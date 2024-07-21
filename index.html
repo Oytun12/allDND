@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Karakter Oluşturucu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>D&D Karakter Oluşturucu</h1>
+        
+        <div id="stats">
+            <p>Güç (STR): <span id="str">10 (0)</span></p>
+            <p>Çeviklik (DEX): <span id="dex">10 (0)</span></p>
+            <p>Dayanıklılık (CON): <span id="con">10 (0)</span></p>
+            <p>Zeka (INT): <span id="int">10 (0)</span></p>
+            <p>Bilgelik (WIS): <span id="wis">10 (0)</span></p>
+            <p>Karizma (CHA): <span id="cha">10 (0)</span></p>
+        </div>
+
+        <form id="race-form">
+            <p>Hangi ırkla oynamak istersiniz?</p>
+            <select id="race" name="race" required>
+                <option value="">Seçiniz</option>
+                <option value="Human">İnsan</option>
+                <option value="Elf">Elf</option>
+                <option value="Dwarf">Cüce</option>
+            </select>
+        </form>
+
+        <form id="background-form">
+            <p>Hangi karakter geçmişi ile oynamak istersiniz?</p>
+            <select id="background" name="background" required>
+                <option value="">Seçiniz</option>
+                <option value="Acolyte">Rahip</option>
+                <option value="Criminal">Suçlu</option>
+                <option value="Folk Hero">Halk Kahramanı</option>
+                <option value="Noble">Asil</option>
+                <option value="Sage">Bilge</option>
+                <option value="Soldier">Asker</option>
+            </select>
+        </form>
+
+        <form id="class-form">
+            <p>Hangi sınıfla oynamak istersiniz?</p>
+            <select id="class" name="class" required>
+                <option value="">Seçiniz</option>
+                <option value="Fighter">Savaşçı</option>
+                <option value="Wizard">Büyücü</option>
+                <option value="Rogue">Düzenbaz</option>
+                <!-- Diğer sınıflar buraya eklenebilir -->
+            </select>
+        </form>
+
+        <div id="priority-order">
+            <h2>Öncelik Sıralaması</h2>
+            <ul id="sortable">
+                <li id="str-priority">
+                    Güç (STR)
+                </li>
+                <li id="dex-priority">
+                    Çeviklik (DEX)
+                </li>
+                <li id="con-priority">
+                    Dayanıklılık (CON)
+                </li>
+                <li id="int-priority">
+                    Zeka (INT)
+                </li>
+                <li id="wis-priority">
+                    Bilgelik (WIS)
+                </li>
+                <li id="cha-priority">
+                    Karizma (CHA)
+                </li>
+            </ul>
+        </div>
+        
+        <div id="skills">
+            <h2>Yetenekler</h2>
+            <p>Atletizm (Athletics)STR: <span id="athletics">0</span></p>
+            <p>Akrobasi (Acrobatics)DEX: <span id="acrobatics">0</span></p>
+            <p>Gizlenme (Stealth)DEX: <span id="stealth">0</span></p>
+            <p>El Çabukluğu (Sleight of Hand)DEX: <span id="sleightOfHand">0</span></p>
+            <p>İçgüdü (Insight)WİS: <span id="insight">0</span></p>
+            <p>Tıp (Medicine)WİS: <span id="medicine">0</span></p>
+            <p>Algılama (Perception)WİS: <span id="perception">0</span></p>
+            <p>Hayatta Kalma (Survival): <span id="survival">0</span></p>
+            <p>Din (Religion): <span id="religion">0</span></p>
+            <p>Araştırma (Investigation): <span id="investigation">0</span></p>
+            <p>Doğa (Nature): <span id="nature">0</span></p>
+            <p>Büyücülük (Arcana): <span id="arcana">0</span></p>
+            <p>Aldatma (Deception): <span id="deception">0</span></p>
+            <p>İkna (Persuasion): <span id="persuasion">0</span></p>
+            <p>Performans (Performance): <span id="performance">0</span></p>
+            <p>Korkutma (Intimidation): <span id="intimidation">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
