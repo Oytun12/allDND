@@ -61,12 +61,11 @@ select {
 }
 
 #sortable li {
-    cursor: move;
-    padding: 10px;
+    padding: 5px;
     background-color: #d3d3a4;
     border: 1px solid #aaa;
     border-radius: 5px;
-    margin: 5px;
+    margin: 2px;
     transition: background-color 0.3s;
     flex: 1 1 calc(50% - 10px); /* Her bir öğenin genişliğini %50 olarak ayarla ve aralarındaki boşluk */
     box-sizing: border-box;
@@ -78,7 +77,7 @@ select {
 
 h2 {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
     color: #8b4513;
 }
 
