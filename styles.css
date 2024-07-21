@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #e6e4d9;
+    background-color: #f9f5e3;
     color: #333;
     margin: 0;
     padding: 20px;
@@ -13,7 +13,7 @@ body {
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
     background-size: cover;
 }
@@ -36,7 +36,7 @@ p {
 #stats, #skills {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f5f5e8;
+    background-color: #f5f5dc;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
@@ -56,17 +56,20 @@ select {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #sortable li {
     cursor: move;
     padding: 10px;
-    background-color: #dad596;
+    background-color: #d3d3a4;
     border: 1px solid #aaa;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 5px 0;
     transition: background-color 0.3s;
+    flex: 1 1 45%; /* Esnek genişlik */
+    box-sizing: border-box;
 }
 
 #sortable li:hover {
@@ -103,4 +106,28 @@ button {
 
 button:hover {
     background-color: #603c1d;
+}
+
+/* Mobil uyumlu tasarım için medya sorguları */
+
+@media (max-width: 768px) {
+    #sortable li {
+        flex: 1 1 100%; /* Düşük çözünürlükte tam genişlik */
+        margin: 5px 0;
+    }
+
+    p {
+        font-size: 1em; /* Küçük ekranlarda yazı boyutunu küçültme */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5em; /* Küçük ekranlarda başlık boyutunu küçültme */
+    }
+
+    button {
+        padding: 8px 16px; /* Küçük ekranlarda buton boyutunu küçültme */
+        font-size: 0.9em;
+    }
 }
