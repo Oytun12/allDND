@@ -57,7 +57,7 @@ select {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #sortable li {
@@ -66,9 +66,9 @@ select {
     background-color: #d3d3a4;
     border: 1px solid #aaa;
     border-radius: 5px;
-    margin: 5px 0;
+    margin: 5px;
     transition: background-color 0.3s;
-    flex: 1 1 45%; /* Esnek genişlik */
+    flex: 1 1 calc(50% - 10px); /* Her bir öğenin genişliğini %50 olarak ayarla ve aralarındaki boşluk */
     box-sizing: border-box;
 }
 
@@ -112,7 +112,7 @@ button:hover {
 
 @media (max-width: 768px) {
     #sortable li {
-        flex: 1 1 100%; /* Düşük çözünürlükte tam genişlik */
+        flex: 1 1 100%; /* Küçük ekranlarda her bir öğe tam genişlikte olacak şekilde ayarla */
         margin: 5px 0;
     }
 
