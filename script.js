@@ -136,3 +136,4 @@ const updateStatsAndSkills = () => {
 document.getElementById('race').addEventListener('change', updateStatsAndSkills);
 document.getElementById('background').addEventListener('change', updateStatsAndSkills);
 document.getElementById('class').addEventListener('change', updateStatsAndSkills);
+
