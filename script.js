@@ -29,13 +29,42 @@ const updateStatsAndSkills = () => {
         stats.int += 1;
         stats.wis += 1;
         stats.cha += 1;
-    } else if (race === 'Elf') {
+    }  else if (race === 'Tiefling') {
+        stats.cha += 2;
+        stats.int += 1;
+    }  else if (race === 'Gnome(Or)') {
+        stats.int += 2;
+        stats.dex += 1;
+    }  else if (race === 'Gnome(Kaya)') {
+        stats.int += 2;
+        stats.con += 1;
+    }  else if (race === 'Elf(Ulu)') {
         stats.dex += 2;
         stats.int += 1;
-    } else if (race === 'Dwarf') {
+    }  else if (race === 'Elf(Or)') {
+        stats.dex += 2;
+        stats.wis += 1;
+    } else if (race === 'Elf(Drow)') {
+        stats.dex += 2;
+        stats.cha += 1;
+    } else if (race === 'Dragonborn') {
+        stats.str += 2;
+        stats.cha += 1;
+    } else if (race === 'Dwarf(Dağ)') {
         stats.str += 2;
         stats.con += 2;
+    } else if (race === 'Dwarf(Tepe)') {
+        stats.str += 2;
+        stats.wis += 1;
+    }else if (race === 'Halfling(Tez)') {
+        stats.dex += 2;
+        stats.cha += 1;
+    }else if (race === 'Halfling(Tık)') {
+        stats.dex += 2;
+        stats.con += 1;
     }
+
+    
 
     if (background === 'Acolyte') {
         stats.wis += 1;
