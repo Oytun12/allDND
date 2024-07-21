@@ -111,3 +111,21 @@ button:hover {
 
 /* Mobil uyumlu tasarım için medya sorguları */
 
+/* @media (max-width: 768px) { */
+    /* #sortable li { */
+        /* flex: 1 1 100%; Küçük ekranlarda her bir öğe tam genişlikte olacak şekilde ayarla */
+        /* margin: 5px 0; */
+    /* } */
+
+    /* p { */
+        /* font-size: 1em; Küçük ekranlarda yazı boyutunu küçültme */
+    /* } */
+/* } */
+
+@media (max-width: 480px) {
+    #skills {
+        font-size: 1.5em; /* Küçük ekranlarda başlık boyutunu küçültme */
+    }
+
+
+}
