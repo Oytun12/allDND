@@ -124,7 +124,7 @@ button:hover {
 
 @media (max-width: 450px) {
     #skillsyazı {
-        font-size: 0.8em; /* Küçük ekranlarda başlık boyutunu küçültme */
+        font-size: 0.9em; /* Küçük ekranlarda başlık boyutunu küçültme */
     }
 
 
