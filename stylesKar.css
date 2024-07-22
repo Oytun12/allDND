@@ -190,4 +190,9 @@ button:hover {
     #skillsyazı {
         font-size: 0.85em;
     }
+    .title {
+        font-family: 'Georgia', serif;
+        font-size: 1.3em;
+    }
+    
 }
