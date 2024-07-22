@@ -94,12 +94,12 @@ form p {
 
 button {
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
+    padding: 2px 5px 3px 2px;
+    margin-top: 5px;
     font-size: 1em;
     color: #fff;
-    background-color: #8b4513;
-    border: none;
+    background-color: #8b5b13;
+    border: solid black 1px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -111,20 +111,9 @@ button:hover {
 
 /* Mobil uyumlu tasarım için medya sorguları */
 
-/* @media (max-width: 768px) { */
-    /* #sortable li { */
-        /* flex: 1 1 100%; Küçük ekranlarda her bir öğe tam genişlikte olacak şekilde ayarla */
-        /* margin: 5px 0; */
-    /* } */
-
-    /* p { */
-        /* font-size: 1em; Küçük ekranlarda yazı boyutunu küçültme */
-    /* } */
-/* } */
-
 @media (max-width: 600px) {
     #skillsyazı {
-        font-size: 0.85em; /* Küçük ekranlarda başlık boyutunu küçültme */
+        font-size: 0.8em;
     }
 
 
