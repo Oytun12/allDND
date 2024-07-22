@@ -8,12 +8,42 @@ const classPriorities = {
     Rogue: ['dex', 'int', 'wis', 'cha', 'str', 'con']
 };
 
+const skillDependencies = {
+    athletics: 'str',
+    acrobatics: 'dex',
+    animalHanding: 'wis',
+    stealth: 'dex',
+    sleightOfHand: 'dex',
+    insight: 'wis',
+    medicine: 'wis',
+    history: 'int',
+    perception: 'wis',
+    survival: 'wis',
+    religion: 'int',
+    investigation: 'int',
+    nature: 'int',
+    arcana: 'int',
+    deception: 'cha',
+    persuasion: 'cha',
+    performance: 'cha',
+    intimidation: 'cha'
+};
+
+let stats = {
+    str: 10,
+    dex: 10,
+    con: 10,
+    int: 10,
+    wis: 10,
+    cha: 10
+};
+
 const updateStatsAndSkills = () => {
     const race = document.getElementById('race').value;
     const background = document.getElementById('background').value;
     const selectedClass = document.getElementById('class').value;
 
-    let stats = {
+    stats = {
         str: 10,
         dex: 10,
         con: 10,
@@ -22,6 +52,7 @@ const updateStatsAndSkills = () => {
         cha: 10
     };
 
+    // Apply race bonuses
     if (race === 'Human') {
         stats.str += 1;
         stats.dex += 1;
@@ -29,43 +60,42 @@ const updateStatsAndSkills = () => {
         stats.int += 1;
         stats.wis += 1;
         stats.cha += 1;
-    }  else if (race === 'Tiefling') {
-        stats.cha += 2;
-        stats.int += 1;
-    }  else if (race === 'Gnome(Or)') {
-        stats.int += 2;
-        stats.dex += 1;
-    }  else if (race === 'Gnome(Kaya)') {
-        stats.int += 2;
-        stats.con += 1;
-    }  else if (race === 'Elf(Ulu)') {
+    } else if (race === 'Elf(Ulu)') {
         stats.dex += 2;
         stats.int += 1;
-    }  else if (race === 'Elf(Or)') {
+    } else if (race === 'Elf(Or)') {
         stats.dex += 2;
         stats.wis += 1;
     } else if (race === 'Elf(Drow)') {
         stats.dex += 2;
         stats.cha += 1;
-    } else if (race === 'Dragonborn') {
-        stats.str += 2;
-        stats.cha += 1;
     } else if (race === 'Dwarf(Dağ)') {
         stats.str += 2;
         stats.con += 2;
     } else if (race === 'Dwarf(Tepe)') {
-        stats.str += 2;
+        stats.con += 2;
         stats.wis += 1;
-    }else if (race === 'Halfling(Tez)') {
+    } else if (race === 'Halfling(Tez)') {
         stats.dex += 2;
         stats.cha += 1;
-    }else if (race === 'Halfling(Tık)') {
+    } else if (race === 'Halfling(Tık)') {
         stats.dex += 2;
         stats.con += 1;
+    } else if (race === 'Dragonborn') {
+        stats.str += 2;
+        stats.cha += 1;
+    } else if (race === 'Gnome(Kaya)') {
+        stats.int += 2;
+        stats.con += 1;
+    } else if (race === 'Gnome(Or)') {
+        stats.int += 2;
+        stats.dex += 1;
+    } else if (race === 'Tiefling') {
+        stats.int += 1;
+        stats.cha += 2;
     }
 
-    
-
+    // Apply background bonuses
     if (background === 'Acolyte') {
         stats.wis += 1;
     } else if (background === 'Criminal') {
@@ -81,59 +111,93 @@ const updateStatsAndSkills = () => {
         stats.con += 1;
     }
 
+    // Apply class bonuses
+    if (selectedClass === 'Fighter') {
+        stats.str += 5;
+        stats.con += 4;
+        stats.wis += 3;
+        stats.cha += 4;
+        stats.dex += 4;
+        stats.int += 4;
+    } else if (selectedClass === 'Wizard') {
+        stats.int += 5;
+        stats.wis += 4;
+        stats.dex += 3;
+        stats.con += 4;
+        stats.cha += 4;
+        stats.str += 4;
+    } else if (selectedClass === 'Rogue') {
+        stats.dex += 5;
+        stats.int += 4;
+        stats.wis += 3;
+        stats.cha += 4;
+        stats.str += 4;
+        stats.con += 4;
+    }
+
+    document.getElementById('str').innerText = `${stats.str} (${calculateBonus(stats.str)})`;
+    document.getElementById('dex').innerText = `${stats.dex} (${calculateBonus(stats.dex)})`;
+    document.getElementById('con').innerText = `${stats.con} (${calculateBonus(stats.con)})`;
+    document.getElementById('int').innerText = `${stats.int} (${calculateBonus(stats.int)})`;
+    document.getElementById('wis').innerText = `${stats.wis} (${calculateBonus(stats.wis)})`;
+    document.getElementById('cha').innerText = `${stats.cha} (${calculateBonus(stats.cha)})`;
+
+    const priorityList = document.getElementById('sortable');
+    priorityList.innerHTML = '';
+
     if (selectedClass) {
         const priorities = classPriorities[selectedClass];
-        const priorityOrder = document.getElementById('sortable');
-        priorityOrder.innerHTML = '';
-        priorities.forEach(stat => {
-            const li = document.createElement('li');
-            li.id = `${stat}-priority`;
-            li.innerHTML = `
-                ${{
-                    str: 'Güç (STR)',
-                    dex: 'Çeviklik (DEX)',
-                    con: 'Dayanıklılık (CON)',
-                    int: 'Zeka (INT)',
-                    wis: 'Bilgelik (WIS)',
-                    cha: 'Karizma (CHA)'
-                }[stat]}
-            `;
-            priorityOrder.appendChild(li);
-        });
-
-        const scores = [5, 4, 3, 2, 0, -2];
-        const orderedStats = [...document.getElementById('sortable').children].map(li => li.id.split('-')[0]);
-        orderedStats.forEach((stat, index) => {
-            stats[stat] += scores[index];
+        priorities.forEach(priority => {
+            const listItem = document.createElement('li');
+            listItem.id = `${priority}-priority`;
+            listItem.innerText = document.querySelector(`#${priority}`).parentNode.innerText.split(':')[0];
+            priorityList.appendChild(listItem);
         });
     }
 
-    document.getElementById('str').textContent = `${stats.str} (${calculateBonus(stats.str)})`;
-    document.getElementById('dex').textContent = `${stats.dex} (${calculateBonus(stats.dex)})`;
-    document.getElementById('con').textContent = `${stats.con} (${calculateBonus(stats.con)})`;
-    document.getElementById('int').textContent = `${stats.int} (${calculateBonus(stats.int)})`;
-    document.getElementById('wis').textContent = `${stats.wis} (${calculateBonus(stats.wis)})`;
-    document.getElementById('cha').textContent = `${stats.cha} (${calculateBonus(stats.cha)})`;
+    updateSkillBonuses();
+};
 
-    document.getElementById('athletics').textContent = calculateBonus(stats.str);
-    document.getElementById('acrobatics').textContent = calculateBonus(stats.dex);
-    document.getElementById('stealth').textContent = calculateBonus(stats.dex);
-    document.getElementById('sleightOfHand').textContent = calculateBonus(stats.dex);
-    document.getElementById('insight').textContent = calculateBonus(stats.wis);
-    document.getElementById('medicine').textContent = calculateBonus(stats.wis);
-    document.getElementById('perception').textContent = calculateBonus(stats.wis);
-    document.getElementById('survival').textContent = calculateBonus(stats.wis);
-    document.getElementById('religion').textContent = calculateBonus(stats.int);
-    document.getElementById('investigation').textContent = calculateBonus(stats.int);
-    document.getElementById('nature').textContent = calculateBonus(stats.int);
-    document.getElementById('arcana').textContent = calculateBonus(stats.int);
-    document.getElementById('deception').textContent = calculateBonus(stats.cha);
-    document.getElementById('persuasion').textContent = calculateBonus(stats.cha);
-    document.getElementById('performance').textContent = calculateBonus(stats.cha);
-    document.getElementById('intimidation').textContent = calculateBonus(stats.cha);
+const skillBonuses = {
+    athletics: 0,
+    acrobatics: 0,
+    animalHanding: 0,
+    stealth: 0,
+    sleightOfHand: 0,
+    insight: 0,
+    medicine: 0,
+    history: 0,
+    perception: 0,
+    survival: 0,
+    religion: 0,
+    investigation: 0,
+    nature: 0,
+    arcana: 0,
+    deception: 0,
+    persuasion: 0,
+    performance: 0,
+    intimidation: 0
+};
+
+const toggleBonus = (skill) => {
+    if (skillBonuses[skill] === 0) {
+        skillBonuses[skill] = 2;
+    } else {
+        skillBonuses[skill] = 0;
+    }
+    updateSkillBonuses();
+};
+
+const updateSkillBonuses = () => {
+    for (const skill in skillBonuses) {
+        const baseBonus = calculateBonus(stats[skillDependencies[skill]]);
+        const totalBonus = baseBonus + skillBonuses[skill];
+        document.getElementById(skill).innerText = totalBonus;
+    }
 };
 
 document.getElementById('race').addEventListener('change', updateStatsAndSkills);
 document.getElementById('background').addEventListener('change', updateStatsAndSkills);
 document.getElementById('class').addEventListener('change', updateStatsAndSkills);
 
+updateStatsAndSkills();
