@@ -56,15 +56,17 @@ nav {
 }
 
 nav ul {
-    list-style: none;
+    margin-left: 20px;
+    list-style: disc;
     padding: 0;
 }
 
 nav ul li {
-    /* margin: 5px 0; */
+    text-align: left;
+
+    margin-left: 13px; 
     margin-bottom: 13px;
 }
-
 nav ul li a {
     color: #8b4513;
     font-size: 1.2em;
