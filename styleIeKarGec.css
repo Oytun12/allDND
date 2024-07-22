@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('monsterm.jpg');
-    background-size: cover;
+    background-color: #f9f5e3;
     color: #333;
     margin: 0;
     padding: 20px;
