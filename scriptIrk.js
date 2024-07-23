@@ -9,7 +9,7 @@ const toggleMenu = () => {
     }
 };
 
-// Menü dışında bir yere tıklanınca menüyü gizle
+// Menü dışında bir yere tıklanınca menüyü gizle 
 document.addEventListener('click', (event) => {
     const menu = document.getElementById('hamburger-menu');
     const menuIcon = document.querySelector('.menu-icon');
