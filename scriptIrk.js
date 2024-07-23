@@ -25,3 +25,14 @@ document.addEventListener('click', (event) => {
         menu.classList.add('hidden');
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const collapsibles = document.querySelectorAll(".collapsible");
+
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener("click", function() {
+            const content = this.nextElementSibling;
+            content.classList.toggle("hidden");
+        });
+    });
+});
