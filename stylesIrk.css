@@ -173,6 +173,34 @@ hr {
     color: #000;
 }
 
+.siyah{
+    color: #000;
+}
+.mavi{
+    color: #00008B;
+}
+.pirinc{
+    color: #8B4513 ;
+}
+.bronz{
+    color: #8B3E2F;
+}
+.altin{
+    color: #B8860B;
+}
+.yesil{
+    color: #006400 ;
+}
+.kirmizi{
+    color: #8B0000 ;
+}
+.gumus{
+    color: #708090
+}
+.beyaz{
+    color: #000000;
+}
+
 h1 {
     font-family: 'Georgia', serif;
     margin-bottom: 20px;
