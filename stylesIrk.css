@@ -170,6 +170,11 @@ h3, h4{
     color: #8b4513;
 }
 
+.altbaslık{
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
 hr {
     border: 1.4px solid #862F1B;
     width: 100%;
