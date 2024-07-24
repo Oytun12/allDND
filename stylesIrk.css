@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ddddac;
+    background-color: #ddddacc3;
     border: 2px solid rgb(186, 184, 184);
     border-radius: 10px;
     color: #8b4513;
@@ -116,7 +116,7 @@ nav ul li a {
     background-size: cover;
 }
 
-.bucuklukTez, .bucuklukTik, .cuceDa, .cuceTe, .ejder{
+.bucuklukTez, .bucuklukTik, .cuceDa, .cuceTe, .ejder, .elfD, .elfO{
     padding: 20px;
     background-color: #FBF1DE;
     border: 2px solid #DB9D43;
