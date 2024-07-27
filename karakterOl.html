@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="D&D karakter oluşturma aracı ile Irklar, Sınıflar ve Karakter geçmişleri hakkında bilgi edinin. Kişiselleştirilmiş karakterler oluşturun ve en iyi sonuçları alın.">
+    <meta name="keywords" content="D&D, DND, Dungeons and Dragons, Karakter Yaratma, Karakter Oluşturma,Dnd Sınıflar, Karakter Kağıdı, RPG, Rol Yapma Oyunu">
+    <meta name="author" content="Oytun">
+    <link rel="icon" href="https://oytun12.github.io/DND/favicon.png" type="image/x-icon">
+    <title>D&D Karakter Yaratma</title>
+    <link rel="stylesheet" href="stylesKarOl.css">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "D&D Karakter Yaratma",
+          "url": "https://oytun12.github.io/DND",
+          "image": "https://oytun12.github.io/DND/favicon.png",
+          "description": "Karakter Oluşturma bölümünden ise basit bir test çözerek oynamak istediğiniz karakterin karakter kağıdını otomatik olarak oluşturabilirsiniz.",
+          "author": {
+            "@type": "Person",
+            "name": "Oytun"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Oytun's D&D Hub",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://oytun12.github.io/DND/favicon.png"
+            }
+          }
+        }
+    </script>
+</head>
+<body>
+  <header>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="title">Karakter Oluşturucu</div>   
+      <img src="SariZar.png" alt="Logo" class="logo-img">
+     <nav id="hamburger-menu" class="hidden">
+         <ul>
+             <li><a href="index.html">Ana Sayfa</a></li>
+             <li><a href="irklar.html">Irklar</a></li>
+             <li><a href="karGec.html">Karakter Geçmişleri</a></li>
+             <li><a href="siniflar.html">Sınıflar</a></li>
+             <li><a href="karakterOl.html">Karakter Oluşturma</a></li>
+         </ul>
+     </nav>
+   </header>
+
+  <div class="container">
+  <div id="stats">
+    <p>Güç (STR): <span id="str">10 (<span id="str-b">0</span>)</span></p>
+    <p>Çeviklik (DEX): <span id="dex">10 (<span id="dex-b">0</span>)</span></p>
+    <p>Dayanıklılık (CON): <span id="con">10 (<span id="con-b">0</span>)</span></p>
+    <p>Zeka (INT): <span id="int">10 (<span id="int-b">0</span>)</span></p>
+    <p>Bilgelik (WIS): <span id="wis">10 (<span id="wis-b">0</span>)</span></p>
+    <p>Karizma (CHA): <span id="cha">10 (<span id="cha-b">0</span>)</span></p>
+  </div>
+  <form>
+    <label for="race"><p>hangi ırkla oynamak istersiniz?</p></label>
+    <select id="race">
+        <option value="">Seçiniz</option>
+        <option value="Human">İnsan</option>
+        <option value="Elf(Ulu)">Elf(Ulu)</option>
+        <option value="Elf(Or)">Elf(Or)</option>
+        <option value="Elf(Drow)">Elf(Drow)</option>
+        <option value="Dwarf(Dağ)">Cüce(Dağ)</option>
+        <option value="Dwarf(Tepe)">Cüce(Tepe)</option>
+        <option value="Halfling(Tez)">Halfling(Tez)</option>
+        <option value="Halfling(Tık)">Halfling(Tık)</option>
+        <option value="Dragonborn">Dragonborn</option>
+        <option value="Gnome(Kaya)">Gnome(Kaya)</option>
+        <option value="Gnome(Or)">Gnome(Or)</option>
+        <option value="Tiefling">Tiefling</option>
+        <option value="Yarı-Elf">Yarı-Elf</option>
+        <option value="Yarı-Orc">Yarı-Orc</option>
+    </select>
+
+    <label for="background"><p>hangi karakter geçmişi ile oynamak istersiniz?</p></label>
+    <select id="background">
+        <option value="">Seçiniz</option>
+        <option value="Acolyte">Rahip</option>
+        <option value="Criminal">Suçlu</option>
+        <option value="Folk Hero">Halk Kahramanı</option>
+        <option value="Noble">Asil</option>
+        <option value="Sage">Bilge</option>
+        <option value="Soldier">Asker</option>
+    </select>
+
+      <label for="class"><p>hangi sınıf ile oynamak istersiniz?</p></label>
+      <select id="class">
+          <option value="">Seçiniz</option>
+          <option value="Fighter">Fighter</option>
+          <option value="Wizard">Wizard</option>
+          <option value="Rogue">Rogue</option>
+      </select>
+  </form>
+
+  <div id="skills">
+    <p id="skill-slots">Kalan Skill Yuvası: 0</p>
+    <ul id="sortable">        
+        <li id="athletics">
+          <button id="athletics-plus" class="plus-button">+2</button>    Athletics: <span id="athletics-value">0</span>
+        </li>
+        <li id="acrobatics">
+          <button id="acrobatics-plus" class="plus-button">+2</button>    Acrobatics: <span id="acrobatics-value">0</span>
+        </li>
+        <li id="animalHanding">
+          <button id="animalHandling-plus" class="plus-button">+2</button>    Animal Handling: <span id="animalHandling-value">0</span>
+        </li>
+        <li id="stealth">
+          <button id="stealth-plus" class="plus-button">+2</button>    Stealth: <span id="stealth-value">0</span>
+        </li>
+        <li id="sleightOfHand">
+          <button id="sleightOfHand-plus" class="plus-button">+2</button>    Sleight Of Hand: <span id="sleightOfHand-value">0</span>
+        </li>
+        <li id="insight">
+          <button id="insight-plus" class="plus-button">+2</button>    Insight: <span id="insight-value">0</span>
+        </li>
+        <li id="medicine">
+          <button id="medicine-plus" class="plus-button">+2</button>    Medicine: <span id="medicine-value">0</span>
+        </li>
+        <li id="history">
+          <button id="history-plus" class="plus-button">+2</button>    History: <span id="history-value">0</span>
+        </li>
+        <li id="perception">
+          <button id="perception-plus" class="plus-button">+2</button>    Perception: <span id="perception-value">0</span>
+        </li>
+        <li id="survival">
+          <button id="survival-plus" class="plus-button">+2</button>    Survival: <span id="survival-value">0</span>
+        </li>
+        <li id="religion">
+          <button id="religion-plus" class="plus-button">+2</button>    Religion: <span id="religion-value">0</span>
+        </li>
+        <li id="investigation">
+          <button id="investigation-plus" class="plus-button">+2</button>    Investigation: <span id="investigation-value">0</span>
+        </li>
+        <li id="nature">
+          <button id="nature-plus" class="plus-button">+2</button>    Nature: <span id="nature-value">0</span>
+        </li>
+        <li id="arcana">
+          <button id="arcana-plus" class="plus-button">+2</button>    Arcana: <span id="arcana-value">0</span>
+        </li>
+        <li id="performance">
+          <button id="performance-plus" class="plus-button">+2</button>    Performance: <span id="performance-value">0</span>
+        </li>
+        <li id="persuasion">
+          <button id="persuasion-plus" class="plus-button">+2</button>    Persuasion: <span id="persuasion-value">0</span>
+        </li>
+        <li id="intimidation">
+          <button id="intimidation-plus" class="plus-button">+2</button>    Intimidation: <span id="intimidation-value">0</span>
+        </li>
+        <li id="deception">
+          <button id="deception-plus" class="plus-button">+2</button>    Deception: <span id="deception-value">0</span>
+        </li>
+    </ul>
+  </div>
+  <div class="btns">
+      <button id="create-character">Karakter Oluştur</button>
+      <button id="reset-skills">Sıfırla</button>
+  </div>
+  
+  <footer>
+      <p>© 2023 Tüm Hakları Saklıdır. | Tasarım: Oytun</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="scriptKarOl.js"></script>
+</body>
+</html>

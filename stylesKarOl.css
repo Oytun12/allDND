@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f5e3;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddddacc3;
+    border: 2px solid rgb(186, 184, 184);
+    border-radius: 10px;
+    color: #8b4513;
+    font-family: 'Georgia', serif;
+    padding: 1rem 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 2.2em;
+}
+
+.title {
+    font-family: 'Georgia', serif;
+    font-size: 2em;
+}
+
+.logo-img {
+    width: 60px; /* Logonun genişliği */
+    height: auto; /* Oranını koruyarak yüksekliği otomatik ayarlar */
+}
+
+nav {
+    position: absolute;
+    top: 121%; /* Menü ikonunun hemen altında başlar */
+    left: -2px;
+    width: 250px;
+    background-color: #cabe80;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    display: none;
+    z-index: 1000; /* Menü ikonunun üstünde görünmesi için */
+}
+
+nav ul {
+    margin-left: 20px;
+    list-style: disc;
+    padding: 0;
+}
+
+nav ul li {
+    text-align: left;
+    margin-left: 13px; 
+    margin-bottom: 13px;
+}
+
+nav ul li a {
+    color: #8b4513;
+    font-size: 1.2em;
+    font-family: 'Georgia', serif;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    background-size: cover;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8b4513;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+#stats, #skills {
+    margin-top: 5px;
+    padding: 20px;
+    background-color: #f5f5dc;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f5e3;
+}
+
+#sortable {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#sortable li {
+    padding: 5px;
+    background-color: #ddddacd6;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin: 2px;
+    transition: background-color 0.3s;
+    flex: 1 1 calc(50% - 10px); /* Her bir öğenin genişliğini %50 olarak ayarla ve aralarındaki boşluk */
+    box-sizing: border-box;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#sortable li:hover {
+    background-color: #cece91;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    color: #8b4513;
+}
+
+p span {
+    font-weight: bold;
+    color: #555;
+}
+
+form p {
+    margin-bottom: 10px;
+}
+
+button {
+    display: inline-block;
+    padding: 2px 5px 3px 2px;
+    margin-top: 5px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #777;
+    color: #fff;
+}
+
+.plus-button {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.plus-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
