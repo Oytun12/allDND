@@ -195,6 +195,24 @@ button:hover {
     background-color: #ccc;
     cursor: not-allowed;
 }
+#class-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5dc;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#class-info h3 {
+    margin-top: 0;
+    color: #8b4513;
+}
+
+#class-info p {
+    font-size: 1.1em;
+    color: #333;
+}
 
 @media (max-width: 600px) {
     #skillsyazı {
