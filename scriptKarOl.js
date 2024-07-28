@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const backgroundSelect = document.getElementById("background");
     const classSelect = document.getElementById("class");
     const classInfoDiv = document.getElementById("class-info");
+    document.getElementById('skills').classList.add('hidden');
+
+    // document.addEventListener('DOMContentLoaded', (event) => {
+    //     document.getElementById('skills-info').classList.add('hidden');
+    // });
   
     let remainingSkillSlots = 0;
   
@@ -97,7 +102,20 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     };
+
+
+    document.getElementById('class').addEventListener('change', function() {
+        var classSelect = document.getElementById('class');
+        var skillsInfo = document.getElementById('skills');
+
+        if (classSelect.value !== "") {
+            skillsInfo.classList.remove('hidden');
+        } else {
+            skillsInfo.classList.add('hidden');
+        }
+    });
     
+
     classSelect.addEventListener('change', updateClassInfo);
     updateClassInfo();  // Sayfa yüklendiğinde bilgileri güncelle
     raceSelect.addEventListener('change', updateStatsAndSkills);
@@ -272,6 +290,21 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (race === 'Yarı-Orc') {
         stats.con += 1;
         stats.str += 2;
+    }
+
+    if (background === 'Acolyte') {
+        stats.wis += 1;
+    } else if (background === 'Criminal') {
+        stats.dex += 1;
+    } else if (background === 'Folk Hero') {
+        stats.str += 1;
+    } else if (background === 'Noble') {
+        stats.cha += 1;
+    } else if (background === 'Sage') {
+        stats.int += 1;
+    } else if (background === 'Soldier') {
+        stats.str += 1;
+        stats.con += 1;
     }
   
     if (selectedClass === 'Fighter') {
