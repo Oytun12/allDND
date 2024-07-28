@@ -201,7 +201,7 @@ button:hover {
     background-color: #f5f5dc;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #class-info h3 {
