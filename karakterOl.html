@@ -31,142 +31,113 @@
           }
         }
     </script>
-</head>
-<body>
-  <header>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
-      <div class="title">Karakter Oluşturucu</div>   
-      <img src="SariZar.png" alt="Logo" class="logo-img">
-     <nav id="hamburger-menu" class="hidden">
-         <ul>
-             <li><a href="index.html">Ana Sayfa</a></li>
-             <li><a href="irklar.html">Irklar</a></li>
-             <li><a href="karGec.html">Karakter Geçmişleri</a></li>
-             <li><a href="siniflar.html">Sınıflar</a></li>
-             <li><a href="karakterOl.html">Karakter Oluşturma</a></li>
-         </ul>
-     </nav>
-   </header>
+    </head>
+    <body>
+        <header>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <div class="title">Karakter Oluşturucu</div>   
+            <img src="SariZar.png" alt="Logo" class="logo-img">
+           <nav id="hamburger-menu" class="hidden">
+               <ul>
+                   <li><a href="index.html">Ana Sayfa</a></li>
+                   <li><a href="irklar.html">Irklar</a></li>
+                   <li><a href="karGec.html">Karakter Geçmişleri</a></li>
+                   <li><a href="siniflar.html">Sınıflar</a></li>
+                   <li><a href="karakterOl.html">Karakter Oluşturma</a></li>
+               </ul>
+           </nav>
+         </header>
 
-  <div class="container">
-  <div id="stats">
-    <p>Güç (STR): <span id="str">10 (<span id="str-b">0</span>)</span></p>
-    <p>Çeviklik (DEX): <span id="dex">10 (<span id="dex-b">0</span>)</span></p>
-    <p>Dayanıklılık (CON): <span id="con">10 (<span id="con-b">0</span>)</span></p>
-    <p>Zeka (INT): <span id="int">10 (<span id="int-b">0</span>)</span></p>
-    <p>Bilgelik (WIS): <span id="wis">10 (<span id="wis-b">0</span>)</span></p>
-    <p>Karizma (CHA): <span id="cha">10 (<span id="cha-b">0</span>)</span></p>
-  </div>
-  <form>
-    <label for="race"><p>hangi ırkla oynamak istersiniz?</p></label>
-    <select id="race">
-        <option value="">Seçiniz</option>
-        <option value="Human">İnsan</option>
-        <option value="Elf(Ulu)">Elf(Ulu)</option>
-        <option value="Elf(Or)">Elf(Or)</option>
-        <option value="Elf(Drow)">Elf(Drow)</option>
-        <option value="Dwarf(Dağ)">Cüce(Dağ)</option>
-        <option value="Dwarf(Tepe)">Cüce(Tepe)</option>
-        <option value="Halfling(Tez)">Halfling(Tez)</option>
-        <option value="Halfling(Tık)">Halfling(Tık)</option>
-        <option value="Dragonborn">Dragonborn</option>
-        <option value="Gnome(Kaya)">Gnome(Kaya)</option>
-        <option value="Gnome(Or)">Gnome(Or)</option>
-        <option value="Tiefling">Tiefling</option>
-        <option value="Yarı-Elf">Yarı-Elf</option>
-        <option value="Yarı-Orc">Yarı-Orc</option>
-    </select>
+    <div class="container">
+        <div id="stats">
+            <p id="StatStr">Str: 10(0)</p>
+            <p id="StatDex">Dex: 10(0)</p>
+            <p id="StatCon">Con: 10(0)</p>
+            <p id="StatInt">İnt: 10(0)</p>
+            <p id="StatWis">Wis: 10(0)</p>
+            <p id="StatCha">Cha: 10(0)</p>
+        </div>
 
-    <label for="background"><p>hangi karakter geçmişi ile oynamak istersiniz?</p></label>
-    <select id="background">
-        <option value="">Seçiniz</option>
-        <option value="Acolyte">Rahip</option>
-        <option value="Criminal">Suçlu</option>
-        <option value="Folk Hero">Halk Kahramanı</option>
-        <option value="Noble">Asil</option>
-        <option value="Sage">Bilge</option>
-        <option value="Soldier">Asker</option>
-    </select>
+        <form id="race-from">
+            <p>Hangi ırkla oynamak istersiniz?</p>
+            <select id="race" name="race" required>
+                <option value="">Seçiniz</option>
+                <option value="Human">İnsan</option>
+                <option value="Elf(Ulu)">Elf(Ulu)</option>
+                <option value="Elf(Or)">Elf(Orman)</option>
+                <option value="Elf(Drow)">Elf(Drow)</option>
+                <option value="Dwarf(Dağ)">Cüce(Dağ)</option>
+                <option value="Dwarf(Tepe)">Cüce(Tepe)</option>
+                <option value="Halfling(Tez)">Buçukluk (Tez Ayak)</option>
+                <option value="Halfling(Tık)">Buçukluk (Tıknaz)</option>
+                <option value="Dragonborn">Ejderdoğan</option>
+                <option value="Gnome(Kaya)">Gnome(Kaya)</option>
+                <option value="Gnome(Or)">Gnome(Orman)</option>
+                <option value="Tiefling">Tiefling</option>
+                <option value="Yarı-Ef">Yarı-Elf</option>
+                <option value="Yarı-Orc">Yarı-Orc</option>
+            </select>
+        </form>
 
-      <label for="class"><p>hangi sınıf ile oynamak istersiniz?</p></label>
-      <select id="class">
-          <option value="">Seçiniz</option>
-          <option value="Fighter">Fighter</option>
-          <option value="Wizard">Wizard</option>
-          <option value="Rogue">Rogue</option>
-      </select>
-    <div id="class-info" class="hidden"></div>
-  </form>
+        <form id="background-form">
+            <p>Hangi karakter geçmişi ile oynamak istersiniz?</p>
+            <select id="background" name="background" required>
+                <option value="">Seçiniz</option>
+                <option value="Acolyte">Rahip</option>
+                <option value="Criminal">Suçlu</option>
+                <optxion value="Folk Hero">Halk Kahramanı</option>
+                <option value="Noble">Asil</option>
+                <option value="Sage">Bilge</option>
+                <option value="Soldier">Asker</option>
+            </select>
+        </form>
 
-  <div id="skills"  class="hidden">
-    <p id="skill-slots">Kalan Skill Yuvası: 0</p>
-    <ul id="sortable">        
-        <li id="athletics">
-          <button id="athletics-plus" class="plus-button">+2</button>    Athletics: <span id="athletics-value">0</span>
-        </li>
-        <li id="acrobatics">
-          <button id="acrobatics-plus" class="plus-button">+2</button>    Acrobatics: <span id="acrobatics-value">0</span>
-        </li>
-        <li id="animalHanding">
-          <button id="animalHandling-plus" class="plus-button">+2</button>    Animal Handling: <span id="animalHandling-value">0</span>
-        </li>
-        <li id="stealth">
-          <button id="stealth-plus" class="plus-button">+2</button>    Stealth: <span id="stealth-value">0</span>
-        </li>
-        <li id="sleightOfHand">
-          <button id="sleightOfHand-plus" class="plus-button">+2</button>    Sleight Of Hand: <span id="sleightOfHand-value">0</span>
-        </li>
-        <li id="insight">
-          <button id="insight-plus" class="plus-button">+2</button>    Insight: <span id="insight-value">0</span>
-        </li>
-        <li id="medicine">
-          <button id="medicine-plus" class="plus-button">+2</button>    Medicine: <span id="medicine-value">0</span>
-        </li>
-        <li id="history">
-          <button id="history-plus" class="plus-button">+2</button>    History: <span id="history-value">0</span>
-        </li>
-        <li id="perception">
-          <button id="perception-plus" class="plus-button">+2</button>    Perception: <span id="perception-value">0</span>
-        </li>
-        <li id="survival">
-          <button id="survival-plus" class="plus-button">+2</button>    Survival: <span id="survival-value">0</span>
-        </li>
-        <li id="religion">
-          <button id="religion-plus" class="plus-button">+2</button>    Religion: <span id="religion-value">0</span>
-        </li>
-        <li id="investigation">
-          <button id="investigation-plus" class="plus-button">+2</button>    Investigation: <span id="investigation-value">0</span>
-        </li>
-        <li id="nature">
-          <button id="nature-plus" class="plus-button">+2</button>    Nature: <span id="nature-value">0</span>
-        </li>
-        <li id="arcana">
-          <button id="arcana-plus" class="plus-button">+2</button>    Arcana: <span id="arcana-value">0</span>
-        </li>
-        <li id="performance">
-          <button id="performance-plus" class="plus-button">+2</button>    Performance: <span id="performance-value">0</span>
-        </li>
-        <li id="persuasion">
-          <button id="persuasion-plus" class="plus-button">+2</button>    Persuasion: <span id="persuasion-value">0</span>
-        </li>
-        <li id="intimidation">
-          <button id="intimidation-plus" class="plus-button">+2</button>    Intimidation: <span id="intimidation-value">0</span>
-        </li>
-        <li id="deception">
-          <button id="deception-plus" class="plus-button">+2</button>    Deception: <span id="deception-value">0</span>
-        </li>
-    </ul>
-  </div>
-  <div class="btns">
-      <button id="create-character">Karakter Oluştur</button>
-      <button id="reset-skills">Sıfırla</button>
-  </div>
-  <footer>
-      <p>© 2023 Tüm Hakları Saklıdır. | Tasarım: Oytun</p>
-  </footer>
-</div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="scriptKarOl.js"></script>
+        <form id="class-form">
+            <p>Hangi sınıfla oynamak istersiniz?</p>
+            <select id="class" name="class" required>
+                <option value="">Seçiniz</option>
+                <option value="Fighter">Savaşçı</option>
+                <option value="Wizard">Büyücü</option>
+                <option value="Rogue">Düzenbaz</option>
+                <!-- Diğer sınıflar buraya eklenebilir -->
+            </select>
+            <div id="class-info" class="hidden"></div>
+        </form>
+        
+        <div id="skills"  class="hidden">
+            <p id="skill-slots">Kalan Skill Yuvası: 0</p>
+            <ul id="sortable">  
+                <li><button id="But-athletics" class="skillButton" onclick="window.toggleBonusAthletics()">+2</button> Atletizm (Athletics) STR: <span id="athletics">0</span></li>
+                <li><button id="But-acrobatics" class="skillButton" onclick="window.toggleBonusAcrobatics()">+2</button> Akrobasi (Acrobatics) DEX: <span id="acrobatics">0</span></li>
+                <li><button id="But-sleightOfHand" class="skillButton" onclick="window.toggleBonusSleightOfHand()">+2</button> El Çabukluğu (Sleight of Hand) DEX: <span id="sleightOfHand">0</span></li>
+                <li><button id="But-stealth" class="skillButton" onclick="window.toggleBonusStealth()">+2</button> Gizlenme (Stealth) DEX: <span id="stealth">0</span></li>
+                <li><button id="But-history" class="skillButton" onclick="window.toggleBonusHistory()">+2</button> Tarih (History) İNT: <span id="history">0</span></li>
+                <li><button id="But-religion" class="skillButton" onclick="window.toggleBonusReligion()">+2</button> Din (Religion) İNT: <span id="religion">0</span></li>
+                <li><button id="But-investigation" class="skillButton" onclick="window.toggleBonusInvestigation()">+2</button> Araştırma (Investigation) İNT: <span id="investigation">0</span></li>
+                <li><button id="But-nature" class="skillButton" onclick="window.toggleBonusNature()">+2</button> Doğa (Nature) İNT: <span id="nature">0</span></li>
+                <li><button id="But-arcana" class="skillButton" onclick="window.toggleBonusArcana()">+2</button> Büyücülük (Arcana) İNT: <span id="arcana">0</span></li>
+                <li><button id="But-animalHandling" class="skillButton" onclick="window.toggleBonusAnimalHandling()">+2</button> Hayvan İdaresi (Animal Handling) WİS: <span id="animalHandling">0</span></li>
+                <li><button id="But-insight" class="skillButton" onclick="window.toggleBonusInsight()">+2</button> İçgüdü (Insight) WİS: <span id="insight">0</span></li>
+                <li><button id="But-medicine" class="skillButton" onclick="window.toggleBonusMedicine()">+2</button> Tıp (Medicine) WİS: <span id="medicine">0</span></li>
+                <li><button id="But-perception" class="skillButton" onclick="window.toggleBonusPerception()">+2</button> Algılama (Perception) WİS: <span id="perception">0</span></li>
+                <li><button id="But-survival" class="skillButton" onclick="window.toggleBonusSurvival()">+2</button> Hayatta Kalma (Survival) WİS: <span id="survival">0</span></li>
+                <li><button id="But-deception" class="skillButton" onclick="window.toggleBonusDeception()">+2</button> Aldatma (Deception) CHA: <span id="deception">0</span></li>
+                <li><button id="But-persuasion" class="skillButton" onclick="window.toggleBonusPersuasion()">+2</button> İkna (Persuasion) CHA: <span id="persuasion">0</span></li>
+                <li><button id="But-performance" class="skillButton" onclick="window.toggleBonusPerformance()">+2</button> Performans (Performance) CHA: <span id="performance">0</span></li>
+                <li><button id="But-intimidation" class="skillButton" onclick="window.toggleBonusIntimidation()">+2</button> Korkutma (Intimidation) CHA: <span id="intimidation">0</span></li>
+            </ul>
+        </div>
+        <div class="btns">
+            <!-- <button id="create-character">Karakter Oluştur</button>
+            <button id="reset-skills">Sıfırla</button> -->
+            <button onclick="guncelle()">Sayiyi Güncelle</button>
+        </div>
+        <footer class="footer">
+            <p>© 2023 Tüm Hakları Saklıdır. | Tasarım: Oytun</p>
+        </footer>
+     </div>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+     <script src="scriptKarOl.js"></script>
 </body>
 </html>
