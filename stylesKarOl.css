@@ -166,35 +166,46 @@ form p {
     margin-bottom: 10px;
 }
 
-button {
+#But {
+    background-color: #8b4513;
+    color: white;
+    border: solid 1px #000000;
+    border-radius: 5px;
+    cursor: pointer;
     display: inline-block;
     padding: 2px 5px 3px 2px;
     margin-top: 5px;
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.1s;
 }
 
-button:hover {
-    background-color: #777;
+#But.active {
+    background-color: #4e5d4a;
     color: #fff;
 }
 
-.plus-button {
+.skill-button {
     background-color: #8b4513;
     color: white;
-    border: none;
+    border: solid 1px #000000;
     border-radius: 5px;
-    padding: 5px;
     cursor: pointer;
-    margin-left: 10px;
+    display: inline-block;
+    padding: 2px 5px 3px 2px;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 1em;
+    transition: background-color 0.1s;
 }
 
-.plus-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.skill-button.active {
+    background-color: #4e5d4a;
+    color: #fff;
 }
+
+
 #class-info {
     margin-top: 20px;
     padding: 15px;
@@ -214,9 +225,30 @@ button:hover {
     color: #333;
 }
 
+.skillButton {
+    background-color: #8b4513;
+    color: white;
+    border: solid 1px #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px 5px 3px 2px;
+    margin-top: 5px;
+    font-size: 1em;
+    transition: background-color 0.1s;
+}
+
+.skillButton.active {
+    background-color: #321907b5;
+    color: #fff;
+}
+.footer{
+    font-size: 0.8em;
+}
+
 @media (max-width: 600px) {
     #skillsyazı {
-        font-size: 0.85em;
+        font-size: 0.7em;
     }
     .title {
         font-family: 'Georgia', serif;
