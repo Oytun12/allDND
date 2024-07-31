@@ -1,71 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const raceSelect = document.getElementById("race");
-    const backgroundSelect = document.getElementById("background");
-    const classSelect = document.getElementById("class");
+    guncelle();
+    document.getElementById('race').addEventListener('change', guncelle);
+    document.getElementById('background').addEventListener('change', guncelle);
+    document.getElementById('class').addEventListener('change', guncelle);
+
+    document.getElementById('race').addEventListener('change', calculateSkillSlots);
+    document.getElementById('background').addEventListener('change', calculateSkillSlots);
+    document.getElementById('class').addEventListener('change', calculateSkillSlots);
+
+// ------------------------------CLASS İNFO-----------------------------------
+
     const classInfoDiv = document.getElementById("class-info");
     document.getElementById('skills').classList.add('hidden');
 
-    // document.addEventListener('DOMContentLoaded', (event) => {
-    //     document.getElementById('skills-info').classList.add('hidden');
-    // });
-  
-    let remainingSkillSlots = 0;
-  
-    function calculateSkillSlots() {
-        let skillSlots = 0; // Yerel skillSlots değişkeni
-  
-        const calculateSkillSlotsClass = () => {
-            const selectedClass = classSelect.value;
-  
-            if (selectedClass === 'Fighter') {
-                skillSlots += 2;
-            } else if (selectedClass === 'Wizard') {
-                skillSlots += 3;
-            } else if (selectedClass === 'Rogue') {
-                skillSlots += 4;
-            }
-        };
-  
-        const calculateSkillSlotsBackground = () => {
-            const selectedBackground = backgroundSelect.value;
-            if (selectedBackground === 'Acolyte') {
-                skillSlots += 2;
-            } else if (selectedBackground === 'Criminal') {
-                skillSlots += 2;
-            } else if (selectedBackground === 'Folk Hero') {
-                skillSlots += 2;
-            } else if (selectedBackground === 'Noble') {
-                skillSlots += 2;
-            } else if (selectedBackground === 'Sage') {
-                skillSlots += 2;
-            } else if (selectedBackground === 'Soldier') {
-                skillSlots += 2;
-            }
-        };
-  
-        calculateSkillSlotsClass();
-        calculateSkillSlotsBackground();
-  
-        remainingSkillSlots = skillSlots; // remainingSkillSlots güncelle
-        updateRemainingSkillSlots(); // remainingSkillSlots metnini güncelle
-  
-        document.getElementById('skill-slots').innerText = `Kalan Skill Yuvası: ${skillSlots}`; // Hesaplanan skillSlots değerini güncelle
-    }
-  
-    const updateRemainingSkillSlots = () => {
-        document.getElementById('skill-slots').innerText = `Kalan Skill Yuvası: ${remainingSkillSlots}`;
-    };
-  
-    const handleSkillButtonClick = (event) => {
-        if (remainingSkillSlots > 0) {
-            const skillId = event.target.id.replace('-plus', '');
-            skillBonuses[skillId] += 2;
-            remainingSkillSlots -= 1;
-            updateSkillBonuses();
-            updateRemainingSkillSlots();
-        }
-    };
-  
+
     const classInfo = {
         Fighter: {
             title: "Savaşçı",
@@ -83,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
   
     const updateClassInfo = () => {
-        const selectedClass = classSelect.value;
+        const selectedClass = document.getElementById('class').value;
   
         if (selectedClass === "select") {
             classInfoDiv.classList.add('hidden');
@@ -114,127 +62,210 @@ document.addEventListener("DOMContentLoaded", function() {
             skillsInfo.classList.add('hidden');
         }
     });
-    
+    document.getElementById('class').addEventListener('change', updateClassInfo);
 
-    classSelect.addEventListener('change', updateClassInfo);
-    updateClassInfo();  // Sayfa yüklendiğinde bilgileri güncelle
-    raceSelect.addEventListener('change', updateStatsAndSkills);
-    backgroundSelect.addEventListener('change', updateStatsAndSkills);
-    classSelect.addEventListener('change', updateStatsAndSkills);
-  
-    raceSelect.addEventListener('change', calculateSkillSlots);
-    backgroundSelect.addEventListener('change', calculateSkillSlots);
-    classSelect.addEventListener('change', calculateSkillSlots);
-  
-    document.querySelectorAll('.plus-button').forEach(button => {
-        button.addEventListener('click', handleSkillButtonClick);
-    });
-  
-    document.getElementById('reset-skills').addEventListener('click', () => {
-        skillBonuses = {
-            athletics: 0,
-            acrobatics: 0,
-            animalHandling: 0,
-            stealth: 0,
-            sleightOfHand: 0,
-            insight: 0,
-            medicine: 0,
-            history: 0,
-            perception: 0,
-            survival: 0,
-            religion: 0,
-            investigation: 0,
-            nature: 0,
-            arcana: 0,
-            deception: 0,
-            persuasion: 0,
-            performance: 0,
-            intimidation: 0
-        };
-        remainingSkillSlots = 10;
-        updateSkillBonuses();
-        updateRemainingSkillSlots();
-    });
-  
+// -------------------------------SKİLL SLOT-----------------------------------------------
+
+let remainingSkillSlots = 0;
+
+function calculateSkillSlots() {
+    let skillSlots = 0; // Yerel skillSlots değişkeni
+
+    const selectedClass = document.getElementById('class').value;
+    if (selectedClass === 'Fighter') {
+        skillSlots += 2;
+    } else if (selectedClass === 'Wizard') {
+        skillSlots += 3;
+    } else if (selectedClass === 'Rogue') {
+        skillSlots += 4;
+    }
+
+    const selectedBackground = document.getElementById('background').value;
+    if (selectedBackground === 'Acolyte') {
+        skillSlots += 2;
+    } else if (selectedBackground === 'Criminal') {
+        skillSlots += 2;
+    } else if (selectedBackground === 'Folk Hero') {
+        skillSlots += 2;
+    } else if (selectedBackground === 'Noble') {
+        skillSlots += 2;
+    } else if (selectedBackground === 'Sage') {
+        skillSlots += 2;
+    } else if (selectedBackground === 'Soldier') {
+        skillSlots += 2;
+    }
+
+    remainingSkillSlots = skillSlots; // remainingSkillSlots güncelle
+    updateRemainingSkillSlots(); // remainingSkillSlots metnini güncelle
+};
+const updateRemainingSkillSlots = () => {
+    document.getElementById('skill-slots').innerText = `Kalan Skill Yuvası: ${remainingSkillSlots}`; // Hesaplanan skillSlots değerini güncelle
+};
+
+const toggleBonus = (skillId, buttonId, skillBonusKey) => {
+    const button = document.getElementById(buttonId);
+    if (button.classList.contains('active')) {
+        button.classList.remove('active');
+        document.getElementById(skillId).innerHTML = skillBonuses[skillBonusKey];
+        remainingSkillSlots += 1;
+    } else {
+        button.classList.add('active');
+        document.getElementById(skillId).innerHTML = skillBonuses[skillBonusKey] + 2;
+        remainingSkillSlots -= 1;
+    }
     updateRemainingSkillSlots();
-    updateStatsAndSkills();
+};
+
+
+const resetAllButtons = () => {
+    const skillButtons = document.querySelectorAll('.skillButton');
+    skillButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+};
+
+// Fonksiyonları window nesnesine atama
+window.toggleBonusAthletics = () => toggleBonus('athletics', 'But-athletics', 'athletics');
+window.toggleBonusAcrobatics = () => toggleBonus('acrobatics', 'But-acrobatics', 'acrobatics');
+window.toggleBonusSleightOfHand = () => toggleBonus('sleightOfHand', 'But-sleightOfHand', 'sleightOfHand');
+window.toggleBonusStealth = () => toggleBonus('stealth', 'But-stealth', 'stealth');
+window.toggleBonusHistory = () => toggleBonus('history', 'But-history', 'history');
+window.toggleBonusReligion = () => toggleBonus('religion', 'But-religion', 'religion');
+window.toggleBonusInvestigation = () => toggleBonus('investigation', 'But-investigation', 'investigation');
+window.toggleBonusNature = () => toggleBonus('nature', 'But-nature', 'nature');
+window.toggleBonusArcana = () => toggleBonus('arcana', 'But-arcana', 'arcana');
+window.toggleBonusAnimalHandling = () => toggleBonus('animalHandling', 'But-animalHandling', 'animalHandling');
+window.toggleBonusInsight = () => toggleBonus('insight', 'But-insight', 'insight');
+window.toggleBonusMedicine = () => toggleBonus('medicine', 'But-medicine', 'medicine');
+window.toggleBonusPerception = () => toggleBonus('perception', 'But-perception', 'perception');
+window.toggleBonusSurvival = () => toggleBonus('survival', 'But-survival', 'survival');
+window.toggleBonusDeception = () => toggleBonus('deception', 'But-deception', 'deception');
+window.toggleBonusPersuasion = () => toggleBonus('persuasion', 'But-persuasion', 'persuasion');
+window.toggleBonusPerformance = () => toggleBonus('performance', 'But-performance', 'performance');
+window.toggleBonusIntimidation = () => toggleBonus('intimidation', 'But-intimidation', 'intimidation');
+
+document.getElementById('class').addEventListener('change', () => {
+    resetAllButtons();
+    calculateSkillSlots();
+});
+
+document.getElementById('background').addEventListener('change', () => {
+    resetAllButtons();
+    calculateSkillSlots();
+});
+
+calculateSkillSlots(); // Başlangıçta çağrılır
+
+
   });
-  
-  const hesaplanmisBonus = (stat) => {
-    return Math.floor((stat - 10) / 2);
-  };
-  
-  const classPriorities = {
-    Fighter: ['str', 'con', 'wis', 'cha', 'dex', 'int'],
-    Wizard: ['int', 'wis', 'dex', 'con', 'cha', 'str'],
-    Rogue: ['dex', 'int', 'wis', 'cha', 'str', 'con']
-  };
-  
-  const skillDependencies = {
-    athletics: 'str-b',
-    acrobatics: 'dex-b',
-    animalHandling: 'wis-b',
-    stealth: 'dex-b',
-    sleightOfHand: 'dex-b',
-    insight: 'wis-b',
-    medicine: 'wis-b',
-    history: 'int-b',
-    perception: 'wis-b',
-    survival: 'wis-b',
-    religion: 'int-b',
-    investigation: 'int-b',
-    nature: 'int-b',
-    arcana: 'int-b',
-    deception: 'cha-b',
-    persuasion: 'cha-b',
-    performance: 'cha-b',
-    intimidation: 'cha-b'
-  };
-  
-  let stats = {
+
+  // -----------------------STAT AND SKİLL------------------------------------------
+
+let stats = {
     str: 10,
     dex: 10,
     con: 10,
     int: 10,
     wis: 10,
     cha: 10
-  };
-  
-  let statBonuses = {
-    'str-b': 0,
-    'dex-b': 0,
-    'con-b': 0,
-    'int-b': 0,
-    'wis-b': 0,
-    'cha-b': 0
-  };
-  
-  let skillBonuses = {
+};
+
+const statBonuses = {
+    strB: 0,
+    dexB: 0,
+    conB: 0,
+    intB: 0,
+    wisB: 0,
+    chaB: 0
+};
+
+// -------------------------------Stat-Skill----------------------------------
+
+const hesaplanmisBonus = () => {
+    statBonuses.strB = Math.floor((stats.str - 10) / 2);
+    statBonuses.dexB = Math.floor((stats.dex - 10) / 2);
+    statBonuses.conB = Math.floor((stats.con - 10) / 2);
+    statBonuses.intB = Math.floor((stats.int - 10) / 2);
+    statBonuses.wisB = Math.floor((stats.wis - 10) / 2);
+    statBonuses.chaB = Math.floor((stats.cha - 10) / 2);
+};
+let skillBonuses = {
     athletics: 0,
     acrobatics: 0,
-    animalHandling: 0,
     stealth: 0,
     sleightOfHand: 0,
-    insight: 0,
-    medicine: 0,
     history: 0,
-    perception: 0,
-    survival: 0,
     religion: 0,
     investigation: 0,
     nature: 0,
     arcana: 0,
+    animalHandling: 0,
+    insight: 0,
+    medicine: 0,
+    perception: 0,
+    survival: 0,
     deception: 0,
     persuasion: 0,
     performance: 0,
     intimidation: 0
-  };
-  
-  const updateStatsAndSkills = () => {
+};
+
+const skillBonuslariGuncelle = () => {
+    skillBonuses.athletics = statBonuses.strB;
+    skillBonuses.acrobatics = statBonuses.dexB;
+    skillBonuses.stealth = statBonuses.dexB;
+    skillBonuses.sleightOfHand = statBonuses.dexB;
+    skillBonuses.history = statBonuses.intB;
+    skillBonuses.religion = statBonuses.intB;
+    skillBonuses.investigation = statBonuses.intB;
+    skillBonuses.nature = statBonuses.intB;
+    skillBonuses.arcana = statBonuses.intB;
+    skillBonuses.animalHandling = statBonuses.wisB;
+    skillBonuses.insight = statBonuses.wisB;
+    skillBonuses.medicine = statBonuses.wisB;
+    skillBonuses.perception = statBonuses.wisB;
+    skillBonuses.survival = statBonuses.wisB;
+    skillBonuses.deception = statBonuses.chaB;
+    skillBonuses.persuasion = statBonuses.chaB;
+    skillBonuses.performance = statBonuses.chaB;
+    skillBonuses.intimidation = statBonuses.chaB;
+};
+
+const updateStatsAndSkills = () => {
+    skillBonuslariGuncelle();
+    hesaplanmisBonus(); 
+
+    document.getElementById('StatStr').innerHTML = "Güç (STR): <span id='str'>" + stats.str + " (" + statBonuses.strB + ")</span>";
+    document.getElementById('StatDex').innerHTML = "Çeviklik (DEX): <span id='dex'>" + stats.dex + " (" + statBonuses.dexB + ")</span>";
+    document.getElementById('StatCon').innerHTML = "Dayanıklılık (CON): <span id='con'>" + stats.con + " (" + statBonuses.conB + ")</span>";
+    document.getElementById('StatInt').innerHTML = "Zeka (INT): <span id='int'>" + stats.int + " (" + statBonuses.intB + ")</span>";
+    document.getElementById('StatWis').innerHTML = "Bilgelik (WIS): <span id='wis'>" + stats.wis + " (" + statBonuses.wisB + ")</span>";
+    document.getElementById('StatCha').innerHTML = "Karizma (CHA): <span id='cha'>" + stats.cha + " (" + statBonuses.chaB + ")</span>";
+
+    document.getElementById('athletics').innerHTML = skillBonuses.athletics;
+    document.getElementById('acrobatics').innerHTML = skillBonuses.acrobatics;
+    document.getElementById('stealth').innerHTML = skillBonuses.stealth;
+    document.getElementById('sleightOfHand').innerHTML = skillBonuses.sleightOfHand;
+    document.getElementById('history').innerHTML = skillBonuses.history;
+    document.getElementById('religion').innerHTML = skillBonuses.religion;
+    document.getElementById('investigation').innerHTML = skillBonuses.investigation;
+    document.getElementById('nature').innerHTML = skillBonuses.nature;
+    document.getElementById('arcana').innerHTML = skillBonuses.arcana;
+    document.getElementById('animalHandling').innerHTML = skillBonuses.animalHandling;
+    document.getElementById('insight').innerHTML = skillBonuses.insight;
+    document.getElementById('medicine').innerHTML = skillBonuses.medicine;
+    document.getElementById('perception').innerHTML = skillBonuses.perception;
+    document.getElementById('survival').innerHTML = skillBonuses.survival;
+    document.getElementById('deception').innerHTML = skillBonuses.deception;
+    document.getElementById('persuasion').innerHTML = skillBonuses.persuasion;
+    document.getElementById('performance').innerHTML = skillBonuses.performance;
+    document.getElementById('intimidation').innerHTML = skillBonuses.intimidation;
+    };
+
+// ------------------------------------------------
+const applyRaceBonuses = () => {
     const race = document.getElementById('race').value;
-    const background = document.getElementById('background').value;
-    const selectedClass = document.getElementById('class').value;
-    
+
     stats = {
         str: 10,
         dex: 10,
@@ -243,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function() {
         wis: 10,
         cha: 10
     };
-  
+
     if (race === 'Human') {
         stats.str += 1;
         stats.dex += 1;
@@ -291,6 +322,10 @@ document.addEventListener("DOMContentLoaded", function() {
         stats.con += 1;
         stats.str += 2;
     }
+};
+
+const applyBackgroundBonuses = () => {
+    const background = document.getElementById('background').value;
 
     if (background === 'Acolyte') {
         stats.wis += 1;
@@ -306,7 +341,11 @@ document.addEventListener("DOMContentLoaded", function() {
         stats.str += 1;
         stats.con += 1;
     }
-  
+};
+
+const applyClassBonuses = () => {
+    const selectedClass = document.getElementById('class').value;
+
     if (selectedClass === 'Fighter') {
         stats.str += 5;
         stats.con += 4;
@@ -329,63 +368,21 @@ document.addEventListener("DOMContentLoaded", function() {
         stats.str += 0;
         stats.con += -2;
     }
-  
-    statBonuses = {
-        'str-b': hesaplanmisBonus(stats.str),
-        'dex-b': hesaplanmisBonus(stats.dex),
-        'con-b': hesaplanmisBonus(stats.con),
-        'int-b': hesaplanmisBonus(stats.int),
-        'wis-b': hesaplanmisBonus(stats.wis),
-        'cha-b': hesaplanmisBonus(stats.cha)
-    };
-  
-    document.getElementById('str').innerText = `${stats.str} (${statBonuses['str-b']})`;
-    document.getElementById('dex').innerText = `${stats.dex} (${statBonuses['dex-b']})`;
-    document.getElementById('con').innerText = `${stats.con} (${statBonuses['con-b']})`;
-    document.getElementById('int').innerText = `${stats.int} (${statBonuses['int-b']})`;
-    document.getElementById('wis').innerText = `${stats.wis} (${statBonuses['wis-b']})`;
-    document.getElementById('cha').innerText = `${stats.cha} (${statBonuses['cha-b']})`;
-  
-  
-    Object.keys(skillBonuses).forEach(skill => {
-        const dependency = skillDependencies[skill];
-        skillBonuses[skill] = statBonuses[dependency];
-    });
-  
-    if (selectedClass !== "select") {
-        const classPriority = classPriorities[selectedClass];
-  
-        stats[classPriority[0]] += 2;
-        stats[classPriority[1]] += 1;
-  
-        statBonuses = {
-            'str-b': hesaplanmisBonus(stats.str),
-            'dex-b': hesaplanmisBonus(stats.dex),
-            'con-b': hesaplanmisBonus(stats.con),
-            'int-b': hesaplanmisBonus(stats.int),
-            'wis-b': hesaplanmisBonus(stats.wis),
-            'cha-b': hesaplanmisBonus(stats.cha)
-        };
-  
-        Object.keys(skillBonuses).forEach(skill => {
-            const dependency = skillDependencies[skill];
-            skillBonuses[skill] = statBonuses[dependency];
-        });
-    }
-  
-    updateSkillBonuses();
-  };
-  
-  const updateSkillBonuses = () => {
-    Object.keys(skillBonuses).forEach(skill => {
-        const skillValueElement = document.getElementById(`${skill}-value`);
-        if (skillValueElement) {
-            skillValueElement.innerText = skillBonuses[skill];
-        }
-    });
-  };
-  
-  const toggleMenu = () => {
+};
+
+// ---------------------------GÜNCELLE--------------------------------------
+
+const guncelle = () => {
+    applyRaceBonuses();
+    applyBackgroundBonuses();
+    applyClassBonuses();
+    hesaplanmisBonus();
+    updateStatsAndSkills();
+};
+
+// -------------------------------MENÜ----------------------------------
+
+const toggleMenu = () => {
     const menu = document.getElementById('hamburger-menu');
     if (menu.classList.contains('hidden')) {
         menu.classList.remove('hidden');
