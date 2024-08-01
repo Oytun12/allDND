@@ -120,7 +120,7 @@ nav ul li a {
     background-size: cover;
 }
 
-.bucuklukTez, .bucuklukTik, .cuceDa, .cuceTe, .ejder, .elfD, .elfO, .elfU, .gnomeK, .gnomeO, .insan, .insanAl, .tiefling, .yarıElf, .yarıOrc{
+.bucuklukTez, .bucuklukTik, .cuceDa, .cuceTe, .ejder, .elfD, .elfO, .elfU, .gnomeO, .insan, .insanAl, .tiefling, .yarıElf, .yarıOrc{
     padding-right: 20px;
     padding-left: 20px;
     /* padding-top: 10px;
@@ -130,6 +130,24 @@ nav ul li a {
     border-radius: 7px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     font-family: 'Convergence', sans-serif;
+}
+.gnomeK{
+    padding-right: 20px;
+    padding-left: 20px;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    background-color: #FBF1DE;
+    border: 2px solid #DB9D43;
+    border-radius: 7px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Convergence', sans-serif;
+}
+.collapsibleGnome{
+    text-decoration: underline;
+    cursor: pointer;
+    border: #000;
+    margin-top: -20px;
+    padding-bottom: 20px;
 }
 
 .draconicSoy{
@@ -155,12 +173,7 @@ nav ul li a {
     margin-left: -10px;
 }
 
-.collapsibleGnome{
-    text-decoration: underline;
-    cursor: pointer;
-    border: #000;
-    margin-top: -20px;
-}
+
 
 h3, h4{
     width: 100%;
