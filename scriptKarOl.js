@@ -424,13 +424,12 @@ const skillBonuslariGuncelle = () => {
 const updateStatsAndSkills = () => {
     skillBonuslariGuncelle();
     hesaplanmisBonus(); 
-
-    document.getElementById('StatStr').innerHTML = "<div class='strT'>Güç (STR): </div><div id='str'>" + stats.str + "(" + statBonuses.strB + ")</div>";
-    document.getElementById('StatDex').innerHTML = "Çeviklik (DEX): <div id='dex'>" + stats.dex + "(" + statBonuses.dexB + ")</div>";
-    document.getElementById('StatCon').innerHTML = "Dayanıklılık (CON): <div id='con'>" + stats.con + "(" + statBonuses.conB + ")</div>";
-    document.getElementById('StatInt').innerHTML = "Zeka (INT): <div id='int'>" + stats.int + "(" + statBonuses.intB + ")</div>";
-    document.getElementById('StatWis').innerHTML = "Bilgelik (WIS): <div id='wis'>" + stats.wis + "(" + statBonuses.wisB + ")</div>";
-    document.getElementById('StatCha').innerHTML = "Karizma (CHA): <div id='cha'>" + stats.cha + "(" + statBonuses.chaB + ")</div>";
+    document.getElementById('StatStr').innerHTML = "<div class='containerStat'><div class='strTxt'>Güç (STR): </div><div id='stricon'><div class='strB'>" + stats.str + "(" + statBonuses.strB + ")</div></div></div>";
+    document.getElementById('StatDex').innerHTML = "<div class='containerStat'><div class='dexTxt'>Çeviklik (DEX): </div><div id='dexicon'><div class='dexB'>" + stats.dex + "(" + statBonuses.dexB + ")</div></div></div>";
+    document.getElementById('StatCon').innerHTML = "<div class='containerStat'><div class='conTxt'>Dayanıklılık (CON): </div><div id='conicon'><div class='conB'>" + stats.con + "(" + statBonuses.conB + ")</div></div></div>";
+    document.getElementById('StatInt').innerHTML = "<div class='containerStat'><div class='intTxt'>Zeka (INT): </div><div id='inticon'><div class='intB'>" + stats.int + "(" + statBonuses.intB + ")</div></div></div>";
+    document.getElementById('StatWis').innerHTML = "<div class='containerStat'><div class='wisTxt'>Bilgelik (WIS): </div><div id='wisicon'><div class='wisB'>" + stats.wis + "(" + statBonuses.wisB + ")</div></div></div>";
+    document.getElementById('StatCha').innerHTML = "<div class='containerStat'><div class='chaTxt'>Karizma (CHA): </div><div id='chaicon'><div class='chaB'>" + stats.cha + "(" + statBonuses.chaB + ")</div></div></div>";
 
     document.getElementById('athletics').innerHTML = skillBonuses.athletics;
     document.getElementById('acrobatics').innerHTML = skillBonuses.acrobatics;
