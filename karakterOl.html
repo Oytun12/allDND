@@ -85,11 +85,12 @@
                 <option value="">Seçiniz</option>
                 <option value="Acolyte">Rahip</option>
                 <option value="Criminal">Suçlu</option>
-                <optxion value="Folk Hero">Halk Kahramanı</option>
+                <optxion value="FolkHero">Halk Kahramanı</option>
                 <option value="Noble">Asil</option>
                 <option value="Sage">Bilge</option>
                 <option value="Soldier">Asker</option>
             </select>
+            <div id="background-info" class="hidden"></div>
         </form>
 
         <form id="class-form">
@@ -106,25 +107,26 @@
         
         <div id="skills"  class="hidden">
             <p id="skill-slots">Kalan Skill Yuvası: 0</p>
+            <p id="skill-slot-eksi">(Skill yuvanız DM'iniz ile anlaşmadıysanız eksiye düşemez !!!)</p>
             <ul id="sortable">  
-                <li><button id="But-athletics" class="skillButton" onclick="window.toggleBonusAthletics()">+2</button> Atletizm (Athletics) STR: <span id="athletics">0</span></li>
-                <li><button id="But-acrobatics" class="skillButton" onclick="window.toggleBonusAcrobatics()">+2</button> Akrobasi (Acrobatics) DEX: <span id="acrobatics">0</span></li>
-                <li><button id="But-sleightOfHand" class="skillButton" onclick="window.toggleBonusSleightOfHand()">+2</button> El Çabukluğu (Sleight of Hand) DEX: <span id="sleightOfHand">0</span></li>
-                <li><button id="But-stealth" class="skillButton" onclick="window.toggleBonusStealth()">+2</button> Gizlenme (Stealth) DEX: <span id="stealth">0</span></li>
-                <li><button id="But-history" class="skillButton" onclick="window.toggleBonusHistory()">+2</button> Tarih (History) İNT: <span id="history">0</span></li>
-                <li><button id="But-religion" class="skillButton" onclick="window.toggleBonusReligion()">+2</button> Din (Religion) İNT: <span id="religion">0</span></li>
-                <li><button id="But-investigation" class="skillButton" onclick="window.toggleBonusInvestigation()">+2</button> Araştırma (Investigation) İNT: <span id="investigation">0</span></li>
-                <li><button id="But-nature" class="skillButton" onclick="window.toggleBonusNature()">+2</button> Doğa (Nature) İNT: <span id="nature">0</span></li>
-                <li><button id="But-arcana" class="skillButton" onclick="window.toggleBonusArcana()">+2</button> Büyücülük (Arcana) İNT: <span id="arcana">0</span></li>
-                <li><button id="But-animalHandling" class="skillButton" onclick="window.toggleBonusAnimalHandling()">+2</button> Hayvan İdaresi (Animal Handling) WİS: <span id="animalHandling">0</span></li>
-                <li><button id="But-insight" class="skillButton" onclick="window.toggleBonusInsight()">+2</button> İçgüdü (Insight) WİS: <span id="insight">0</span></li>
-                <li><button id="But-medicine" class="skillButton" onclick="window.toggleBonusMedicine()">+2</button> Tıp (Medicine) WİS: <span id="medicine">0</span></li>
-                <li><button id="But-perception" class="skillButton" onclick="window.toggleBonusPerception()">+2</button> Algılama (Perception) WİS: <span id="perception">0</span></li>
-                <li><button id="But-survival" class="skillButton" onclick="window.toggleBonusSurvival()">+2</button> Hayatta Kalma (Survival) WİS: <span id="survival">0</span></li>
-                <li><button id="But-deception" class="skillButton" onclick="window.toggleBonusDeception()">+2</button> Aldatma (Deception) CHA: <span id="deception">0</span></li>
-                <li><button id="But-persuasion" class="skillButton" onclick="window.toggleBonusPersuasion()">+2</button> İkna (Persuasion) CHA: <span id="persuasion">0</span></li>
-                <li><button id="But-performance" class="skillButton" onclick="window.toggleBonusPerformance()">+2</button> Performans (Performance) CHA: <span id="performance">0</span></li>
-                <li><button id="But-intimidation" class="skillButton" onclick="window.toggleBonusIntimidation()">+2</button> Korkutma (Intimidation) CHA: <span id="intimidation">0</span></li>
+              <li><button id="But-athletics" class="skillButton" onclick="window.toggleBonusAthletics()">+2</button> Atletizm (Athletics) <span class="sagayasla">STR: <span id="athletics">0</span></span></li>
+              <li><button id="But-acrobatics" class="skillButton" onclick="window.toggleBonusAcrobatics()">+2</button> Akrobasi (Acrobatics) <span class="sagayasla">DEX: <span id="acrobatics">0</span></span></li>
+              <li><button id="But-sleightOfHand" class="skillButton" onclick="window.toggleBonusSleightOfHand()">+2</button> El Çabukluğu (Sleight of Hand) <span class="sagayasla">DEX: <span id="sleightOfHand">0</span></span></li>
+              <li><button id="But-stealth" class="skillButton" onclick="window.toggleBonusStealth()">+2</button> Gizlenme (Stealth) <span class="sagayasla">DEX: <span id="stealth">0</span></span></li>
+              <li><button id="But-history" class="skillButton" onclick="window.toggleBonusHistory()">+2</button> Tarih (History) <span class="sagayasla">İNT: <span id="history">0</span></span></li>
+              <li><button id="But-religion" class="skillButton" onclick="window.toggleBonusReligion()">+2</button> Din (Religion) <span class="sagayasla">İNT: <span id="religion">0</span></span></li>
+              <li><button id="But-investigation" class="skillButton" onclick="window.toggleBonusInvestigation()">+2</button> Araştırma (Investigation) <span class="sagayasla">İNT: <span id="investigation">0</span></span></li>
+              <li><button id="But-nature" class="skillButton" onclick="window.toggleBonusNature()">+2</button> Doğa (Nature) <span class="sagayasla">İNT: <span id="nature">0</span></span></li>
+              <li><button id="But-arcana" class="skillButton" onclick="window.toggleBonusArcana()">+2</button> Büyücülük (Arcana) <span class="sagayasla">İNT: <span id="arcana">0</span></span></li>
+              <li><button id="But-animalHandling" class="skillButton" onclick="window.toggleBonusAnimalHandling()">+2</button> Hayvan İdaresi (Animal Handling) <span class="sagayasla">WİS: <span id="animalHandling">0</span></span></li>
+              <li><button id="But-insight" class="skillButton" onclick="window.toggleBonusInsight()">+2</button> İçgüdü (Insight) <span class="sagayasla">WİS: <span id="insight">0</span></span></li>
+              <li><button id="But-medicine" class="skillButton" onclick="window.toggleBonusMedicine()">+2</button> Tıp (Medicine) <span class="sagayasla">WİS: <span id="medicine">0</span></span></li>
+              <li><button id="But-perception" class="skillButton" onclick="window.toggleBonusPerception()">+2</button> Algılama (Perception) <span class="sagayasla">WİS: <span id="perception">0</span></span></li>
+              <li><button id="But-survival" class="skillButton" onclick="window.toggleBonusSurvival()">+2</button> Hayatta Kalma (Survival) <span class="sagayasla">WİS: <span id="survival">0</span></span></li>
+              <li><button id="But-deception" class="skillButton" onclick="window.toggleBonusDeception()">+2</button> Aldatma (Deception) <span class="sagayasla">CHA: <span id="deception">0</span></span></li>
+              <li><button id="But-persuasion" class="skillButton" onclick="window.toggleBonusPersuasion()">+2</button> İkna (Persuasion) <span class="sagayasla">CHA: <span id="persuasion">0</span></span></li>
+              <li><button id="But-performance" class="skillButton" onclick="window.toggleBonusPerformance()">+2</button> Performans (Performance) <span class="sagayasla">CHA: <span id="performance">0</span></span></li>
+              <li><button id="But-intimidation" class="skillButton" onclick="window.toggleBonusIntimidation()">+2</button> Korkutma (Intimidation) <span class="sagayasla">CHA: <span id="intimidation">0</span></span></li>              
             </ul>
         </div>
         <div class="btns">
