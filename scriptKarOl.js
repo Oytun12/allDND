@@ -7,91 +7,169 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('race').addEventListener('change', calculateSkillSlots);
     document.getElementById('background').addEventListener('change', calculateSkillSlots);
     document.getElementById('class').addEventListener('change', calculateSkillSlots);
+// ------------------------------RACE İNFO-----------------------------------
 
-// ------------------------------CLASS İNFO-----------------------------------
+const raceInfo = {
+    Human: {
+        title: "İnsan",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kuv +1; Çev +1; Day +1; Zek +1; Akı +1; Kar +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Elf(Ulu)": {
+        title: "Elf(Ulu)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Çev +2; Zek +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Elf(Or)": {
+        title: "Elf(Orman)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Çev +2; Akı +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Elf(Drow)": {
+        title: "Elf(Drow)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Çev +2; Kar +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Dwarf(Dağ)": {
+        title: "Cüce(Dağ)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kuv +2; Day +2</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Dwarf(Tepe)": {
+        title: "Cüce(Tepe)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Day +2; Akı +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Halfling(Tez)": {
+        title: "Buçukluk (Tez Ayak)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Çev +2; Kar +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Halfling(Tık)": {
+        title: "Buçukluk (Tıknaz)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Çev +2; Day +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    Dragonborn: {
+        title: "Ejderdoğan",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kuv +2; Kar +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Gnome(Kaya)": {
+        title: "Gnome(Kaya)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Day +1; Zek +2</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Gnome(Or)": {
+        title: "Gnome(Orman)",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Çev +1; Zek +2</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    Tiefling: {
+        title: "Tiefling",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Zek +1; Kar +2</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Yarı-Ef": {
+        title: "Yarı-Elf",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kar +2; harici herhangi iki +1 seç</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    "Yarı-Orc": {
+        title: "Yarı-Orc",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kuv +2; Day +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    }
+    // Diğer ırklar ve bilgileri buraya ekleyin
+};
 
-    const classInfoDiv = document.getElementById("class-info");
-    document.getElementById('skills').classList.add('hidden');
-
-
-    const classInfo = {
-        Fighter: {
-            title: "Savaşçı",
-            description: "<hr><strong class='bold'>Beceri Uzmanlıkları.</strong>Bunlardan 2 tanesi seçilmelidir. <span class='ciz' >Akrobasi, Hayvan İdaresi, Atletizm, Tarih, Sezgi, Gözdağı, Algı, ve Hayatta Kalma.</span><br>Savaşçılar, güçlü ve taktiksel yetenekleriyle silahlı çatışmalara girebilen savaşçılardır."
-        },
-        Wizard: {
-            title: "Büyücü",
-            description: "<hr>Büyücüler, güçlü büyüler yapmak için bilgi ve zekalarını kullanan büyücülerdir."
-        },
-        Rogue: {
-            title: "Hırsız",
-            description: "<hr>Hırsızlar, gizlilik, kilit açma ve tuzak bulma ve etkisiz hale getirme konusunda yeteneklidir."
-        }
-        // Diğer sınıflar ve bilgileri buraya ekleyin
-    };
-  
-    const updateClassInfo = () => {
-        const selectedClass = document.getElementById('class').value;
-        if (selectedClass === "select") {
-            classInfoDiv.classList.add('hidden');
-            classInfoDiv.classList.remove('visible');
-            classInfoDiv.innerHTML = '';
+const updateRaceInfo = () => {
+    const selectedRace = document.getElementById('race').value;
+    const raceInfoDiv = document.getElementById('race-info');
+    
+    if (selectedRace === "") {
+        raceInfoDiv.classList.add('hidden');
+        raceInfoDiv.classList.remove('visible');
+        raceInfoDiv.innerHTML = '';
+    } else {
+        const info = raceInfo[selectedRace];
+        if (info) {
+            raceInfoDiv.classList.remove('hidden');
+            raceInfoDiv.classList.add('visible');
+            raceInfoDiv.innerHTML = `<h3>${info.title}</h3><p>${info.description}</p>`;
         } else {
-            const info = classInfo[selectedClass];
-            if (info) {
-                classInfoDiv.classList.remove('hidden');
-                classInfoDiv.classList.add('visible');
-                classInfoDiv.innerHTML = `<h3>${info.title}</h3><p>${info.description}</p>`;
-            } else {
-                classInfoDiv.classList.add('hidden');
-                classInfoDiv.classList.remove('visible');
-                classInfoDiv.innerHTML = '';
-            }
+            raceInfoDiv.classList.add('hidden');
+            raceInfoDiv.classList.remove('visible');
+            raceInfoDiv.innerHTML = '';
         }
-    };
+    }
+};
 
-
-    document.getElementById('class').addEventListener('change', function() {
-        var classSelect = document.getElementById('class');
-        var skillsInfo = document.getElementById('skills');
-
-        if (classSelect.value !== "") {
-            skillsInfo.classList.remove('hidden');
-        } else {
-            skillsInfo.classList.add('hidden');
-        }
-    });
-    document.getElementById('class').addEventListener('change', updateClassInfo);
+document.getElementById('race').addEventListener('change', updateRaceInfo);
 
 // -------------------------------BACKGROUND İNFO-----------------------------------
 
 const backgroundInfoDiv = document.getElementById("background-info");
     
 const backgroundInfo = {
-    Acolyte: {
-        title: "Rahip",
-        description: "<hr>Rahipler, dini hizmetlerde bulunmuş kişilerdir. Tanrılarıyla güçlü bir bağları vardır."
-    },
-    Criminal: {
-        title: "Suçlu",
-        description: "<hr>Suçlular, kanun dışı işlerle uğraşmış kişilerdir. Gizlilik ve kurnazlık konusunda uzmandırlar."
-    },
-    FolkHero: {
-        title: "Halk Kahramanı",
-        description: "<hr>Halk Kahramanları, halk arasında destansı hikayeleriyle tanınan kişilerdir."
-    },
-    Noble: {
-        title: "Asilzade",
-        description: "<hr>Asilzadeler, soylu bir aileden gelen kişilerdir. Diplomasi ve liderlik yetenekleri gelişmiştir."
-    },
-    Sage: {
-        title: "Bilge",
-        description: "<hr>Bilgeler, bilgiye ve öğrenmeye adanmış kişilerdir. Tarih ve araştırma konularında uzmandırlar."
-    },
     Soldier: {
         title: "Asker",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Atletizim</span> ve <span class='ciz'>Gözdağı</span> seçilmelidir.<br>Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
-    }
+    },
+    Sage: {
+        title: "Bilge",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Arcana</span> ve <span class='ciz'>Tarih</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    Denizci: {
+        title: "Denizci",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Atletizim</span> ve <span class='ciz'>Algı</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    DenizciKorsan: {
+        title: "Alternatif Denizci (Korsan)",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Atletizim</span> ve <span class='ciz'>Algı</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    GosteriAdamı: {
+        title: "Gösteri Adamı",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Akrobasi</span> ve <span class='ciz'>Performance</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    GosteriAdamiGladyator: {
+        title: "Alternatif Gösteri Adamı (Gladyatör)",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Akrobasi</span> ve <span class='ciz'>Performance</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    FolkHero: {
+        title: "Halk Kahramanı",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Hayvan İdaresi</span> ve <span class='ciz'>Hayatta Kalma</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    LocaZanaatkari: {
+        title: "Loca Zanaatkarı",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Sezgi</span> ve <span class='ciz'>İkna Etme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    LocaZanaatkariTuccar: {
+        title: "Alternatif Loca Zanaatkarı (Loca Tüccarı)t",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Sezgi</span> ve <span class='ciz'>İkna</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    Munzevi: {
+        title: "Münzevi (İnzivaya çekilmiş kimse)",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Tıp</span> ve <span class='ciz'>Din</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    Murit: {
+        title: "Mürit",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Sezgi</span> ve <span class='ciz'>Din</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    SokakCocugu: {
+        title: "Sokak Çocuğu",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>El Çubukluğu</span> ve <span class='ciz'>Gizlenme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    Soylu: {
+        title: "Soylu",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Tarih</span> ve <span class='ciz'>İkna</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    SoyluSovalye: {
+        title: "Alternatif Soylu (Şövalye)",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Tarih</span> ve <span class='ciz'>İkna</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    Suclu: {
+        title: "Suçlu",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Aldatma</span> ve <span class='ciz'>Gizlenme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    SucluAjan: {
+        title: "Alternatif Suçlu (Ajan)",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Aldatma</span> ve <span class='ciz'>Gizlenme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    Yabanci: {
+        title: "Yabancı",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Atletizim</span> ve <span class='ciz'>Hayatta Kalma</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
+    Sarlatan: {
+        title: "Şarlatan",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Aldatma</span> ve <span class='ciz'>El Çabukluğu</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    },
     // Diğer backgroundlar ve bilgileri buraya ekleyin
 };
 
@@ -115,6 +193,60 @@ const updateBackgroundInfo = () => {
 
 document.getElementById('background').addEventListener('change', updateBackgroundInfo);
 
+// ------------------------------CLASS İNFO-----------------------------------
+
+const classInfoDiv = document.getElementById("class-info");
+document.getElementById('skills').classList.add('hidden');
+
+
+const classInfo = {
+    Fighter: {
+        title: "Savaşçı",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları.</strong>Bunlardan 2 tanesi seçilmelidir. <span class='ciz' >Akrobasi, Hayvan İdaresi, Atletizm, Tarih, Sezgi, Gözdağı, Algı, ve Hayatta Kalma.</span><br>Savaşçılar, güçlü ve taktiksel yetenekleriyle silahlı çatışmalara girebilen savaşçılardır."
+    },
+    Wizard: {
+        title: "Büyücü",
+        description: "<hr>Büyücüler, güçlü büyüler yapmak için bilgi ve zekalarını kullanan büyücülerdir."
+    },
+    Rogue: {
+        title: "Hırsız",
+        description: "<hr>Hırsızlar, gizlilik, kilit açma ve tuzak bulma ve etkisiz hale getirme konusunda yeteneklidir."
+    }
+    // Diğer sınıflar ve bilgileri buraya ekleyin
+};
+
+const updateClassInfo = () => {
+    const selectedClass = document.getElementById('class').value;
+    if (selectedClass === "select") {
+        classInfoDiv.classList.add('hidden');
+        classInfoDiv.classList.remove('visible');
+        classInfoDiv.innerHTML = '';
+    } else {
+        const info = classInfo[selectedClass];
+        if (info) {
+            classInfoDiv.classList.remove('hidden');
+            classInfoDiv.classList.add('visible');
+            classInfoDiv.innerHTML = `<h3>${info.title}</h3><p>${info.description}</p>`;
+        } else {
+            classInfoDiv.classList.add('hidden');
+            classInfoDiv.classList.remove('visible');
+            classInfoDiv.innerHTML = '';
+        }
+    }
+};
+
+
+document.getElementById('class').addEventListener('change', function() {
+    var classSelect = document.getElementById('class');
+    var skillsInfo = document.getElementById('skills');
+
+    if (classSelect.value !== "") {
+        skillsInfo.classList.remove('hidden');
+    } else {
+        skillsInfo.classList.add('hidden');
+    }
+});
+document.getElementById('class').addEventListener('change', updateClassInfo);
 
 // -------------------------------SKİLL SLOT-----------------------------------------------
 
@@ -139,19 +271,18 @@ function calculateSkillSlots() {
     }
 
     const selectedBackground = document.getElementById('background').value;
-    if (selectedBackground === 'Acolyte') {
-        skillSlots += 2;
-    } else if (selectedBackground === 'Criminal') {
-        skillSlots += 2;
-    } else if (selectedBackground === 'FolkHero') {
-        skillSlots += 2;
-    } else if (selectedBackground === 'Noble') {
-        skillSlots += 2;
-    } else if (selectedBackground === 'Sage') {
-        skillSlots += 2;
-    } else if (selectedBackground === 'Soldier') {
+    const backgroundsWithBonus = [
+        'Criminal', 'FolkHero', 'Sage', 'Soldier', 
+        'Denizci', 'DenizciKorsan', 'GosteriAdamı', 'GosteriAdamiGladyator', 
+        'LocaZanaatkari', 'LocaZanaatkariTuccar', 'Munzevi', 'Murit', 
+        'SokakCocugu', 'Soylu', 'SoyluSovalye', 'Suclu', 'SucluAjan', 
+        'Yabanci', 'Sarlatan'
+    ];
+
+    if (backgroundsWithBonus.includes(selectedBackground)) {
         skillSlots += 2;
     }
+    
 
     remainingSkillSlots = skillSlots; // remainingSkillSlots güncelle
     updateRemainingSkillSlots(); // remainingSkillSlots metnini güncelle
@@ -294,12 +425,12 @@ const updateStatsAndSkills = () => {
     skillBonuslariGuncelle();
     hesaplanmisBonus(); 
 
-    document.getElementById('StatStr').innerHTML = "Güç (STR): <span id='str'>" + stats.str + " (" + statBonuses.strB + ")</span>";
-    document.getElementById('StatDex').innerHTML = "Çeviklik (DEX): <span id='dex'>" + stats.dex + " (" + statBonuses.dexB + ")</span>";
-    document.getElementById('StatCon').innerHTML = "Dayanıklılık (CON): <span id='con'>" + stats.con + " (" + statBonuses.conB + ")</span>";
-    document.getElementById('StatInt').innerHTML = "Zeka (INT): <span id='int'>" + stats.int + " (" + statBonuses.intB + ")</span>";
-    document.getElementById('StatWis').innerHTML = "Bilgelik (WIS): <span id='wis'>" + stats.wis + " (" + statBonuses.wisB + ")</span>";
-    document.getElementById('StatCha').innerHTML = "Karizma (CHA): <span id='cha'>" + stats.cha + " (" + statBonuses.chaB + ")</span>";
+    document.getElementById('StatStr').innerHTML = "<div class='strT'>Güç (STR): </div><div id='str'>" + stats.str + "(" + statBonuses.strB + ")</div>";
+    document.getElementById('StatDex').innerHTML = "Çeviklik (DEX): <div id='dex'>" + stats.dex + "(" + statBonuses.dexB + ")</div>";
+    document.getElementById('StatCon').innerHTML = "Dayanıklılık (CON): <div id='con'>" + stats.con + "(" + statBonuses.conB + ")</div>";
+    document.getElementById('StatInt').innerHTML = "Zeka (INT): <div id='int'>" + stats.int + "(" + statBonuses.intB + ")</div>";
+    document.getElementById('StatWis').innerHTML = "Bilgelik (WIS): <div id='wis'>" + stats.wis + "(" + statBonuses.wisB + ")</div>";
+    document.getElementById('StatCha').innerHTML = "Karizma (CHA): <div id='cha'>" + stats.cha + "(" + statBonuses.chaB + ")</div>";
 
     document.getElementById('athletics').innerHTML = skillBonuses.athletics;
     document.getElementById('acrobatics').innerHTML = skillBonuses.acrobatics;
@@ -386,20 +517,21 @@ const applyRaceBonuses = () => {
 const applyBackgroundBonuses = () => {
     const background = document.getElementById('background').value;
 
-    if (background === 'Acolyte') {
-        stats.wis += 1;
-    } else if (background === 'Criminal') {
-        stats.dex += 1;
-    } else if (background === 'FolkHero') {
-        stats.str += 1;
-    } else if (background === 'Noble') {
-        stats.cha += 1;
-    } else if (background === 'Sage') {
-        stats.int += 1;
-    } else if (background === 'Soldier') {
-        stats.str += 1;
-        stats.con += 1;
-    }
+    // if (background === 'Soldier') {
+    //     stats.str += 1;
+    //     stats.con += 1;
+    // } else if (background === 'Criminal') {
+    //     stats.dex += 1;
+    // } else if (background === 'FolkHero') {
+    //     stats.str += 1;
+    // } else if (background === 'Noble') {
+    //     stats.cha += 1;
+    // } else if (background === 'Sage') {
+    //     stats.int += 1;
+    // } else if (background === 'Sarlatan') {
+    //     stats.str += 1;
+    //     stats.con += 1;
+    // }
 };
 
 const applyClassBonuses = () => {
