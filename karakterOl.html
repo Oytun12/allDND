@@ -50,12 +50,14 @@
 
     <div class="container">
         <div id="stats">
-            <p id="StatStr">Str: 10(0)</p>
-            <p id="StatDex">Dex: 10(0)</p>
-            <p id="StatCon">Con: 10(0)</p>
-            <p id="StatInt">İnt: 10(0)</p>
-            <p id="StatWis">Wis: 10(0)</p>
-            <p id="StatCha">Cha: 10(0)</p>
+          <ul id="sortable">  
+            <li id="StatStr">"<div class="strT">Güç (STR): </div><div id='str'>10(0)</div></li>
+            <li id="StatDex">Çeviklik (DEX): <div id='dex'>10(0)</div></li>
+            <li id="StatCon">Dayanıklılık (CON): <div id='con'>10(0)</div></li>
+            <li id="StatInt">Zeka (INT): <div id='int'>10(0)</div></li>
+            <li id="StatWis">Bilgelik (WIS): <div id='wis'>10(0)</div></li>
+            <li id="StatCha">Karizma (CHA): <div id='cha'>10(0)</div></li>
+            </ul>
         </div>
 
         <form id="race-from">
@@ -77,18 +79,31 @@
                 <option value="Yarı-Ef">Yarı-Elf</option>
                 <option value="Yarı-Orc">Yarı-Orc</option>
             </select>
+            <div id="race-info" class="hidden"></div>
         </form>
 
         <form id="background-form">
             <p>Hangi karakter geçmişi ile oynamak istersiniz?</p>
             <select id="background" name="background" required>
-                <option value="">Seçiniz</option>
-                <option value="Acolyte">Rahip</option>
-                <option value="Criminal">Suçlu</option>
-                <optxion value="FolkHero">Halk Kahramanı</option>
-                <option value="Noble">Asil</option>
-                <option value="Sage">Bilge</option>
-                <option value="Soldier">Asker</option>
+              <option value="">Seçiniz</option>
+              <option value="Soldier">Asker</option>
+              <option value="Sage">Bilge</option>
+              <option value="Denizci">Denizci</option>
+              <option value="DenizciKorsan">Alternatif Denizci (Korsan)</option>
+              <option value="GosteriAdamı">Gösteri Adamı</option>
+              <option value="GosteriAdamiGladyator">Alternatif Gösteri Adamı (Gladyatör)</option>
+              <optxion value="FolkHero">Halk Kahramanı</option>
+              <option value="LocaZanaatkari">Loca Zanaatkarı</option>
+              <option value="LocaZanaatkariTuccar">Alternatif Loca Zanaatkarı (Loca Tüccarı)</option>
+              <option value="Munzevi">Münzevi (İnzivaya çekilmiş kimse)</option>
+              <option value="Murit">Mürit</option>
+              <option value="SokakCocugu">Sokak Çocuğu</option>
+              <option value="Soylu">Soylu</option>
+              <option value="SoyluSovalye">Alternatif Soylu (Şövalye)</option>
+              <option value="Suclu">Suçlu</option>
+              <option value="SucluAjan">Alternatif Suçlu (Ajan)</option>
+              <option value="Yabanci">Yabancı</option>
+              <option value="Sarlatan">Şarlatan</option>
             </select>
             <div id="background-info" class="hidden"></div>
         </form>
