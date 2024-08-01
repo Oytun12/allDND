@@ -311,7 +311,7 @@ form p {
     font-size: 0.8em;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 695px) {
     #skillsyazı {
         font-size: 0.7em;
     }
