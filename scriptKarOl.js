@@ -17,22 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const classInfo = {
         Fighter: {
             title: "Savaşçı",
-            description: "Savaşçılar, güçlü ve taktiksel yetenekleriyle silahlı çatışmalara girebilen savaşçılardır."
+            description: "<hr><strong class='bold'>Beceri Uzmanlıkları.</strong>Bunlardan 2 tanesi seçilmelidir. <span class='ciz' >Akrobasi, Hayvan İdaresi, Atletizm, Tarih, Sezgi, Gözdağı, Algı, ve Hayatta Kalma.</span><br>Savaşçılar, güçlü ve taktiksel yetenekleriyle silahlı çatışmalara girebilen savaşçılardır."
         },
         Wizard: {
             title: "Büyücü",
-            description: "Büyücüler, güçlü büyüler yapmak için bilgi ve zekalarını kullanan büyücülerdir."
+            description: "<hr>Büyücüler, güçlü büyüler yapmak için bilgi ve zekalarını kullanan büyücülerdir."
         },
         Rogue: {
             title: "Hırsız",
-            description: "Hırsızlar, gizlilik, kilit açma ve tuzak bulma ve etkisiz hale getirme konusunda yeteneklidir."
+            description: "<hr>Hırsızlar, gizlilik, kilit açma ve tuzak bulma ve etkisiz hale getirme konusunda yeteneklidir."
         }
         // Diğer sınıflar ve bilgileri buraya ekleyin
     };
   
     const updateClassInfo = () => {
         const selectedClass = document.getElementById('class').value;
-  
         if (selectedClass === "select") {
             classInfoDiv.classList.add('hidden');
             classInfoDiv.classList.remove('visible');
@@ -64,10 +63,69 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.getElementById('class').addEventListener('change', updateClassInfo);
 
+// -------------------------------BACKGROUND İNFO-----------------------------------
+
+const backgroundInfoDiv = document.getElementById("background-info");
+    
+const backgroundInfo = {
+    Acolyte: {
+        title: "Rahip",
+        description: "<hr>Rahipler, dini hizmetlerde bulunmuş kişilerdir. Tanrılarıyla güçlü bir bağları vardır."
+    },
+    Criminal: {
+        title: "Suçlu",
+        description: "<hr>Suçlular, kanun dışı işlerle uğraşmış kişilerdir. Gizlilik ve kurnazlık konusunda uzmandırlar."
+    },
+    FolkHero: {
+        title: "Halk Kahramanı",
+        description: "<hr>Halk Kahramanları, halk arasında destansı hikayeleriyle tanınan kişilerdir."
+    },
+    Noble: {
+        title: "Asilzade",
+        description: "<hr>Asilzadeler, soylu bir aileden gelen kişilerdir. Diplomasi ve liderlik yetenekleri gelişmiştir."
+    },
+    Sage: {
+        title: "Bilge",
+        description: "<hr>Bilgeler, bilgiye ve öğrenmeye adanmış kişilerdir. Tarih ve araştırma konularında uzmandırlar."
+    },
+    Soldier: {
+        title: "Asker",
+        description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Atletizim</span> ve <span class='ciz'>Gözdağı</span> seçilmelidir.<br>Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
+    }
+    // Diğer backgroundlar ve bilgileri buraya ekleyin
+};
+
+const updateBackgroundInfo = () => {
+    const selectedBackground = document.getElementById('background').value;
+    if (selectedBackground === "select") {
+        backgroundInfoDiv.classList.add('hidden');
+
+        backgroundInfoDiv.innerHTML = '';
+    } else {
+        const info = backgroundInfo[selectedBackground];
+        if (info) {
+            backgroundInfoDiv.classList.remove('hidden');
+            backgroundInfoDiv.innerHTML = `<h3>${info.title}</h3><p>${info.description}</p>`;
+        } else {
+            backgroundInfoDiv.classList.add('hidden');
+            backgroundInfoDiv.innerHTML = '';
+        }
+    }
+};
+
+document.getElementById('background').addEventListener('change', updateBackgroundInfo);
+
+
 // -------------------------------SKİLL SLOT-----------------------------------------------
 
-let remainingSkillSlots = 0;
-
+let remainingSkillSlots = 0; 
+const skillSlotEksi = () => {
+    if (remainingSkillSlots < 0) {
+        document.getElementById('skill-slot-eksi').classList.remove('hidden');
+    } else {
+        document.getElementById('skill-slot-eksi').classList.add('hidden');
+    }
+}
 function calculateSkillSlots() {
     let skillSlots = 0; // Yerel skillSlots değişkeni
 
@@ -85,7 +143,7 @@ function calculateSkillSlots() {
         skillSlots += 2;
     } else if (selectedBackground === 'Criminal') {
         skillSlots += 2;
-    } else if (selectedBackground === 'Folk Hero') {
+    } else if (selectedBackground === 'FolkHero') {
         skillSlots += 2;
     } else if (selectedBackground === 'Noble') {
         skillSlots += 2;
@@ -100,6 +158,7 @@ function calculateSkillSlots() {
 };
 const updateRemainingSkillSlots = () => {
     document.getElementById('skill-slots').innerText = `Kalan Skill Yuvası: ${remainingSkillSlots}`; // Hesaplanan skillSlots değerini güncelle
+    skillSlotEksi();
 };
 
 const toggleBonus = (skillId, buttonId, skillBonusKey) => {
@@ -331,7 +390,7 @@ const applyBackgroundBonuses = () => {
         stats.wis += 1;
     } else if (background === 'Criminal') {
         stats.dex += 1;
-    } else if (background === 'Folk Hero') {
+    } else if (background === 'FolkHero') {
         stats.str += 1;
     } else if (background === 'Noble') {
         stats.cha += 1;
