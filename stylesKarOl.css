@@ -36,9 +36,11 @@ header {
 }
 
 .logo-img {
+    padding: -20px;
     width: 60px; /* Logonun genişliği */
     height: auto; /* Oranını koruyarak yüksekliği otomatik ayarlar */
 }
+
 
 nav {
     position: absolute;
@@ -114,8 +116,45 @@ form {
 p {
     font-size: 1.2em;
 }
+#str,#dex,#con,#int,#wis,#cha{
+    font-family: Arial, sans-serif;
+    margin-right: 5px;
+    padding: 10px 2px 10px 2px;
+    float: right;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+#str{
+    /* ---------------------------------------------------------------------------- */
+    background-image: url('img/Str.png');
+    background-size: cover;
+    background-position: center;
+    padding: 55px 31px 35px 27px;
+    margin-top: -80px;
+}
 
-#stats, #skills {
+.strT{
+    margin-left: 10px;
+    margin-top: 58px;
+}
+
+#StatStr {
+    padding: 60px 0 0 10px;
+    height: auto;
+}
+
+#stats{
+    font-size: 1.3em;
+    font-family: 'Georgia', serif;
+    margin-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f5f5dc;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#skills {
     margin-top: 5px;
     padding: 20px;
     background-color: #f5f5dc;
@@ -225,7 +264,7 @@ form p {
 }
 
 
-#class-info {
+#background-info, #class-info, #race-info {
     padding-top: 10px;
     padding-right: 20px;
     padding-left: 20px;
@@ -244,40 +283,12 @@ form p {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
-#class-info h3 {
+#background-info h3, #class-info h3, #race-info h3 {
     margin-top: 0;
     color: #8b4513;
 }
 
-#class-info p {
-    font-size: 1.1em;
-    color: #333;
-}
-#background-info {
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
-    background-color: #FBF1DE;
-    border: 2px solid #DB9D43;
-    border-radius: 7px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Convergence', sans-serif;
-    margin-top: 20px;
-    /* padding: 15px;
-    background-color: #f5f5dc;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); */
-}
-
-#background-info h3 {
-    margin-top: 0;
-    color: #8b4513;
-}
-
-#background-info p {
+#background-info p, #class-info p, #race-info p {
     font-size: 1.1em;
     color: #333;
 }
