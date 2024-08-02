@@ -465,6 +465,17 @@ form p {
 }
 
 @media (max-width: 695px) {
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #fff;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+        background-size: cover;
+    }
     #skillsyazı {
         font-size: 0.7em;
     }
@@ -472,14 +483,25 @@ form p {
         font-family: 'Georgia', serif;
         font-size: 1.3em;
     }
-    #sortableStat {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    #skills {
+        margin-top: 5px;
+        padding: 5px;
+        background-color: #f5f5dc;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    
+    #sortable li {
+        flex: 1 1 100%; /* Her bir öğenin genişliğini %100 yaparak alt alta sıralama */
+        padding: 5px;
+        background-color: #f9f5e3;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        margin: 2px;
+        transition: background-color 0.3s;
+        box-sizing: border-box;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
     #sortableStat li {
         flex: 1 1 100%; /* Her bir öğenin genişliğini %100 yaparak alt alta sıralama */
         padding: 5px;
@@ -488,24 +510,7 @@ form p {
         border-radius: 5px;
         margin: 2px;
         transition: background-color 0.3s;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
-    #sortable {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    #sortable li {
-        flex: 1 1 100%; /* Her bir öğenin genişliğini %100 yaparak alt alta sıralama */
-        padding: 5px;
-        background-color: #ddddacd6;
-        border: 1px solid #aaa;
-        border-radius: 5px;
-        margin: 2px;
-        transition: background-color 0.3s;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    }
+
 }
