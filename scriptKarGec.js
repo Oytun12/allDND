@@ -24,4 +24,28 @@ document.addEventListener('click', (event) => {
         menu.classList.remove('visible');
         menu.classList.add('hidden');
     }
+
+    // Tıklanan eleman collapsible öğesi veya onun içeriği değilse collapsible içeriklerini gizle
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(collapsible => {
+        const content = collapsible.nextElementSibling;
+        if (content && content.classList.contains('visible') && !collapsible.contains(event.target) && !content.contains(event.target)) {
+            content.classList.remove('visible');
+            content.classList.add('hidden');
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const collapsibles = document.querySelectorAll(".collapsible");
+
+    collapsibles.forEach(collapsible => {
+        collapsible.addEventListener("click", function() {
+            const content = this.nextElementSibling;
+            if (content) {
+                content.classList.toggle("hidden");
+                content.classList.toggle("visible");
+            }
+        });
+    });
 });
