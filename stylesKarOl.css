@@ -120,12 +120,11 @@ p {
 .containerStat{
     display: flex;
     justify-content:space-between;
+    align-items: center;
 }
 /* ----------------------------- */
 .strTxt{
     /* border: 2px solid #000000; */
-    padding: 10px;
-    padding-top: 53px;
     float: left;
 }
 
@@ -148,8 +147,6 @@ p {
 
 /* ----------------------------- */
 .dexTxt{
-    padding: 10px;
-    padding-top: 51px;
     float: left;
 }
 
@@ -174,8 +171,6 @@ p {
 /* -------------------------------- */
 .conTxt{
     /* border: 2px solid #000000; */
-    padding: 10px;
-    padding-top: 49px;
     float: left;
 }
 
@@ -200,8 +195,6 @@ p {
 /* ----------------------------- */
 .intTxt{
     /* border: 2px solid #000000; */
-    padding: 10px;
-    padding-top: 49px;
     float: left;
 }
 
@@ -226,8 +219,6 @@ p {
 /* ----------------------------- */
 .wisTxt{
     /* border: 2px solid #000000; */
-    padding: 10px;
-    padding-top: 49px;
     float: left;
 }
 
@@ -252,8 +243,6 @@ p {
 /* ----------------------------- */
 .chaTxt{
     /* border: 2px solid #000000; */
-    padding: 10px;
-    padding-top: 49px;
     float: left;
 }
 
@@ -494,8 +483,8 @@ form p {
     #sortableStat li {
         flex: 1 1 100%; /* Her bir öğenin genişliğini %100 yaparak alt alta sıralama */
         padding: 5px;
-        background-color: #ddddacd6;
-        border: 1px solid #aaa;
+        background-color: #f5f5ebd6;
+        /* border: 1px solid #aaa; */
         border-radius: 5px;
         margin: 2px;
         transition: background-color 0.3s;
