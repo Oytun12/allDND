@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Convergence';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Convergence-Regular'), url('fonts/Convergence-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    src: local('glyphicons-halflings-regular'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype');
+}
+
+.indented {
+    padding-left: 20px;
+} 
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f5e3;
@@ -23,6 +41,8 @@ header {
     margin-bottom: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: relative;
+    /* background-color: #f5deb3;  Krem tonunda arka plan 
+    border: 2px solid #d2b48c; Daha yumuşak krem tonunda kenarlık */
 }
 
 .menu-icon {
@@ -36,24 +56,25 @@ header {
 }
 
 .logo-img {
-    padding: -20px;
     width: 60px; /* Logonun genişliği */
     height: auto; /* Oranını koruyarak yüksekliği otomatik ayarlar */
 }
 
-
 nav {
     position: absolute;
     top: 121%; /* Menü ikonunun hemen altında başlar */
-    left: -2px;
-    width: 250px;
-    background-color: #cabe80;
+    left: -4px;
+    width: 200px;
+    /* background-color: #cabe80; */
     border: 2px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
     display: none;
     z-index: 1000; /* Menü ikonunun üstünde görünmesi için */
+    background-color: #f5deb3;
+    /* background-color: #f5deb3;  Krem tonunda arka plan
+    border: 2px solid #d2b48c; Daha yumuşak krem tonunda kenarlık */
 }
 
 nav ul {
@@ -83,6 +104,10 @@ nav ul li a {
     display: block;
 }
 
+.collapsible{
+    cursor: pointer;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -95,319 +120,7 @@ nav ul li a {
     background-size: cover;
 }
 
-hr {
-    border: 1.4px solid #862F1B;
-    width: 100%;
-    margin-top: -10px;
-    /* margin: 20px 0; */
-}
-
-h1, h2 {
-    font-family: 'Georgia', serif;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #8b4513;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.2em;
-}
-/* -------------------------------------------------------- */
-.containerStat{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-}
-/* ----------------------------- */
-.strTxt{
-    /* border: 2px solid #000000; */
-    float: left;
-}
-
-#stricon{
-    position: relative; /* İçindeki elemanların konumlandırılmasına izin verir */
-    background-image: url('img/Str.png');
-    background-size: cover;
-    background-position: center;
-    width: 111px;
-    height: 117px;
-}
-.strB{
-    position: absolute; /* Mutlak konumlandırma */
-    top: 50%; /* Dikeyde ortala */
-    left: 29%; /* Yatayda ortala */
-    color: #A0892C; /* Metin rengini ayarlayın */
-    font-size: 16px; /* Yazı boyutunu ayarlayın */
-    font-weight: bold; /* Metni kalın yapın */
-}
-
-/* ----------------------------- */
-.dexTxt{
-    float: left;
-}
-
-#dexicon{
-    position: relative; /* İçindeki elemanların konumlandırılmasına izin verir */
-    background-image: url('img/Dex.png');
-    background-size: cover;
-    background-position: center;
-    margin-right: 10px;
-    width: 111px;
-    height: 117px;
-}
-.dexB{
-    position: absolute; /* Mutlak konumlandırma */
-    top: 50%; /* Dikeyde ortala */
-    left: 50%; /* Yatayda ortala */
-    transform: translate(-18px, -12px); /* 50px sağa, 30px yukarı */
-    color: #A0892C; /* Metin rengini ayarlayın */
-    font-size: 16px; /* Yazı boyutunu ayarlayın */
-    font-weight: bold; /* Metni kalın yapın */
-}
-/* -------------------------------- */
-.conTxt{
-    /* border: 2px solid #000000; */
-    float: left;
-}
-
-#conicon{
-    position: relative; /* İçindeki elemanların konumlandırılmasına izin verir */
-    background-image: url('img/Con.png');
-    background-size: cover;
-    background-position: center;
-    width: 111px;
-    height: 117px;
-}
-.conB{
-    position: absolute; /* Mutlak konumlandırma */
-    top: 50%; /* Dikeyde ortala */
-    left: 50%; /* Yatayda ortala */
-    transform: translate(-22px, -8px); /* 50px sağa, 30px yukarı */
-    color: #A0892C; /* Metin rengini ayarlayın */
-    font-size: 16px; /* Yazı boyutunu ayarlayın */
-    font-weight: bold; /* Metni kalın yapın */
-}
-
-/* ----------------------------- */
-.intTxt{
-    /* border: 2px solid #000000; */
-    float: left;
-}
-
-#inticon{
-    position: relative; /* İçindeki elemanların konumlandırılmasına izin verir */
-    background-image: url('img/İnt.png');
-    background-size: cover;
-    background-position: center;
-    width: 111px;
-    height: 117px;
-}
-.intB{
-    position: absolute; /* Mutlak konumlandırma */
-    top: 50%; /* Dikeyde ortala */
-    left: 50%; /* Yatayda ortala */
-    transform: translate(-27px, -9px); /* 50px sağa, 30px yukarı */
-    color: #A0892C; /* Metin rengini ayarlayın */
-    font-size: 16px; /* Yazı boyutunu ayarlayın */
-    font-weight: bold; /* Metni kalın yapın */
-}
-
-/* ----------------------------- */
-.wisTxt{
-    /* border: 2px solid #000000; */
-    float: left;
-}
-
-#wisicon{
-    position: relative; /* İçindeki elemanların konumlandırılmasına izin verir */
-    background-image: url('img/Wis.png');
-    background-size: cover;
-    background-position: center;
-    width: 111px;
-    height: 117px;
-}
-.wisB{
-    position: absolute; /* Mutlak konumlandırma */
-    top: 50%; /* Dikeyde ortala */
-    left: 50%; /* Yatayda ortala */
-    transform: translate(-20px, -1px); /* 50px sağa, 30px yukarı */
-    color: #A0892C; /* Metin rengini ayarlayın */
-    font-size: 16px; /* Yazı boyutunu ayarlayın */
-    font-weight: bold; /* Metni kalın yapın */
-}
-
-/* ----------------------------- */
-.chaTxt{
-    /* border: 2px solid #000000; */
-    float: left;
-}
-
-#chaicon{
-    position: relative; /* İçindeki elemanların konumlandırılmasına izin verir */
-    background-image: url('img/Cha.png');
-    background-size: cover;
-    background-position: center;
-    width: 111px;
-    height: 117px;
-}
-.chaB{
-    position: absolute; /* Mutlak konumlandırma */
-    top: 50%; /* Dikeyde ortala */
-    left: 50%; /* Yatayda ortala */
-    transform: translate(-22px, -1px); /* 50px sağa, 30px yukarı */
-    color: #A0892C; /* Metin rengini ayarlayın */
-    font-size: 16px; /* Yazı boyutunu ayarlayın */
-    font-weight: bold; /* Metni kalın yapın */
-}
-/* ------------------------------------------------------- */
-#stats{
-    font-size: 1.3em;
-    font-family: 'Georgia', serif;
-    margin-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #f0e4af95;
-    border: 1px solid #ddd;
-    /* border: 1px solid #000000; */
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
-}
-#skills {
-    margin-top: 5px;
-    padding: 20px;
-    background-color: #f5f5dc;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f5e3;
-}
-
-#sortable {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#sortable li {
-    padding: 5px;
-    background-color: #f9f5e3;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    margin: 2px;
-    transition: background-color 0.3s;
-    flex: 1 1 calc(50% - 10px); /* Her bir öğenin genişliğini %50 olarak ayarla ve aralarındaki boşluk */
-    box-sizing: border-box;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-#sortable li:hover {
-    background-color: #cece9127;
-}
-
-#sortableStat {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#sortableStat li {
-    padding: 5px;
-    background-color: #f5f5ebd6;
-    /* border: 1px solid #aaa; */
-    border-radius: 5px;
-    margin: 5px;
-    transition: background-color 0.3s;
-    flex: 1 1 calc(50% - 15px); /* Her bir öğenin genişliğini %50 olarak ayarla ve aralarındaki boşluk */
-    box-sizing: border-box;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-#sortableStat li:hover {
-    background-color: #ebebd88e;
-}
-
-.sagayasla{
-    padding: 5px;
-    padding-top: 10px;
-    float: right;
-}
-#skill-slot-eksi{
-    color: red;
-    font-size: 0.9em;
-    margin-top: -10px;
-    margin-bottom: -5px;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 10px;
-    color: #8b4513;
-}
-
-p span {
-    font-weight: bold;
-    color: #555;
-}
-
-form p {
-    margin-bottom: 10px;
-}
-
-#But {
-    background-color: #8b4513;
-    color: white;
-    border: solid 1px #000000;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 2px 5px 3px 2px;
-    margin-top: 5px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.1s;
-}
-
-#But.active {
-    background-color: #4e5d4a;
-    color: #fff;
-}
-
-.skill-button {
-    background-color: #8b4513;
-    color: white;
-    border: solid 1px #000000;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 2px 5px 3px 2px;
-    margin-top: 5px;
-    margin-right: 5px;
-    font-size: 1em;
-    transition: background-color 0.1s;
-}
-
-.skill-button.active {
-    background-color: #4e5d4a;
-    color: #fff;
-}
-
-
-#background-info, #class-info, #race-info {
-    padding-top: 10px;
+.bucuklukTez, .bucuklukTik, .cuceDa, .cuceTe, .ejder, .elfD, .elfO, .elfU, .gnomeO, .insan, .insanAl, .tiefling, .yarıElf, .yarıOrc{
     padding-right: 20px;
     padding-left: 20px;
     /* padding-top: 10px;
@@ -417,95 +130,131 @@ form p {
     border-radius: 7px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     font-family: 'Convergence', sans-serif;
-    margin-top: 20px;
-    /* padding: 15px;
-    background-color: #f5f5dc;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+.gnomeK{
+    padding-right: 20px;
+    padding-left: 20px;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    background-color: #FBF1DE;
+    border: 2px solid #DB9D43;
+    border-radius: 7px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Convergence', sans-serif;
+}
+.collapsibleGnome{
+    text-decoration: underline;
+    cursor: pointer;
+    border: #000;
+    margin-top: -20px;
+    padding-bottom: 20px;
+}
+.collapsibleKarGec{
+    text-decoration: underline;
+    cursor: pointer;
+    border: #000;
 }
 
-#background-info h3, #class-info h3, #race-info h3 {
-    margin-top: 0;
+.draconicSoy{
+    margin-top: 10px;
+    background-color: #fefaf0;
+    border: 2px solid #862F1B;
+    border-radius: 5px;
+}
+
+.koyu{
+    padding-left: 10px;
+    /* border: solid 1px #f3e9d7; */
+    background-color: #fef8ec;
+}
+
+.acık, .acık1{
+    padding-left: 10px;
+    /* border:solid 1px #FBF1DE; */
+    background-color: #fcf9f2;
+}
+.hr1{
+    padding-left: 10px;
+    margin-left: -10px;
+}
+
+
+
+h3, h4{
+    width: 100%;
+    font-size: 1.5em;
+    font-family: 'Andada', serif;
+    font-variant: small-caps;
+    font-weight: 500;
+    padding-left: 0.25em;
+    cursor: pointer;
     color: #8b4513;
 }
 
-#background-info p, #class-info p, #race-info p {
-    font-size: 1.1em;
-    color: #333;
+.altbaslık{
+    margin-top: -15px;
+    margin-bottom: -15px;
 }
+
+hr {
+    border: 1.4px solid #862F1B;
+    width: 100%;
+    margin: 20px 0;
+}
+
 .bold {
     font-weight: bold;
     font-style: italic;
     font-family: 'Convergence', sans-serif;
     color: #000;
 }
+
+.siyah{
+    color: #000;
+}
+.mavi{
+    color: #00008B;
+}
+.pirinc{
+    color: #8B4513 ;
+}
+.bronz{
+    color: #8B3E2F;
+}
+.altin{
+    color: #B8860B;
+}
+.yesil{
+    color: #006400 ;
+}
+.kirmizi{
+    color: #8B0000 ;
+}
+.gumus{
+    color: #708090
+}
+.beyaz{
+    color: #000000;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    color: #8b4513;
+}
+h2 {
+    margin-top: 5px;
+    font-size: 2em;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    color: #8b4513;
+}
 .ciz {
     text-decoration: underline;
 }
-.skillButton {
-    background-color: #8b4513;
-    color: white;
-    border: solid 1px #000000;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 2px 5px 3px 2px;
-    margin-top: 5px;
-    font-size: 1em;
-    transition: background-color 0.1s;
-}
 
-.skillButton.active {
-    background-color: #321907b5;
-    color: #fff;
-}
-.footer{
-    font-size: 0.8em;
-}
-
-@media (max-width: 695px) {
+@media (max-width: 600px) {
     #skillsyazı {
-        font-size: 0.7em;
-    }
-    .title {
-        font-family: 'Georgia', serif;
-        font-size: 1.3em;
-    }
-    #sortableStat {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    #sortableStat li {
-        flex: 1 1 100%; /* Her bir öğenin genişliğini %100 yaparak alt alta sıralama */
-        padding: 5px;
-        background-color: #f5f5ebd6;
-        /* border: 1px solid #aaa; */
-        border-radius: 5px;
-        margin: 2px;
-        transition: background-color 0.3s;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-    #sortable {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    #sortable li {
-        flex: 1 1 100%; /* Her bir öğenin genişliğini %100 yaparak alt alta sıralama */
-        padding: 5px;
-        background-color: #ddddacd6;
-        border: 1px solid #aaa;
-        border-radius: 5px;
-        margin: 2px;
-        transition: background-color 0.3s;
-        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.85em;
     }
 }
