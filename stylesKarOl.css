@@ -493,7 +493,7 @@ form p {
     }
     #sortable li {
         flex: 1 1 100%; /* Her bir öğenin genişliğini %100 yaparak alt alta sıralama */
-        padding: 5px;
+        padding:0 0px 0 5px;
         background-color: #f9f5e3;
         border: 1px solid #aaa;
         border-radius: 5px;
