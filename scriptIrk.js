@@ -9,30 +9,6 @@ const toggleMenu = () => {
     }
 };
 
-// En yakın başlık (h1, h2, h3, h4, h5, h6) bulma fonksiyonu
-const findNearestHeading = (element) => {
-    let sibling = element.previousElementSibling;
-    while (sibling) {
-        if (/^H[1-6]$/.test(sibling.tagName)) {
-            return sibling;
-        }
-        sibling = sibling.previousElementSibling;
-    }
-    return null;
-};
-
-// Bir sonraki başlığı bulma fonksiyonu
-const findNextVisibleHeading = (element) => {
-    let sibling = element.nextElementSibling;
-    while (sibling) {
-        if (/^H[1-6]$/.test(sibling.tagName) && sibling.offsetParent !== null) {
-            return sibling;
-        }
-        sibling = sibling.nextElementSibling;
-    }
-    return null;
-};
-
 // Menü dışında bir yere tıklanınca menüyü gizle
 document.addEventListener('click', (event) => {
     const menu = document.getElementById('hamburger-menu');
@@ -56,17 +32,11 @@ document.addEventListener('click', (event) => {
         if (content && content.classList.contains('visible') && !collapsible.contains(event.target) && !content.contains(event.target)) {
             content.classList.remove('visible');
             content.classList.add('hidden');
-
-            // Bir sonraki başlığa kaydır
-            const nextHeading = findNextVisibleHeading(collapsible);
-            if (nextHeading) {
-                nextHeading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
         }
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     const collapsibles = document.querySelectorAll(".collapsible");
 
     collapsibles.forEach(collapsible => {
@@ -74,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const content = this.nextElementSibling;
             if (content) {
                 const isVisible = content.classList.contains('visible');
-                content.classList.toggle("hidden");
-                content.classList.toggle("visible");
+                content.classList.toggle("hidden", isVisible);
+                content.classList.toggle("visible", !isVisible);
 
                 // İçeriğin açılma/kapanma işlemi tamamlandıktan sonra kaydırma işlemini gerçekleştir
                 setTimeout(() => {
