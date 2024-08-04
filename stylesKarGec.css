@@ -120,7 +120,7 @@ nav ul li a {
     background-size: cover;
 }
 
-.bucuklukTez, .bucuklukTik, .cuceDa, .cuceTe, .ejder, .elfD, .elfO, .elfU, .gnomeO, .insan, .insanAl, .tiefling, .yarıElf, .yarıOrc{
+.asker,.bilge, .denizci, .gosteriAdami, .halkKahramani, .loncaZanatkari, .munzevi, .murit, .sokakCocugu, .soylu, .suclu, .yabanci, .sarlatan{
     padding-right: 20px;
     padding-left: 20px;
     /* padding-top: 10px;
@@ -155,8 +155,15 @@ nav ul li a {
     border: #000;
 }
 
-.draconicSoy{
+.gecmisler{
     margin-top: 10px;
+    background-color: #fefaf0;
+    border: 2px solid #862F1B;
+    border-radius: 5px;
+}
+.kisilikler{
+    margin-top: 10px;
+    margin-bottom: 15px;
     background-color: #fefaf0;
     border: 2px solid #862F1B;
     border-radius: 5px;
