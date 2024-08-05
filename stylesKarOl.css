@@ -276,7 +276,7 @@ p {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
 }
-#skills {
+#skills, #stat-oncelik{
     margin-top: 5px;
     padding: 20px;
     background-color: #f5f5dc;
@@ -405,8 +405,20 @@ form p {
     color: #fff;
 }
 
+#statList {
+    list-style-type: none;
+    padding: 0;
+}
 
-#background-info, #class-info, #race-info{
+#statList li {
+    padding: 8px;
+    margin: 4px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+
+#background-info, #class-info, #race-info {
     padding-top: 10px;
     padding-right: 20px;
     padding-left: 20px;
@@ -423,16 +435,6 @@ form p {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); */
-}
-#stat-sira {
-    margin-top: 5px;
-    padding: 20px;
-    background-color: #f5f5dc;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Convergence', sans-serif;
-    margin-top: 20px;
 }
 
 #background-info h3, #class-info h3, #race-info h3 {
@@ -470,28 +472,6 @@ form p {
     background-color: #321907b5;
     color: #fff;
 }
-
-/* Diğer stil kuralları */
-
-#statList {
-    list-style-type: none;
-    padding: 0;
-}
-
-#statList li {
-    padding: 8px;
-    margin: 4px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    cursor: move;
-}
-
-#result {
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-
 .footer{
     font-size: 0.8em;
 }
