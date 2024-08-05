@@ -50,7 +50,7 @@
 
     <div class="container">
         <div id="stats">
-          <ul id="sortable">  
+          <ul id="sortableStat">  
             <li id="StatStr">"<div class="strT">Güç (STR): </div><div id='str'>10(0)</div></li>
             <li id="StatDex">Çeviklik (DEX): <div id='dex'>10(0)</div></li>
             <li id="StatCon">Dayanıklılık (CON): <div id='con'>10(0)</div></li>
@@ -118,8 +118,12 @@
                 <!-- Diğer sınıflar buraya eklenebilir -->
             </select>
             <div id="class-info" class="hidden"></div>
+            <!-- <div id="stat-sira" class="hidden"></div> -->
+      
         </form>
-        
+        <div id="stat-sira">
+          <ul id="statList"><li data-stat='str'>Strength</li><li data-stat='dex'>Dexterity</li><li data-stat='con'>Constitution</li><li data-stat='int'>Intelligence</li><li data-stat='wis'>Wisdom</li><li data-stat='cha'>Charisma</li> </ul><button id='assignStats'>Hesapla</button><div id='result'></div>   
+        </div>
         <div id="skills"  class="hidden">
             <p id="skill-slots">Kalan Skill Yuvası: 0</p>
             <p id="skill-slot-eksi">(Skill yuvanız DM'iniz ile anlaşmadıysanız eksiye düşemez !!!)</p>
@@ -158,3 +162,4 @@
      <script src="scriptKarOl.js"></script>
 </body>
 </html>
+
