@@ -276,13 +276,115 @@ p {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
 }
-#skills, #stat-oncelik{
+#skills{
     margin-top: 5px;
     padding: 20px;
     background-color: #f5f5dc;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.pstat{
+    margin-top: -1px;
+    font-size: 1.1em;
+}
+.statContainer{
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: #eee2ad98;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow:inset 0 0 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+.arkaplan-text1 {
+    position: absolute;
+    font-size: 24px;
+    color: #7f7f7f;
+    pointer-events: none;
+    top: 65px;
+    left: 15px;
+}
+
+.arkaplan-text2 {
+    position: absolute;
+    font-size: 24px;
+    color: #7f7f7f;
+    pointer-events: none;
+    top: 110px;
+    left: 16px;
+}
+.arkaplan-text3 {
+    position: absolute;
+    font-size: 24px;
+    color: #7f7f7f;
+    pointer-events: none;
+    top: 154px;
+    left: 16px;
+}
+.arkaplan-text4 {
+    position: absolute;
+    font-size: 24px;
+    color: #7f7f7f;
+    pointer-events: none;
+    top: 197px;
+    left: 16px;
+}
+.arkaplan-text5 {
+    position: absolute;
+    font-size: 24px;
+    color: #7f7f7f;
+    pointer-events: none;
+    top: 240px;
+    left: 16px;
+}
+.arkaplan-text6 {
+    position: absolute;
+    font-size: 24px;
+    color: #7f7f7f;
+    pointer-events: none;
+    top: 284px;
+    left: 16px;
+}
+#assignStats{
+    font-size: 1em;
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-left: -6px;
+    width: calc(100% + 5px);
+    height: 33px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    background-color:#ffffffd5;
+}
+
+
+#statList{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: calc(100% - 20px);
+    margin-left: 20px;
+}
+
+#statList li{
+    padding: 10px;
+    margin: 5px 0;
+    cursor: move;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: #f9f5e3;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
+
+}
+#statList li:hover {
+    background-color: #ffffff57;
 }
 
 select {
@@ -366,44 +468,6 @@ form p {
     margin-bottom: 10px;
 }
 
-#But {
-    background-color: #8b4513;
-    color: white;
-    border: solid 1px #000000;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 2px 5px 3px 2px;
-    margin-top: 5px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.1s;
-}
-
-#But.active {
-    background-color: #4e5d4a;
-    color: #fff;
-}
-
-.skill-button {
-    background-color: #8b4513;
-    color: white;
-    border: solid 1px #000000;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 2px 5px 3px 2px;
-    margin-top: 5px;
-    margin-right: 5px;
-    font-size: 1em;
-    transition: background-color 0.1s;
-}
-
-.skill-button.active {
-    background-color: #4e5d4a;
-    color: #fff;
-}
 
 #statList {
     list-style-type: none;
@@ -469,7 +533,7 @@ form p {
 }
 
 .skillButton.active {
-    background-color: #321907b5;
+    background-color: #d21919;
     color: #fff;
 }
 .footer{
