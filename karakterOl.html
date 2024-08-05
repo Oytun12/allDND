@@ -107,7 +107,20 @@
             </select>
             <div id="background-info" class="hidden"></div>
         </form>
-
+        <div id="stat-oncelik">
+          <p>statları istediğiniz öncelik sırasında diziniz.</p>
+          <ul id="statList">
+            <li data-stat='str'>Strength</li>
+            <li data-stat='dex'>Dexterity</li>
+            <li data-stat='con'>Constitution</li>
+            <li data-stat='int'>Intelligence</li>
+            <li data-stat='wis'>Wisdom</li>
+            <li data-stat='cha'>Charisma</li>
+          </ul>
+          <button id='assignStats'>Hesapla</button>
+          <div id='result'></div>   
+        </div>
+        
         <form id="class-form">
             <p>Hangi sınıfla oynamak istersiniz?</p>
             <select id="class" name="class" required>
@@ -118,12 +131,8 @@
                 <!-- Diğer sınıflar buraya eklenebilir -->
             </select>
             <div id="class-info" class="hidden"></div>
-            <!-- <div id="stat-sira" class="hidden"></div> -->
-      
         </form>
-        <div id="stat-sira">
-          <ul id="statList"><li data-stat='str'>Strength</li><li data-stat='dex'>Dexterity</li><li data-stat='con'>Constitution</li><li data-stat='int'>Intelligence</li><li data-stat='wis'>Wisdom</li><li data-stat='cha'>Charisma</li> </ul><button id='assignStats'>Hesapla</button><div id='result'></div>   
-        </div>
+        
         <div id="skills"  class="hidden">
             <p id="skill-slots">Kalan Skill Yuvası: 0</p>
             <p id="skill-slot-eksi">(Skill yuvanız DM'iniz ile anlaşmadıysanız eksiye düşemez !!!)</p>
@@ -158,7 +167,9 @@
         </footer>
      </div>
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+</head>
      <script src="scriptKarOl.js"></script>
 </body>
 </html>
