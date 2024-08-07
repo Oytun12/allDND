@@ -4,16 +4,30 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('background').addEventListener('change', guncelle);
     document.getElementById('class').addEventListener('change', guncelle);
     document.getElementById('assignStats').addEventListener('click', guncelle);
+    // İnsan Varyantı seçimlerinin değişimlerini dinle
+    document.getElementById('HumanVariant1').addEventListener('change', guncelle);
+    document.getElementById('HumanVariant2').addEventListener('change', guncelle);
+    document.getElementById('HElfVariant1').addEventListener('change', guncelle);
 
     document.getElementById('race').addEventListener('change', calculateSkillSlots);
     document.getElementById('background').addEventListener('change', calculateSkillSlots);
     document.getElementById('class').addEventListener('change', calculateSkillSlots);
+
+
+
+
+
+  });
 // ------------------------------RACE İNFO-----------------------------------
 
 const raceInfo = {
     Human: {
         title: "İnsan",
         description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kuv +1; Çev +1; Day +1; Zek +1; Akı +1; Kar +1</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+    },
+    HumanVariant: {
+        title: "Alternatif İnsan",
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> herhangi iki stata +1 alır.</span><br><select id='HumanVariant1' name='HumanVariant1' required><option value=''>1. stat seçimi (+1)</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option><option value='cha'>Karizma (Cha) (+1)</option></select><select id='HumanVariant2' name='HumanVariant2' required><option value=''>2. stat seçimi (+1) (farklı)</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option><option value='cha'>Karizma (Cha) (+1)</option></select><br><br>Geri kalan özellikleri Irklar sayfasından bakınız."
     },
     "Elf(Ulu)": {
         title: "Elf(Ulu)",
@@ -59,9 +73,10 @@ const raceInfo = {
         title: "Tiefling",
         description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Zek +1; Kar +2</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
     },
-    "Yarı-Ef": {
+    "Yarı-Elf": {
         title: "Yarı-Elf",
-        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kar +2; harici herhangi iki +1 seç</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kar +2; harici herhangi iki +1 seç</span><br><select id='HumanVariant1' name='HumanVariant1' required><option value=''>Karizma haricinde stat seçimi</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option></select><br><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+        // description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kar +2; harici herhangi iki +1 seç</span><br><select id='HElfVariant1' name='HElfVariant1' required><option value=''>Karizma haricinde stat seçimi</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option></select><br>Geri kalan özellikleri Irklar sayfasından bakınız."
     },
     "Yarı-Orc": {
         title: "Yarı-Orc",
@@ -84,6 +99,9 @@ const updateRaceInfo = () => {
             raceInfoDiv.classList.remove('hidden');
             raceInfoDiv.classList.add('visible');
             raceInfoDiv.innerHTML = `<h3>${info.title}</h3><p>${info.description}</p>`;
+            // Seçimlerin değişimlerini dinle
+            document.getElementById('HumanVariant1').addEventListener('change', guncelle);
+            document.getElementById('HumanVariant2').addEventListener('change', guncelle);
         } else {
             raceInfoDiv.classList.add('hidden');
             raceInfoDiv.classList.remove('visible');
@@ -283,7 +301,6 @@ document.getElementById('class').addEventListener('change', function() {
     }
 });
 document.getElementById('class').addEventListener('change', updateClassInfo);
-
 // -------------------------------SKİLL SLOT-----------------------------------------------
 
 let remainingSkillSlots = 0; 
@@ -400,10 +417,6 @@ document.getElementById('background').addEventListener('change', () => {
 });
 
 calculateSkillSlots(); // Başlangıçta çağrılır
-
-
-  });
-
   // -----------------------STAT AND SKİLL------------------------------------------
 
 let stats = {
@@ -526,6 +539,16 @@ const applyRaceBonuses = () => {
         stats.int += 1;
         stats.wis += 1;
         stats.cha += 1;
+    } else if (race === 'HumanVariant') {
+        const variant1 = document.getElementById('HumanVariant1').value;
+        const variant2 = document.getElementById('HumanVariant2').value;
+
+        if (variant1 !== variant2) {
+            stats[variant1] += 1;
+            stats[variant2] += 1;
+        } else {
+            stats[variant1] += 2;
+        }
     } else if (race === 'Elf(Ulu)') {
         stats.dex += 2;
         stats.int += 1;
@@ -560,14 +583,19 @@ const applyRaceBonuses = () => {
         stats.int += 1;
         stats.cha += 2;
     } else if (race === 'Yarı-Elf') {
-        stats.int += 1;
+        const variant1 = document.getElementById('HumanVariant1').value;
         stats.cha += 2;
+        if (true) {
+            stats[variant1] += 1;
+        } else {
+        }
     } else if (race === 'Yarı-Orc') {
         stats.con += 1;
         stats.str += 2;
     }
+    updateStatsAndSkills();
 };
-
+// ------------------------------------------------
 const statOrder = [5, 4, 3, 2, 0, -2];
 $(function() {
     $("#statList").sortable({
@@ -593,6 +621,8 @@ function assignStats() {
 
 const guncelle = () => {
     applyRaceBonuses();
+    // applyVariantRaceBonuses1();
+    // applyVariantRaceBonuses2();
     assignStats();
     hesaplanmisBonus();
     skillBonuslariGuncelle();
