@@ -203,51 +203,51 @@ document.getElementById('skills').classList.add('hidden');
 const classInfo = {
     Barbarian: {
         title: "Barbar",
-        description: "<hr><strong class='bold'>Tavsiye edilen öncelikli stat:  </strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen kincil öncelikli stat:  </strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:  </strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen kincil öncelikli stat:  </strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Bard: {
         title: "Bard",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong>İkinci Sınıf:</strong> <span class='ciz'>Çeviklik</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Cleric: {
         title: "Rahip",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Druid: {
         title: "Druid",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Fighter: {
         title: "Dövüşçü",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Monk: {
         title: "Keşiş",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Akıl</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Paladin: {
         title: "Paladin",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Kuvvet</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Ranger: {
         title: "Korucu",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Akıl</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Rogue: {
         title: "Rogue",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Karizma</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Sorcerer: {
         title: "Büyücü",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Warlock: {
         title: "Warlock",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Akıl</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Wizard: {
         title: "Büyücü",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span> <br><strong>İkinci Sınıf:</strong> <span class='ciz'>Çeviklik</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     }
 };
 
