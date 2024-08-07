@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Character Creator</title>
+    <link rel="stylesheet" href="stylesPointBuy.css">
+</head>
+<body>
+    <div class="container">
+        <h1>D&D Character Creator</h1>
+        <form id="character-form">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Ability Score</th>
+                        <th>Racial Bonus</th>
+                        <th>Total Score</th>
+                        <th>Ability Modifier</th>
+                        <th>Point Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Strength</td>
+                        <td><input type="number" id="strength" name="strength" value="8" min="8" max="15"></td>
+                        <td><span id="strength-racial">0</span></td>
+                        <td><span id="strength-total">8</span></td>
+                        <td><span id="strength-modifier">-1</span></td>
+                        <td><span id="strength-cost">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity</td>
+                        <td><input type="number" id="dexterity" name="dexterity" value="8" min="8" max="15"></td>
+                        <td><span id="dexterity-racial">0</span></td>
+                        <td><span id="dexterity-total">8</span></td>
+                        <td><span id="dexterity-modifier">-1</span></td>
+                        <td><span id="dexterity-cost">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Constitution</td>
+                        <td><input type="number" id="constitution" name="constitution" value="8" min="8" max="15"></td>
+                        <td><span id="constitution-racial">0</span></td>
+                        <td><span id="constitution-total">8</span></td>
+                        <td><span id="constitution-modifier">-1</span></td>
+                        <td><span id="constitution-cost">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Intelligence</td>
+                        <td><input type="number" id="intelligence" name="intelligence" value="8" min="8" max="15"></td>
+                        <td><span id="intelligence-racial">0</span></td>
+                        <td><span id="intelligence-total">8</span></td>
+                        <td><span id="intelligence-modifier">-1</span></td>
+                        <td><span id="intelligence-cost">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Wisdom</td>
+                        <td><input type="number" id="wisdom" name="wisdom" value="8" min="8" max="15"></td>
+                        <td><span id="wisdom-racial">0</span></td>
+                        <td><span id="wisdom-total">8</span></td>
+                        <td><span id="wisdom-modifier">-1</span></td>
+                        <td><span id="wisdom-cost">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Charisma</td>
+                        <td><input type="number" id="charisma" name="charisma" value="8" min="8" max="15"></td>
+                        <td><span id="charisma-racial">0</span></td>
+                        <td><span id="charisma-total">8</span></td>
+                        <td><span id="charisma-modifier">-1</span></td>
+                        <td><span id="charisma-cost">0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="summary">
+                <button type="reset" id="reset-btn">Reset</button>
+                <button type="button" id="reset-btn" onclick="window.location.href='../karakterOl.html'">Geri Dön</button>
+                <p>Total Points: <span id="total-points">0/27</span></p>
+            </div>
+            <button type="submit" id="submit-btn" disabled>Create Character</button>
+        </form>
+    </div>
+    <script src="scriptsPointBuy.js"></script>
+</body>
+</html>
