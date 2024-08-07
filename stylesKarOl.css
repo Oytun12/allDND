@@ -588,16 +588,4 @@ form p {
         transition: background-color 0.3s;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
-    #statList {
-        list-style-type: none;
-        padding: 0;
-    }
-    #statList{
-        padding: 8px;
-        margin: 4px;
-        margin-bottom: 3px;
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
-        cursor: move;
-    }
 }
