@@ -76,7 +76,6 @@ const raceInfo = {
     "Yarı-Elf": {
         title: "Yarı-Elf",
         description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kar +2; harici herhangi iki +1 seç</span><br><select id='HumanVariant1' name='HumanVariant1' required><option value=''>Karizma haricinde stat seçimi</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option></select><br><br>Geri kalan özellikleri Irklar sayfasından bakınız."
-        // description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> Kar +2; harici herhangi iki +1 seç</span><br><select id='HElfVariant1' name='HElfVariant1' required><option value=''>Karizma haricinde stat seçimi</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option></select><br>Geri kalan özellikleri Irklar sayfasından bakınız."
     },
     "Yarı-Orc": {
         title: "Yarı-Orc",
@@ -221,51 +220,51 @@ document.getElementById('skills').classList.add('hidden');
 const classInfo = {
     Barbarian: {
         title: "Barbar",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:  </strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:  </strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 12 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:  </strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:  </strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 12 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'>Hayvan İdaresi, Atletizm, Gözdağı, Doğa, Algı, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Bard: {
         title: "Bard",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong><span class='ciz'>Tümü arasından 3 tane seç.</span><br>Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Cleric: {
         title: "Rahip",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'>Tarih, Sezgi, Tıp, İkna, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Druid: {
         title: "Druid",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Hayvan İdaresi, Sezgi, Tıp, Doğa, Algı, Din, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Fighter: {
         title: "Savaşçı",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Akrobasi, Hayvan İdaresi, Atletizm, Tarih, Sezgi, Gözdağı, Algı, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Monk: {
         title: "Keşiş",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'>Akrobasi, Atletizm, Tarih, Sezgi, Din, ve Gizlenme.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Paladin: {
         title: "Paladin",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Atletizm, Sezgi, Gözdağı, Tıp, İkna, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Ranger: {
         title: "Korucu",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br><strong class='bold'>Beceriler:  </strong>Bunlardan 3 tanesini seç: <span class='ciz'> Hayvan İdaresi, Atletizm, Sezgi, İnceleme, Doğa, Algı, Gizlenme, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Rogue: {
         title: "Düzenbaz",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 4 tanesini seç: <span class='ciz'> Akrobasi, Atletizm, Aldatma, Sezgi, Gözdağı, İnceleme, Algı, Performans, İkna, El Çabukluğu, ve Gizlenme.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Sorcerer: {
-        title: "Sihirbaz",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 6 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        title: "Sihirbaz (Sorcerer)",
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 6 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Aldatma, Sezgi, Gözdağı, İkna, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Warlock: {
         title: "Warlock",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Aldatma, Tarih, Gözdağı, İnceleme, Doğa, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
     Wizard: {
         title: "Büyücü",
-        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Zeka</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 6 + Dayanıklılık bonusu</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Zeka</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 6 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Tarih, Sezgi, İnceleme, Tıp, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     }
 };
 
