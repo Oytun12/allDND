@@ -27,7 +27,7 @@ const raceInfo = {
     },
     HumanVariant: {
         title: "Alternatif İnsan",
-        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> herhangi iki stata +1 alır.</span><br><select id='HumanVariant1' name='HumanVariant1' required><option value=''>1. stat seçimi (+1)</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option><option value='cha'>Karizma (Cha) (+1)</option></select><select id='HumanVariant2' name='HumanVariant2' required><option value=''>2. stat seçimi (+1) (farklı)</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option><option value='cha'>Karizma (Cha) (+1)</option></select><br><br>Geri kalan özellikleri Irklar sayfasından bakınız."
+        description: "<hr><strong class='bold'>Yetenek Skorları:</strong> <span class='ciz'> herhangi iki farklı stata +1 alır.</span><br><select id='HumanVariant1' name='HumanVariant1' required><option value=''>1. stat seçimi (+1)</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option><option value='cha'>Karizma (Cha) (+1)</option></select><select id='HumanVariant2' name='HumanVariant2' required><option value=''>2. stat seçimi (+1) (farklı)</option><option value='str'>Kuvvet (Str) (+1)</option><option value='dex'>Çeviklik (Dex) (+1)</option><option value='con'>Dayanıklılık (Con) (+1)</option><option value='int'>Zeka (Int) (+1)</option><option value='wis'>Akıl (Wis) (+1)</option><option value='cha'>Karizma (Cha) (+1)</option></select><br><br><strong class='bold'>Beceriler:  </strong><span class='ciz'>Seçeceğin bir beceride uzmanlık kazanırsın.</span><br>Geri kalan özellikleri Irklar sayfasından bakınız."
     },
     "Elf(Ulu)": {
         title: "Elf(Ulu)",
@@ -339,6 +339,10 @@ function calculateSkillSlots() {
         skillSlots += 2;
     }else if (selectedClass === 'Wizard') {
         skillSlots += 2;
+    }
+    const selectedRace = document.getElementById('race').value;
+    if (selectedRace === 'HumanVariant') {
+        skillSlots += 1;
     }
 
     const selectedBackground = document.getElementById('background').value;
