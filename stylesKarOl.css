@@ -303,7 +303,7 @@ p {
     font-size: 24px;
     color: #7f7f7f;
     pointer-events: none;
-    top: 65px;
+    top: 17mm;
     left: 15px;
 }
 
@@ -312,7 +312,7 @@ p {
     font-size: 24px;
     color: #7f7f7f;
     pointer-events: none;
-    top: 110px;
+    top: 29mm;
     left: 16px;
 }
 .arkaplan-text3 {
@@ -320,7 +320,7 @@ p {
     font-size: 24px;
     color: #7f7f7f;
     pointer-events: none;
-    top: 154px;
+    top: 40.6mm;
     left: 16px;
 }
 .arkaplan-text4 {
@@ -328,7 +328,7 @@ p {
     font-size: 24px;
     color: #7f7f7f;
     pointer-events: none;
-    top: 199px;
+    top: 52.1mm;
     left: 16px;
 }
 .arkaplan-text5 {
@@ -336,7 +336,7 @@ p {
     font-size: 24px;
     color: #7f7f7f;
     pointer-events: none;
-    top: 242px;
+    top: 63.8mm;
     left: 16px;
 }
 .arkaplan-text6 {
@@ -344,8 +344,8 @@ p {
     font-size: 24px;
     color: #7f7f7f;
     pointer-events: none;
-    top: 286px;
-    left: 16px;
+    top: 75.6mm;
+    left: 17px;
 }
 #assignStats{
     font-size: 1em;
