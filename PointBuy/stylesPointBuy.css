@@ -15,6 +15,8 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: #ecf0f1;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -39,17 +41,20 @@ thead {
 
 thead th {
     padding: 10px;
+    text-align: center;
 }
 
 tbody td {
     padding: 10px;
     border-top: 1px solid #7f8c8d;
+    text-align: center;
 }
 
 input[type="number"] {
     width: 60px;
     padding: 5px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .summary {
@@ -75,4 +80,21 @@ button:disabled {
 
 p {
     margin: 0;
+}
+
+/* Mobil cihazlar için medya sorgusu */
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 20px);
+        margin: 0 10px;
+        padding: 10px;
+    }
+
+    table th, table td {
+        padding: 5px;
+    }
+
+    button {
+        padding: 8px;
+    }
 }
