@@ -86,6 +86,7 @@ p {
 @media (max-width: 600px) {
     .container {
         width: calc(100% - 0);
+        padding: 0px;
     }
 
     table th, table td {
