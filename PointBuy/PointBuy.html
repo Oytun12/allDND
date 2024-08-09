@@ -8,11 +8,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Cihaz genişliği 800px'den küçükse
-            if (window.innerWidth < 700) {
+            if (window.innerWidth < 600) {
                 // Yeni meta etiketini oluştur
                 var metaTag = document.createElement('meta');
                 metaTag.name = "viewport";
-                metaTag.content = "width=700, initial-scale=" + (window.innerWidth / 800);
+                metaTag.content = "width=600, initial-scale=" + (window.innerWidth / 800);
   
                 // Meta etiketini head'e ekle
                 document.head.appendChild(metaTag);
