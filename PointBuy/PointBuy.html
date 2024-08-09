@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D&D Character Creator (Point Buy)</title>
     <link rel="stylesheet" href="stylesPointBuy.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Cihaz genişliği 800px'den küçükse
+            if (window.innerWidth < 800) {
+                // Yeni meta etiketini oluştur
+                var metaTag = document.createElement('meta');
+                metaTag.name = "viewport";
+                metaTag.content = "width=800, initial-scale=" + (window.innerWidth / 800);
+  
+                // Meta etiketini head'e ekle
+                document.head.appendChild(metaTag);
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -18,7 +32,7 @@
                <li><a href="karGec.html">Karakter Geçmişleri</a></li>
                <li><a href="siniflar.html">Sınıflar</a></li>
                <li><a href="karakterOl.html">Karakter Oluşturma</a></li>
-               <li><a href="PointBuy/PointBuy.html">Karakter Oluşturma (Point Buy)</a></li>
+               <li><a href="PointBuy.html">Karakter Oluşturma (Point Buy)</a></li>
            </ul>
        </nav>
      </header>
