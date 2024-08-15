@@ -284,7 +284,7 @@ select {
     border-radius: 5px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); */
 }
-#background-info h3, #class-info h3, #race-info h3 {
+#background-info h3, #class-info h3, #race-info h3, #race-variant-H h3, #race-variant-E h3{
     margin-top: 0;
     color: #8b4513;
 }
