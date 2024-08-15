@@ -171,17 +171,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (customBonus1) {
         customBonus1.addEventListener('change', () => {
             updateRaceBonuses(document.getElementById('race').value);
-        });
+            updateTotalsAndModifiers();
+         });
     }
 
     if (customBonus2) {
         customBonus2.addEventListener('change', () => {
             updateRaceBonuses(document.getElementById('race').value);
+            updateTotalsAndModifiers();
         });
     }
     if (customBonus3) {
         customBonus3.addEventListener('change', () => {
             updateRaceBonuses(document.getElementById('race').value);
+            updateTotalsAndModifiers();
         });
     }
     
