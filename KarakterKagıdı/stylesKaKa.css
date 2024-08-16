@@ -50,6 +50,11 @@ div{
         flex-wrap: wrap;
         /* justify-content: space-between; */
     }
+    #sol{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 /* ----------------------------------------------------------------------------------------------------- */
 
