@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f5e3;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    background-size: cover;
+}
+
+div{
+    border: solid 3px #333;
+    padding: 10px;
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+#ust{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#isim{
+    width: 100%;
+    height: 30px;
+}
+#ozellikler{
+    width: 100%;
+    height: 30px;
+}
+/* ----------------------------------------------------------------------------------------------------- */
+#alt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+@media (max-width: 695px) {
+    #alt{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+    }
+}
+/* ----------------------------------------------------------------------------------------------------- */
+
+#sol{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#sol-ust{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#sol-ust-sag{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#sol-ust-sol{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#stats{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#sol-alt-ust{
+    height: 30px;
+}
+#sol-alt-alt{
+    height: 90px;
+}
+/* -------------------------------------------- */
+    #inisiyatif{
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    #kurtarma{
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+    }    
+    #skills{
+        display: flex;
+        flex-direction: column;
+    }
+    table{
+        font-size: 0.8em;
+    }
+
+/* -------------------------------------------- */
+
+
+/* ----------------------------------------------------------------------------------------------------- */
+#orta{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#orta-ust{
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    #orta-ust-ust{
+        height: 100%; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+        #ac{
+            width: 100%;
+        }
+        #iniativ{
+            width: 100%;
+        }
+        #speed{
+            width: 100%;
+        }
+    #orta-ust-orta{
+        height: 100%; 
+    }
+    #orta-ust-alt{
+        height: 100%; 
+    }
+#orta-orta{
+    height: 100%;
+}
+#orta-alt{
+    height: 100%;
+}
+/* ----------------------------------------------------------------------------------------------------- */
+
+#sag{
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#sag-ust{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#sag-ust-kisilik{
+    height: 50px;
+}
+#sag-ust-ideals{
+    height: 50px;
+}
+#sag-ust-bonds{
+    height: 50px;
+}
+#sag-ust-flaws{
+    height: 50px;
+}
+
+
+#sag-alt{
+    height: 100%;
+}
