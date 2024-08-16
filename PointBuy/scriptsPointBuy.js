@@ -220,8 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         alert('Character created successfully!');
-        form.reset();
-        updateRaceBonuses('select');
+        // form.reset();
+        // updateRaceBonuses('select');
         calculatePointsRemaining();
         updateTotalsAndModifiers();
     });
