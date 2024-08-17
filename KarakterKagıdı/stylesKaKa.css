@@ -141,84 +141,7 @@ table{
     flex-direction: row;
     justify-content: space-between;
 }
-@media (max-width: 695px) {
-    #alt{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        /* justify-content: space-between; */
-    }
-    #sol{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    #orta{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 10px; 
-    }
-    #orta-orta{
-        display: flex; 
-        justify-content: center; 
-        align-items: flex-start;
-        border-radius: 10px;
-        border: solid 3px #333;
-        height: 100%;
-        margin-bottom: 10px; 
-    }
-    #orta-alt{
-        display: flex; 
-        justify-content: center; 
-        align-items: flex-start;
-        border-radius: 10px;
-        border: solid 3px #333;
-        height: 100%;
-        margin-bottom: 10px; 
-    }
-    #yetenekler{
-        margin-left: 3px;
-        margin-bottom: 15px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        /* background-color: #dfdede;
-        border-radius: 10px;
-        border: solid 3px #333;  */
-    }
-    #PP{
-        padding: 5px;
-        text-align: center;
-        border-radius: 10px 10px 0 0;
-        border: solid 3px #333;  
-        margin-bottom: 5px;
-    }
-    #ozelliklerDiller{
-        padding: 5px 0 5px 0;
-        text-align: center;
-        height: calc(100% - 55px);
-        border-radius: 0 0 10px 10px;
-        border: solid 3px #333;  
-    }
-    #sag-ust{
-        padding-top: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border-radius: 10px;   
-        background-color: #dfdede;
-    }
-    #sag-alt{
-        text-align: center;
-        height: 100%;
-        border-radius: 10px;
-        border: solid 2px #333;
-        margin: 10px 0 0 0;
-    }
-}
+
 /* ----------------------------------------------------------------------------------------------------- */
 
 #sol{
@@ -469,6 +392,7 @@ table{
     border-radius: 10px;
     border: solid 3px #333;
     height: 100%;
+    margin-bottom: 10px;
 }
 #saldırı{
     text-align: center;
@@ -554,4 +478,87 @@ table{
     border-radius: 10px;
     border: solid 2px #333;
     margin: 10px 0 0 10px;
+}
+
+@media (max-width: 695px) {
+    #alt{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+    }
+    #sol{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #orta{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 10px; 
+    }
+    #orta-orta{
+        display: flex; 
+        justify-content: center; 
+        align-items: flex-start;
+        border-radius: 10px;
+        border: solid 3px #333;
+        height: 100%;
+        margin-bottom: 10px; 
+    }
+    #orta-alt{
+        display: flex; 
+        justify-content: center; 
+        align-items: flex-start;
+        border-radius: 10px;
+        border: solid 3px #333;
+        height: 100%;
+        margin-bottom: 10px; 
+    }
+    #yetenekler{
+        margin-left: 3px;
+        margin-bottom: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        /* background-color: #dfdede;
+        border-radius: 10px;
+        border: solid 3px #333;  */
+    }
+    #PP{
+        padding: 5px;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+        border: solid 3px #333;  
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+    #ozelliklerDiller{
+        padding: 5px 0 5px 0;
+        text-align: center;
+        height: calc(100% - 55px);
+        border-radius: 0 0 10px 10px;
+        border: solid 3px #333;  
+        margin-right: 0;
+    }
+    #sag-ust{
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 10px;   
+        background-color: #dfdede;
+        margin-left: 0;
+    }
+    #sag-alt{
+        text-align: center;
+        height: 100%;
+        border-radius: 10px;
+        border: solid 2px #333;
+        margin: 10px 0 0 0;
+    }
 }
