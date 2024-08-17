@@ -65,6 +65,7 @@ table{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-radius: 10px;
     border: solid 3px #333;
 }
 #ust-isim{
@@ -151,6 +152,31 @@ table{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+    #orta{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 10px; 
+    }
+    #orta-orta{
+        display: flex; 
+        justify-content: center; 
+        align-items: flex-start;
+        border-radius: 10px;
+        border: solid 3px #333;
+        height: 100%;
+        margin-bottom: 10px; 
+    }
+    #orta-alt{
+        display: flex; 
+        justify-content: center; 
+        align-items: flex-start;
+        border-radius: 10px;
+        border: solid 3px #333;
+        height: 100%;
+        margin-bottom: 10px; 
     }
 }
 /* ----------------------------------------------------------------------------------------------------- */
