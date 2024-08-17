@@ -6,21 +6,21 @@
     <title>D&D Karakter Kağıdı</title>
     <link rel="stylesheet" href="stylesKaKa.css">
 </head>
-<body> 
+<body>
     <!-- <div id=""></div> -->
     <div class="container">
-        <div id="ust">
-            <div id="isim">Karakter İsmi:</div>
+        <div id="ust"><div id="ust-isim">
+            <div id="isim">Karakter İsmi:<textarea id="noteArea-isim" placeholder="Notlarınızı buraya yazın..."></textarea></div></div>
             <div id="ozellikler">
                 <div id="ozellikler-ust">
-                    <div id="classLevel">Sınıf/ Level:</div>
-                    <div id="background">Karakter Geçmişi:</div>
-                    <div id="PlayerName">Oyuncu İsmi:</div>
+                    <div id="classLevel">Sınıf/ Level:<textarea id="noteArea-ust" placeholder="Sınıf/ Level"></textarea></div>
+                    <div id="background">Karakter Geçmişi:<textarea id="noteArea-ust" placeholder="Karakter Geçmişi"></textarea></div>
+                    <div id="PlayerName">Oyuncu İsmi:<textarea id="noteArea-ust" placeholder="Oyuncu İsmi"></textarea></div>
                 </div>
                 <div id="ozellikler-alt">
-                    <div id="race">Irk:</div>
-                    <div id="alignment">ALIGNMENT:</div>
-                    <div id="EP">Deneyim Puanı:</div>
+                    <div id="race">Irk:<textarea id="noteArea-alt" placeholder="Irk"></textarea></div>
+                    <div id="alignment">Alignment:<textarea id="noteArea-alt" placeholder="Alignment"></textarea></div>
+                    <div id="EP">Deneyim Puanı:<textarea id="noteArea-alt" placeholder="Deneyim Puanı"></textarea></div>
                 </div>
             </div>
         </div>
@@ -39,124 +39,156 @@
                         </div>
                     </div>
                     <div id="sol-ust-sag">
-                        <div id="inspration">+ İnspration</div>
-                        <div id="Proficiency">(+2) Proficiency Bonus</div>
-                        <div id="kurtarma"><table>
-                            <tbody><tr>
-                                <th>Özellik</th>
-                                <th>Skor</th>
-                            </tr>
-                            <tr>
-                                <td>Strenght</td>
-                                <td>-1</td>
-                            </tr>
-                            <tr>
-                                <td>Dexterity</td>
-                                <td>-1</td>
-                            </tr>
-                            <tr>
-                                <td>Constution</td>
-                                <td>-1</td>
-                            </tr>
-                            <tr>
-                                <td>İntelligence</td>
-                                <td>-1</td>
-                            </tr>
-                            <tr>
-                                <td>Wisdom</td>
-                                <td>-1</td>
-                            </tr>
-                            <tr>
-                                <td>Charizma</td>
-                                <td>-1</td>
-                            </tr>
-                        </tbody></table>
-                    </div>
-                        <div id="skills">
-                            <table>
+                        <div id="yetenekler">
+                            <div id="inspration">+ İnspration</div>
+                            <div id="Proficiency">(+2) Proficiency Bonus</div>
+                            <div id="kurtarma"><table>
                                 <tbody><tr>
-                                    <th>Özellik</th>
+                                    <th>Prf</th>
+                                    <th>Kurtarma at</th>
                                     <th>Skor</th>
                                 </tr>
                                 <tr>
-                                    <td>Athletics</td>
+                                    <td><span class="checkbox" id="str-checkbox"></span></td>
+                                    <td>Strenght</td>
                                     <td>-1</td>
                                 </tr>
                                 <tr>
-                                    <td>Acrobatics</td>
+                                    <td><span class="checkbox" id="dex-checkbox"></span></td>
+                                    <td>Dexterity</td>
                                     <td>-1</td>
                                 </tr>
                                 <tr>
-                                    <td>Sleight of Hand</td>
+                                    <td><span class="checkbox" id="con-checkbox"></span></td>
+                                    <td>Constution</td>
                                     <td>-1</td>
                                 </tr>
                                 <tr>
-                                    <td>Stealth</td>
+                                    <td><span class="checkbox" id="int-checkbox"></span></td>
+                                    <td>İntelligence</td>
                                     <td>-1</td>
                                 </tr>
                                 <tr>
-                                    <td>History</td>
+                                    <td><span class="checkbox" id="wis-checkbox"></span></td>
+                                    <td>Wisdom</td>
                                     <td>-1</td>
                                 </tr>
                                 <tr>
-                                    <td>Religion</td>
+                                    <td><span class="checkbox" id="cha-checkbox"></span></td>
+                                    <td>Charizma</td>
                                     <td>-1</td>
                                 </tr>
-                                <tr>
-                                    <td>Investigation</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Nature</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Arcana</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Animal Handling</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Insight</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Medicine</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Perception</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Survival</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Deception</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Persuasion</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Performance</td>
-                                    <td>-1</td>
-                                </tr>
-                                <tr>
-                                    <td>Intimidation</td>
-                                    <td>-1</td>
-                                </tr>
-                            </tbody></table>
-                        </div>
+                                </tbody></table>
+                            </div>
+                            <div id="skills">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th>Prf</th>
+                                            <th>Skill</th>
+                                            <th>Bonus</th>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="athletics-checkbox"></span></td>
+                                            <td>Athletics</td>
+                                            <td><span id="athletics-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="acrobatics-checkbox"></span></td>
+                                            <td>Acrobatics</td>
+                                            <td><span id="acrobatics-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="sleightOfHand-checkbox"></span></td>
+                                            <td>Sleight of Hand</td>
+                                            <td><span id="sleightOfHand-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="stealth-checkbox"></span></td>
+                                            <td>Stealth</td>
+                                            <td><span id="stealth-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="history-checkbox"></span></td>
+                                            <td>History</td>
+                                            <td><span id="history-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="religion-checkbox"></span></td>
+                                            <td>Religion</td>
+                                            <td><span id="religion-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="investigation-checkbox"></span></td>
+                                            <td>Investigation</td>
+                                            <td><span id="investigation-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="nature-checkbox"></span></td>
+                                            <td>Nature</td>
+                                            <td><span id="nature-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="arcana-checkbox"></span></td>
+                                            <td>Arcana</td>
+                                            <td><span id="arcana-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="animalHandling-checkbox"></span></td>
+                                            <td>Animal Handling</td>
+                                            <td><span id="animalHandling-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="insight-checkbox"></span></td>
+                                            <td>Insight</td>
+                                            <td><span id="insight-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="medicine-checkbox"></span></td>
+                                            <td>Medicine</td>
+                                            <td><span id="medicine-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="perception-checkbox"></span></td>
+                                            <td>Perception</td>
+                                            <td><span id="perception-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="survival-checkbox"></span></td>
+                                            <td>Survival</td>
+                                            <td><span id="survival-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="deception-checkbox"></span></td>
+                                            <td>Deception</td>
+                                            <td><span id="deception-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="persuasion-checkbox"></span></td>
+                                            <td>Persuasion</td>
+                                            <td><span id="persuasion-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="performance-checkbox"></span></td>
+                                            <td>Performance</td>
+                                            <td><span id="performance-bonus">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="checkbox" id="intimidation-checkbox"></span></td>
+                                            <td>Intimidation</td>
+                                            <td><span id="intimidation-bonus">0</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> 
                     </div>
                 </div>
                 <div id="sol-alt">
                     <div id="PP">(+wisB) Pasive Perception</div>
-                    <div id="ozelliklerDiller">Diğer Özellikler ve Diller</div>
+                    <div id="ozelliklerDiller">Diğer Özellikler ve Diller <hr> 
+                        <textarea id="noteArea" placeholder="Notlarınızı buraya yazın..."></textarea>
+                    </div>
                 </div>
             </div>
 <!-- ------------------------------------------------------------------------------- -->
@@ -177,43 +209,45 @@
                     </div>
                 </div>
                 <div id="orta-orta">
-                <table>
-                    <tbody><tr>
-                        <th>NAME</th>
-                        <th>ATK BONUS</th>
-                        <th>DAMAGE/ TYPE</th>
-                    </tr>
-                    <tr>
-                        <td>Strenght</td>
-                        <td>-1</td>
-                        <td>-1</td>
-                    </tr>
-                    <tr>
-                        <td>Dexterity</td>
-                        <td>-1</td>
-                        <td>-1</td>
-                    </tr>
-                    <tr>
-                        <td>Constution</td>
-                        <td>-1</td>
-                        <td>-1</td>
-                    </tr>
-                    <tr>
-                        <td>İntelligence</td>
-                        <td>-1</td>
-                        <td>-1</td>
-                    </tr>
-                    <tr>
-                        <td>Wisdom</td>
-                        <td>-1</td>
-                        <td>-1</td>
-                    </tr>
-                    <tr>
-                        <td>Charizma</td>
-                        <td>-1</td>
-                        <td>-1</td>
-                    </tr>
-                </tbody></table>
+                <div id="saldırı">
+                    <table>
+                        <tbody><tr>
+                            <th>NAME</th>
+                            <th>ATK BONUS</th>
+                            <th>DAMAGE/ TYPE</th>
+                        </tr>
+                        <tr>
+                            <td>Strenght</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                        <tr>
+                            <td>Dexterity</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                        <tr>
+                            <td>Constution</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                        <tr>
+                            <td>İntelligence</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                        <tr>
+                            <td>Wisdom</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                        <tr>
+                            <td>Charizma</td>
+                            <td>-1</td>
+                            <td>-1</td>
+                        </tr>
+                    </tbody></table>
+                   </div> 
                 </div>
                 <div id="orta-alt">
                     <div id="para">
@@ -241,23 +275,24 @@
                             </tr>
                         </tbody></table>
                     </div>
-                    <div id="ekipman">Ekipman <hr></div>
+                    <div id="ekipman">Ekipman <hr><textarea id="noteArea" placeholder="Notlarınızı buraya yazın..."></textarea></div>
                 </div>
             </div>
 <!-- ------------------------------------------------------------------------------- -->
             <div id="sag">
                 <div id="sag-ust">
-                    <div id="kisilik">Kişilik Özellikleri <hr>Lorem İmpsun</div>
-                    <div id="ideals">İdealler <hr>Lorem İmpsun</div>
-                    <div id="bonds">Bond <hr>Lorem İmpsun</div>
-                    <div id="flaws">Flaws <hr>Lorem İmpsun</div>
+                    <div id="kisilik">Kişilik Özellikleri <hr><textarea id="noteArea" placeholder="Notlarınızı buraya yazın..."></textarea></div>
+                    <div id="ideals">İdealler <hr><textarea id="noteArea" placeholder="Notlarınızı buraya yazın..."></textarea></div>
+                    <div id="bonds">Bond <hr><textarea id="noteArea" placeholder="Notlarınızı buraya yazın..."></textarea></div>
+                    <div id="flaws">Flaws <hr><textarea id="noteArea" placeholder="Notlarınızı buraya yazın..."></textarea></div>
                 </div>
-                <div id="sag-alt">FEATURES & TRAITS</div>
+                <div id="sag-alt">FEATURES & TRAITS <hr><textarea id="noteArea" placeholder="Notlarınızı buraya yazın..."></textarea></div>
             </div>
 <!-- ------------------------------------------------------------------------------- -->     
         </div>
     
     </div>
+    <script src="scriptKaKa.js"></script>
 </body>
 </html>
 
