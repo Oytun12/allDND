@@ -18,27 +18,55 @@ body {
     background-size: cover;
 }
 
-div{
+/* div{
     border: solid 3px #333;
     padding: 10px;
+} */
+hr {
+    border: 2px solid #862F1B;
+    width: 100%;
 }
-
+th{
+    border: solid 1px #333;
+}
+td{
+    border: solid 1px #3333335f;
+}
+table{
+    font-size: 0.8em;
+}
 /* ----------------------------------------------------------------------------------------------------- */
 #ust{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border: solid 3px #333;
 }
 #isim{
     width: 100%;
-    height: 30px;
+    height: 100%;
 }
 #ozellikler{
     width: 100%;
-    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: solid 3px #333;
+}
+#ozellikler-ust{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 1px #333;
+}
+#ozellikler-alt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 /* ----------------------------------------------------------------------------------------------------- */
 #alt{
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -69,12 +97,6 @@ div{
     flex-direction: row;
     justify-content: space-between;
 }
-#sol-ust-sag{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 #sol-ust-sol{
     width: 100%;
     display: flex;
@@ -82,36 +104,112 @@ div{
     justify-content: space-between;
 }
 #stats{
+    margin-left: 3px;
+    max-width: 80px;
+    padding: 25px 15px 15px 10px;
+    margin-bottom: 15px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #dfdede;
+    border-radius: 10px;
+    border: solid 3px #333; 
 }
-#sol-alt-ust{
-    height: 30px;
+
+#str{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #333;
+    background-color: #fff;
 }
-#sol-alt-alt{
+#dex{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #333;    
+    background-color: #fff;
+}
+#con{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #333;    
+    background-color: #fff;
+}
+#int{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #333;    
+    background-color: #fff;
+}
+#wis{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #333;    
+    background-color: #fff;
+}
+#cha{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: solid 3px #333;    
+    background-color: #fff;
+}
+#PP{
+    border-radius: 10px;
+    border: solid 3px #333;  
+}
+#ozelliklerDiller{
     height: 90px;
+    border: solid 3px #333;  
 }
 /* -------------------------------------------- */
-    #inisiyatif{
-        height: 30px;
+#sol-ust-sag{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f9f5e3;
+}
+    #inspration{
+        padding: 5px;
+        border-radius: 10px;
+        border: solid 3px #333; 
+    }
+    #Proficiency{
+        height: 35px;
+        padding: 5px;
+        text-align: center;
         display: flex;
         flex-direction: column;
+        border-radius: 10px;
+        border: solid 3px #333; 
     }
     #kurtarma{
-        height: 30px;
         display: flex;
         flex-direction: column;
+        border-radius: 10px;
+        border: solid 3px #333; 
+        padding: 5px;
     }    
     #skills{
         display: flex;
         flex-direction: column;
+        border-radius: 10px;
+        border: solid 3px #333; 
+        padding: 5px;
     }
-    table{
-        font-size: 0.8em;
-    }
-
 /* -------------------------------------------- */
 
 
@@ -135,26 +233,61 @@ div{
         justify-content: space-between;
     }
         #ac{
+            text-align: center;
             width: 100%;
+            border-radius: 10px;
         }
         #iniativ{
+            text-align: center;
             width: 100%;
+            border-radius: 10px;
         }
         #speed{
+            text-align: center;
             width: 100%;
+            border-radius: 10px;
         }
     #orta-ust-orta{
         height: 100%; 
     }
+        #CHitPoint{
+            border-radius: 5px;
+        }
+        #THitPoint{
+            border-radius: 5px;
+        }
     #orta-ust-alt{
         height: 100%; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
+        #HitDice{
+            width: 100%;
+        }
+        #DeathSaves{
+            text-align: center;
+            width: 100%;
+        }
 #orta-orta{
     height: 100%;
 }
+
 #orta-alt{
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+    /* #para{
+        padding: -10px;
+    } */
+    #ekipman{
+        width: 100%;
+        text-align: center;
+    }
+
+
 /* ----------------------------------------------------------------------------------------------------- */
 
 #sag{
@@ -168,20 +301,25 @@ div{
     flex-direction: column;
     justify-content: space-between;
 }
-#sag-ust-kisilik{
-    height: 50px;
+#kisilik{
+    text-align: center;
+    height: 100%;
 }
-#sag-ust-ideals{
-    height: 50px;
+#ideals{
+    text-align: center;
+    height: 100%;
 }
-#sag-ust-bonds{
-    height: 50px;
+#bonds{
+    text-align: center;
+    height: 100%;
 }
-#sag-ust-flaws{
-    height: 50px;
+#flaws{
+    text-align: center;
+    height: 100%;
 }
 
 
 #sag-alt{
+    text-align: center;
     height: 100%;
 }
