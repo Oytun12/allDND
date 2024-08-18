@@ -157,67 +157,72 @@ table{
     margin-bottom: -5px;
 }
 #sol-ust-sol{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 50%;
+    margin-bottom: 15px;
 }
 #stats{
     margin-left: 3px;
-    max-width: 80px;
-    padding: 25px 15px 15px 10px;
-    margin-bottom: 15px;
-    height: 100%;
+    /* max-width: 80px; */
+    /* padding: 25px 15px 15px 10px; */
+    width: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: space-between;
     background-color: #dfdede;
     border-radius: 10px;
-    border: solid 3px #333; 
+    /* border: solid 3px #333;  */
 }
 
-#str{
+#str, #dex, #con, #int, #wis, #cha {
+    position: relative;
+    width: 70px;
+    height: 75px;
     text-align: center;
+    line-height: 15px;
     padding:20px 5px 20px 5px;
-    border-radius: 10px;
-    border: solid 3px #333;
-    background-color: #fff;
+    background-size: 100% 100%;      /* Elementin genişliğine ve yüksekliğine eşitler */
+    background-clip: border-box;
+    background-image: url('svg/StatBox.svg'); /* SVG dosyanızın yolu */
+    background-repeat: no-repeat; /* Görselin tekrar etmesini engeller */
+    background-position: center; /* Ortalanmasını sağlar */
 }
+
 #dex{
     text-align: center;
     padding:20px 5px 20px 5px;
-    border-radius: 10px;
+    /* border-radius: 10px;
     border: solid 3px #333;    
-    background-color: #fff;
+    background-color: #fff; */
 }
 #con{
     text-align: center;
     padding:20px 5px 20px 5px;
-    border-radius: 10px;
+    /* border-radius: 10px;
     border: solid 3px #333;    
-    background-color: #fff;
+    background-color: #fff; */
 }
 #int{
     text-align: center;
     padding:20px 5px 20px 5px;
-    border-radius: 10px;
+    /* border-radius: 10px;
     border: solid 3px #333;    
-    background-color: #fff;
+    background-color: #fff; */
 }
 #wis{
     text-align: center;
     padding:20px 5px 20px 5px;
-    border-radius: 10px;
+    /* border-radius: 10px;
     border: solid 3px #333;    
-    background-color: #fff;
+    background-color: #fff; */
 }
 #cha{
     text-align: center;
     padding:20px 5px 20px 5px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    /* border-radius: 10px;
     border: solid 3px #333;    
-    background-color: #fff;
+    background-color: #fff; */
 }
 #sol-alt{
     height: 100%;
@@ -524,9 +529,8 @@ table{
         justify-content: space-between;
     }
     #yetenekler{
-        width: 100%;
-        margin-left: 3px;
         margin-bottom: 15px;
+        margin-left: 20px;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -539,9 +543,9 @@ table{
     #str, #dex, #con, #int, #wis, #cha {
         text-align: center;
         padding:20px 10px 20px 10px;
-        border-radius: 10px;
+        /* border-radius: 10px;
         border: solid 3px #333;
-        background-color: #fff;
+        background-color: #fff; */
     }
 
     #PP{
