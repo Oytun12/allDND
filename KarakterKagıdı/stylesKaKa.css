@@ -486,11 +486,41 @@ table{
 }
 
 @media (max-width: 695px) {
+    #ust{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 10px;
+        border: solid 3px #333;
+    }
     #ust-isim{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: solid 3px #333;
+    }
+    #ozellikler{
+        padding-left: 5px;
+        padding: 5px;
+        width: 98%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: none;
+    }
+    #ozellikler-ust{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: solid 1px #333;
+        margin-bottom: 3px;
+    }
+    #ozellikler-alt{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: -5px;
+    }
     #alt{
         display: flex;
         flex-direction: row;
