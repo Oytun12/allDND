@@ -486,6 +486,11 @@ table{
 }
 
 @media (max-width: 695px) {
+    #ust-isim{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
     #alt{
         display: flex;
         flex-direction: row;
