@@ -517,7 +517,14 @@ table{
         height: 100%;
         margin-bottom: 10px; 
     }
+    #sol-ust-sol{
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     #yetenekler{
+        width: 100%;
         margin-left: 3px;
         margin-bottom: 15px;
         height: 100%;
@@ -529,6 +536,14 @@ table{
         border-radius: 10px;
         border: solid 3px #333;  */
     }
+    #str, #dex, #con, #int, #wis, #cha {
+        text-align: center;
+        padding:20px 10px 20px 10px;
+        border-radius: 10px;
+        border: solid 3px #333;
+        background-color: #fff;
+    }
+
     #PP{
         padding: 5px;
         text-align: center;
