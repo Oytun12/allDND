@@ -4,6 +4,9 @@ body {
     color: #333;
     margin: 0;
     min-width: 500px;
+    transform: scale(0.8);
+    transform-origin: 0 0;
+    width: 125%;
 }
 
 .container {
@@ -159,6 +162,26 @@ table{
 #sol-ust-sol{
     width: 50%;
     margin-bottom: 15px;
+    align-items: center;
+}
+#inspration{
+    margin-top: 7px;
+    white-space: pre;
+    display: flex; /* Flexbox modelini etkinleştirir */
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    height: 100%; /* Div'in yüksekliğini belirleyin (ihtiyacınıza göre) */
+    width: 100%; /* Div'in genişliğini belirleyin (ihtiyacınıza göre) */
+    width: 140pt;
+    height: 45pt;
+    margin-bottom: 7px;
+    margin-left: 3px;
+    text-align: center;
+    background-size: 100% 100%;      /* Elementin genişliğine ve yüksekliğine eşitler */
+    background-clip: border-box;
+    background-image: url('svg/İnspration2.svg'); /* SVG dosyanızın yolu */
+    background-repeat: no-repeat; /* Görselin tekrar etmesini engeller */
+    background-position: center; /* Ortalanmasını sağlar */
 }
 #stats{
     margin-left: 3px;
@@ -228,24 +251,6 @@ table{
     border-radius: 10px;
     border: solid 3px #333;  */
 }
-    #inspration{
-        margin-top: 10px;
-        white-space: pre;
-        display: flex; /* Flexbox modelini etkinleştirir */
-        justify-content: center; /* Yatayda ortalar */
-        align-items: center; /* Dikeyde ortalar */
-        height: 100%; /* Div'in yüksekliğini belirleyin (ihtiyacınıza göre) */
-        width: 100%; /* Div'in genişliğini belirleyin (ihtiyacınıza göre) */
-        width: 172pt;
-        height: 45pt;
-        margin-bottom: 5px;
-        text-align: center;
-        background-size: 100% 100%;      /* Elementin genişliğine ve yüksekliğine eşitler */
-        background-clip: border-box;
-        background-image: url('svg/İnspration.svg'); /* SVG dosyanızın yolu */
-        background-repeat: no-repeat; /* Görselin tekrar etmesini engeller */
-        background-position: center; /* Ortalanmasını sağlar */
-    }
     #Proficiency{
         white-space: pre;
         display: flex; /* Flexbox modelini etkinleştirir */
@@ -533,6 +538,11 @@ table{
 }
 
 @media (max-width: 695px) {
+    body {
+        transform: scale(0.8);
+        transform-origin: 0 0;
+        width: 125%;
+    }
     #ust{
         display: flex;
         flex-direction: column;
