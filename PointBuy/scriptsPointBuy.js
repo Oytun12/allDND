@@ -217,14 +217,14 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTotalsAndModifiers();
     });
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        alert('Character created successfully!');
-        // form.reset();
-        // updateRaceBonuses('select');
-        calculatePointsRemaining();
-        updateTotalsAndModifiers();
-    });
+    // form.addEventListener('submit', (event) => {
+    //     event.preventDefault();
+    //     alert('Character created successfully!');
+    //     // form.reset();
+    //     // updateRaceBonuses('select');
+    //     calculatePointsRemaining();
+    //     updateTotalsAndModifiers();
+    // });
 
     calculatePointsRemaining();
     updateTotalsAndModifiers();
