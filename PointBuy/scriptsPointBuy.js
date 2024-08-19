@@ -345,11 +345,11 @@ document.getElementById('race').addEventListener('change', updateRaceInfo);
 const backgroundInfoDiv = document.getElementById("background-info");
     
 const backgroundInfo = {
-    Soldier: {
+    Asker: {
         title: "Asker",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Atletizim</span> ve <span class='ciz'>Gözdağı</span> seçilmelidir.<br>Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    Sage: {
+    Bilge: {
         title: "Bilge",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Arcana</span> ve <span class='ciz'>Tarih</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
@@ -357,63 +357,63 @@ const backgroundInfo = {
         title: "Denizci",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Atletizim</span> ve <span class='ciz'>Algı</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    DenizciKorsan: {
+    Korsan: {
         title: "Alternatif Denizci (Korsan)",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Atletizim</span> ve <span class='ciz'>Algı</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    GosteriAdamı: {
+    "Gösteri Adamı": {
         title: "Gösteri Adamı",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Akrobasi</span> ve <span class='ciz'>Performance</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    GosteriAdamiGladyator: {
+    "Gösteri Adamı (Gladyatör)": {
         title: "Alternatif Gösteri Adamı (Gladyatör)",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong> <span class='ciz'>Akrobasi</span> ve <span class='ciz'>Performance</span> seçilmelidir. <br> Geri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    FolkHero: {
+    "Halk Kahramanı": {
         title: "Halk Kahramanı",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Hayvan İdaresi</span> ve <span class='ciz'>Hayatta Kalma</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    LocaZanaatkari: {
+    "Loca Zanaatkarı": {
         title: "Loca Zanaatkarı",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Sezgi</span> ve <span class='ciz'>İkna Etme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    LocaZanaatkariTuccar: {
+    "Loca Tüccarı": {
         title: "Alternatif Loca Zanaatkarı (Loca Tüccarı)t",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Sezgi</span> ve <span class='ciz'>İkna</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    Munzevi: {
+    "Münzevi": {
         title: "Münzevi (İnzivaya çekilmiş kimse)",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Tıp</span> ve <span class='ciz'>Din</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    Murit: {
+    "Mürit": {
         title: "Mürit",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Sezgi</span> ve <span class='ciz'>Din</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    SokakCocugu: {
+    "Sokak Çocuğu": {
         title: "Sokak Çocuğu",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>El Çubukluğu</span> ve <span class='ciz'>Gizlenme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    Soylu: {
+    "Soylu": {
         title: "Soylu",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Tarih</span> ve <span class='ciz'>İkna</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    SoyluSovalye: {
+    "Şövalye": {
         title: "Alternatif Soylu (Şövalye)",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Tarih</span> ve <span class='ciz'>İkna</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    Suclu: {
+    "Suçlu": {
         title: "Suçlu",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Aldatma</span> ve <span class='ciz'>Gizlenme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    SucluAjan: {
+    "Suçlu (Ajan)": {
         title: "Alternatif Suçlu (Ajan)",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Aldatma</span> ve <span class='ciz'>Gizlenme</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    Yabanci: {
+    "Yabancı": {
         title: "Yabancı",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Atletizim</span> ve <span class='ciz'>Hayatta Kalma</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
-    Sarlatan: {
+    "Şarlatan": {
         title: "Şarlatan",
         description: "<hr><strong class='bold'>Beceri Uzmanlıkları:</strong><span class='ciz'>Aldatma</span> ve <span class='ciz'>El Çabukluğu</span> seçilmelidir. <brGeri kalan özellikleri Karakter Geçmişleri sayfasından bakınız."
     },
@@ -445,15 +445,15 @@ document.getElementById('background').addEventListener('change', updateBackgroun
 const classInfoDiv = document.getElementById("class-info");
 
 const classInfo = {
-    Barbarian: {
+    Barbar: {
         title: "Barbar",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:  </strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:  </strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 12 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'>Hayvan İdaresi, Atletizm, Gözdağı, Doğa, Algı, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Bard: {
-        title: "Bard",
+    Ozan: {
+        title: "Ozan",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong><span class='ciz'>Tümü arasından 3 tane seç.</span><br>Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Cleric: {
+    Rahip: {
         title: "Rahip",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'>Tarih, Sezgi, Tıp, İkna, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
@@ -461,11 +461,11 @@ const classInfo = {
         title: "Druid",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Akıl</span>   <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Hayvan İdaresi, Sezgi, Tıp, Doğa, Algı, Din, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Fighter: {
+    Savaşçı: {
         title: "Savaşçı",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Akrobasi, Hayvan İdaresi, Atletizm, Tarih, Sezgi, Gözdağı, Algı, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Monk: {
+    Keşiş: {
         title: "Keşiş",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'>Akrobasi, Atletizm, Tarih, Sezgi, Din, ve Gizlenme.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
@@ -473,15 +473,15 @@ const classInfo = {
         title: "Paladin",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Kuvvet</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Atletizm, Sezgi, Gözdağı, Tıp, İkna, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Ranger: {
+    Korucu: {
         title: "Korucu",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 10 + Dayanıklılık bonus</span>u<br><strong class='bold'>Beceriler:  </strong>Bunlardan 3 tanesini seç: <span class='ciz'> Hayvan İdaresi, Atletizm, Sezgi, İnceleme, Doğa, Algı, Gizlenme, ve Hayatta Kalma.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Rogue: {
+    Hırsız: {
         title: "Düzenbaz",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Karizma</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 4 tanesini seç: <span class='ciz'> Akrobasi, Atletizm, Aldatma, Sezgi, Gözdağı, İnceleme, Algı, Performans, İkna, El Çabukluğu, ve Gizlenme.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Sorcerer: {
+    Sihrbaz: {
         title: "Sihirbaz (Sorcerer)",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Dayanıklılık</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 6 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Aldatma, Sezgi, Gözdağı, İkna, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
@@ -489,7 +489,7 @@ const classInfo = {
         title: "Warlock",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Karizma</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Akıl</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 8 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Aldatma, Tarih, Gözdağı, İnceleme, Doğa, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     },
-    Wizard: {
+    Büyücü: {
         title: "Büyücü",
         description: "<hr><strong class='bold'>Tavsiye edilen birincil öncelikli stat:</strong> <span class='ciz'>Zeka</span> <br><strong class='bold'>Tavsiye edilen ikincil öncelikli stat:</strong> <span class='ciz'>Çeviklik</span><br><strong class='bold'>1. seviyede Hit Puanı: </strong><span class='ciz'> 6 + Dayanıklılık bonusu</span><br><strong class='bold'>Beceriler:  </strong>Bunlardan 2 tanesini seç: <span class='ciz'> Arcana, Tarih, Sezgi, İnceleme, Tıp, ve Din.</span><br> Geri kalan özellikleri Sınıflar sayfasından bakınız."
     }
@@ -533,40 +533,40 @@ function calculateSkillSlots() {
     let skillSlots = 0; // Yerel skillSlots değişkeni
 
     const selectedClass = document.getElementById('class').value;
-    if (selectedClass === 'Barbarian') {
+    if (selectedClass === 'Barbar') {
         skillSlots += 2;
-    } else if (selectedClass === 'Bard') {
+    } else if (selectedClass === 'Ozan') {
         skillSlots += 3;
-    } else if (selectedClass === 'Cleric') {
+    } else if (selectedClass === 'Rahip') {
         skillSlots += 2;
     }else if (selectedClass === 'Druid') {
         skillSlots += 2;
-    }else if (selectedClass === 'Fighter') {
+    }else if (selectedClass === 'Savaşçı') {
         skillSlots += 2;
-    }else if (selectedClass === 'Monk') {
+    }else if (selectedClass === 'Keşiş') {
         skillSlots += 2;
     }else if (selectedClass === 'Paladin') {
         skillSlots += 2;
-    }else if (selectedClass === 'Ranger') {
+    }else if (selectedClass === 'Korucu') {
         skillSlots += 3;
-    }else if (selectedClass === 'Rogue') {
+    }else if (selectedClass === 'Hırsız') {
         skillSlots += 4;
-    }else if (selectedClass === 'Sorcerer') {
+    }else if (selectedClass === 'Sihrbaz') {
         skillSlots += 2;
     }else if (selectedClass === 'Warlock') {
         skillSlots += 2;
-    }else if (selectedClass === 'Wizard') {
+    }else if (selectedClass === 'Büyücü') {
         skillSlots += 2;
     }
 
 
     const selectedBackground = document.getElementById('background').value;
     const backgroundsWithBonus = [
-        'Criminal', 'FolkHero', 'Sage', 'Soldier', 
-        'Denizci', 'DenizciKorsan', 'GosteriAdamı', 'GosteriAdamiGladyator', 
-        'LocaZanaatkari', 'LocaZanaatkariTuccar', 'Munzevi', 'Murit', 
-        'SokakCocugu', 'Soylu', 'SoyluSovalye', 'Suclu', 'SucluAjan', 
-        'Yabanci', 'Sarlatan'
+        'Criminal', 'Halk Kahramanı', 'Bilge', 'Asker', 
+        'Denizci', 'Korsan', 'Gösteri Adamı', 'Gösteri Adamı (Gladyatör)', 
+        'Loca Zanaatkarı', 'Loca Tüccarı', 'Münzevi', 'Mürit', 
+        'Sokak Çocuğu', 'Soylu', 'Şövalye', 'Suçlu', 'Suçlu (Ajan)', 
+        'Yabancı', 'Şarlatan'
     ];
 
     if (backgroundsWithBonus.includes(selectedBackground)) {
@@ -760,31 +760,40 @@ document.addEventListener('click', (event) => {
 });  
 
 const KaKa = () => {
+    const selectedRace = document.getElementById('race').value;
 
+    const selectedClass = document.getElementById('class').value;
+
+    const selectedBackground = document.getElementById('background').value;
+
+    const dexModifierText = document.getElementById('dex-modifier').innerText;
+    const dexModifier = parseInt(dexModifierText, 10); // veya parseFloat eğer ondalıklı bir değer varsa
+    const AC = dexModifier + 10;
+    
     // Mevcut statları ve verileri al
     const stats = {
         str: {
-            total: document.getElementById('str').value,
+            total: document.getElementById('str-total').innerText,
             modifier: document.getElementById('str-modifier').innerText,
         },
         dex: {
-            total: document.getElementById('dex').value,
+            total: document.getElementById('dex-total').innerText,
             modifier: document.getElementById('dex-modifier').innerText,
         },
         con: {
-            total: document.getElementById('con').value,
+            total: document.getElementById('con-total').innerText,
             modifier: document.getElementById('con-modifier').innerText,
         },
         int: {
-            total: document.getElementById('int').value,
+            total: document.getElementById('int-total').innerText,
             modifier: document.getElementById('int-modifier').innerText,
         },
         wis: {
-            total: document.getElementById('wis').value,
+            total: document.getElementById('wis-total').innerText,
             modifier: document.getElementById('wis-modifier').innerText,
         },
         cha: {
-            total: document.getElementById('cha').value,
+            total: document.getElementById('cha-total').innerText,
             modifier: document.getElementById('cha-modifier').innerText,
         }
     };
@@ -857,38 +866,63 @@ const KaKa = () => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D&D Karakter Kağıdı</title>
     <link rel="stylesheet" href="stylesKaKa.css">
+    <style>
+        .checkbox {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        
+        .checkbox.checked {
+            background-color: #333; /* İçi dolu olduğunda yeşil renkte olacak */
+        }
+    </style>
 </head>
 <body> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.checkbox').forEach(function(checkbox) {
+                checkbox.addEventListener('click', function() {
+                    // İkona tıklanınca checked sınıfı eklenir veya kaldırılır
+                    this.classList.toggle('checked');
+                });
+            });
+        });
+    </script>
     <!-- <div id=""></div> -->
     <div class="container">
         <div id="ust"><div id="ust-isim">
             <div id="isim">Karakter İsmi:<textarea id="noteArea-isim" placeholder="Notlarınızı buraya yazın..."></textarea></div></div>
             <div id="ozellikler">
                 <div id="ozellikler-ust">
-                    <div id="classLevel">Sınıf/ Level:<textarea id="noteArea-ust" placeholder="Sınıf/ Level"></textarea></div>
-                    <div id="background">Karakter Geçmişi:<textarea id="noteArea-ust" placeholder="Karakter Geçmişi"></textarea></div>
+                    <div id="classLevel">Sınıf/ Level:<textarea id="noteArea-ust" placeholder="Class/ Level">${selectedClass}/ Level:1</textarea></div>
+                    <div id="background">Karakter Geçmişi:<textarea id="noteArea-ust" placeholder="Karakter Geçmişi">${selectedBackground}</textarea></div>
                     <div id="PlayerName">Oyuncu İsmi:<textarea id="noteArea-ust" placeholder="Oyuncu İsmi"></textarea></div>
                 </div>
                 <div id="ozellikler-alt">
-                    <div id="race">Irk:<textarea id="noteArea-alt" placeholder="Irk"></textarea></div>
+                    <div id="race">Irk:<textarea id="noteArea-alt" placeholder="Irk">${selectedRace}</textarea></div>
                     <div id="alignment">Alignment:<textarea id="noteArea-alt" placeholder="Alignment"></textarea></div>
                     <div id="EP">Deneyim Puanı:<textarea id="noteArea-alt" placeholder="Deneyim Puanı"></textarea></div>
                 </div>
             </div>
         </div>
         <div id="alt">
-<!-- ------------------------------------------------------------------------------- -->     
+<!-- ------------------------------------------------------------------------------- -->    
             <div id="sol">
                 <div id="sol-ust">
                     <div id="sol-ust-sol">
                         <div id="inspration"><span class="checkbox" id="str-checkbox"></span>          İnspration   </div>
                         <div id="stats">
-                            <div id="str">Str <br><br> ${stats.str.modifier} <br><br>${stats.str.total}</div>
-                            <div id="dex">Dex <br><br> ${stats.dex.modifier} <br><br>${stats.dex.total}</div>
-                            <div id="con">Con <br><br> ${stats.con.modifier} <br><br>${stats.con.total}</div>
-                            <div id="int">İnt <br><br> ${stats.int.modifier} <br><br>${stats.int.total}</div>
-                            <div id="wis">Wis <br><br> ${stats.wis.modifier} <br><br>${stats.wis.total}</div>
-                            <div id="cha">Cha <br><br> ${stats.cha.modifier} <br><br>${stats.cha.total}</div>
+                            <div id="str"><strong class='bold'>Str</strong> <br><br> ${stats.str.modifier} <br><br>${stats.str.total}</div>
+                            <div id="dex"><strong class='bold'>Dex</strong> <br><br> ${stats.dex.modifier} <br><br>${stats.dex.total}</div>
+                            <div id="con"><strong class='bold'>Con</strong> <br><br> ${stats.con.modifier} <br><br>${stats.con.total}</div>
+                            <div id="int"><strong class='bold'>İnt</strong> <br><br> ${stats.int.modifier} <br><br>${stats.int.total}</div>
+                            <div id="wis"><strong class='bold'>Wis</strong> <br><br> ${stats.wis.modifier} <br><br>${stats.wis.total}</div>
+                            <div id="cha"><strong class='bold'>Cha</strong> <br><br> ${stats.cha.modifier} <br><br>${stats.cha.total}</div>
                         </div>
                     </div>
                     <div id="sol-ust-sag">
@@ -903,32 +937,32 @@ const KaKa = () => {
                                 <tr>
                                     <td><span class="checkbox" id="str-checkbox"></span></td>
                                     <td>Strenght</td>
-                                    <td>-1</td>
+                                    <td>${stats.str.modifier}</td>
                                 </tr>
                                 <tr>
                                     <td><span class="checkbox" id="dex-checkbox"></span></td>
                                     <td>Dexterity</td>
-                                    <td>-1</td>
+                                    <td>${stats.dex.modifier}</td>
                                 </tr>
                                 <tr>
                                     <td><span class="checkbox" id="con-checkbox"></span></td>
                                     <td>Constution</td>
-                                    <td>-1</td>
+                                    <td>${stats.con.modifier}</td>
                                 </tr>
                                 <tr>
                                     <td><span class="checkbox" id="int-checkbox"></span></td>
                                     <td>İntelligence</td>
-                                    <td>-1</td>
+                                    <td>${stats.int.modifier}</td>
                                 </tr>
                                 <tr>
                                     <td><span class="checkbox" id="wis-checkbox"></span></td>
                                     <td>Wisdom</td>
-                                    <td>-1</td>
+                                    <td>${stats.wis.modifier}</td>
                                 </tr>
                                 <tr>
                                     <td><span class="checkbox" id="cha-checkbox"></span></td>
                                     <td>Charizma</td>
-                                    <td>-1</td>
+                                    <td>${stats.cha.modifier}</td>
                                 </tr>
                                 </tbody></table>
                             </div>
@@ -1047,9 +1081,9 @@ const KaKa = () => {
             <div id="orta">
                 <div id="orta-ust">
                     <div id="orta-ust-ust">
-                        <div id="ac">13 <br>AC</div>
-                        <div id="iniativ">+dex <br> İniative</div>
-                        <div id="speed">30 <br>Speed</div>
+                        <div id="ac">${AC}<br>AC</div>
+                        <div id="iniativ">${stats.dex.modifier}<br> İniative</div>
+                        <div id="speed">30<br>Speed</div>
                     </div>
                     <div id="orta-ust-orta">
                         <div id="CHitPoint">Max Hit Point= 30 <br>Current Hit Point</div>
@@ -1144,7 +1178,6 @@ const KaKa = () => {
         </div>
     
     </div>
-    <script src="scriptKaKa.js"></script>
 </body>
 </html>
     `);
